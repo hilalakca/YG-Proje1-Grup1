@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ders Deneyimi Panosu</title>
+  <meta name="description" content="Haftalık ders içeriklerini, görevleri ve ilerlemeni takip et.">
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#gorevler">Görevlere geç</a>
+
+  <header class="topbar">
+    <div class="topbar__title">
+      <h1 id="course-title">Ders Deneyimi Panosu</h1>
+      <p id="course-term" class="muted"></p>
+    </div>
+    <div class="topbar__tools">
+      <label class="search" for="search">
+        <span class="visually-hidden">Görevlerde ara</span>
+        <input id="search" type="search" placeholder="Görev ara" autocomplete="off">
+      </label>
+      <button id="theme-toggle" class="btn" type="button" aria-pressed="false">Koyu tema</button>
+    </div>
+  </header>
+
+  <main>
+    <div id="notice" class="notice" role="status" hidden></div>
+
+    <section class="overview" aria-labelledby="progress-heading">
+      <h2 id="progress-heading" class="visually-hidden">Genel ilerleme</h2>
+      <div id="progress-summary"></div>
+    </section>
+
+    <section aria-labelledby="weeks-heading">
+      <h2 id="weeks-heading">Haftalar</h2>
+      <div id="weeks" class="weeks"></div>
+      <div id="week-detail" class="week-detail" hidden></div>
+    </section>
+
+    <section id="gorevler" aria-labelledby="tasks-heading" tabindex="-1">
+      <h2 id="tasks-heading">Görevler</h2>
+      <div class="filters" role="group" aria-label="Görev filtreleri">
+        <label>Durum
+          <select id="filter-status">
+            <option value="all">Tümü</option>
+            <option value="todo">Yapılacak</option>
+            <option value="in_progress">Devam eden</option>
+            <option value="done">Tamamlanan</option>
+          </select>
+        </label>
+        <label>Hafta
+          <select id="filter-week"><option value="all">Tüm haftalar</option></select>
+        </label>
+        <button id="filter-clear" class="btn btn--quiet" type="button">Filtreleri temizle</button>
+      </div>
+      <p id="result-count" class="muted" aria-live="polite"></p>
+      <ul id="task-list" class="tasks"></ul>
+    </section>
+  </main>
+
+  <footer class="footer muted">
+    <button id="reset" class="btn btn--quiet" type="button">İlerlemeyi sıfırla</button>
+  </footer>
+</body>
+</html>
