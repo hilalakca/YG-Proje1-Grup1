@@ -95,7 +95,7 @@ function renderWeeks() {
       <h3>${w.weekNo}. hafta: ${esc(w.title)}</h3>
       <span class="muted">${esc(w.description)}</span>
       <span class="bar" aria-hidden="true"><span style="width:${p.percent}%"></span></span>
-      <span class="muted">${p.done} / ${p.total} görev tamamlandı</span>
+      <span class="muted">${p.total === 0 ? 'Bu haftada görev yok' : `%${p.percent} · ${p.done} / ${p.total} görev tamamlandı`}</span>
     </button>`;
   }).join('');
 }
