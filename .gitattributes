@@ -1,0 +1,6 @@
+# Windows ve macOS/Linux'ta satır sonları aynı kalsın.
+* text=auto eol=lf
+*.pdf binary
+*.docx binary
+*.xlsx binary
+*.png binary
