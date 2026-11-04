@@ -5,6 +5,7 @@
 Öğrencilerin haftalık ders içeriklerini, görevlerini ve ilerlemelerini takip edebildiği, tarayıcıda çalışan bir web uygulaması.
 Backend ve veri tabanı yoktur; ders içeriği statik bir JSON dosyasından gelir, kullanıcı durumu `localStorage`’da tutulur.
 
+- **Görev panosu (GitHub Projects):** https://github.com/users/hilalakca/projects/1
 - **Görevler:** [Issues](https://github.com/hilalakca/YG-Proje1-Grup1/issues) · [Teslim milestone'u](https://github.com/hilalakca/YG-Proje1-Grup1/milestone/1)
 - **Teslim tarihi:** 11 Kasım 2026
 
@@ -80,6 +81,19 @@ Hocanın takip listesindeki her madde (P1-01…P1-20) bir **GitHub issue**'sudur
 (`P1-11 Arama ve durum/hafta filtresi`); içinde beklenen çıktı ve **kabul kriterleri** yazar. Bütün issue'lar
 **Teslim (11 Kasım 2026)** milestone'una bağlıdır; kaç işin bittiği milestone sayfasında yüzde olarak görünür.
 
+Kartlar [görev panosunda](https://github.com/users/hilalakca/projects/1) takip edilir. Her kart bir issue'dur.
+
+| Sütun        | Anlamı                                      |
+| ------------ | ------------------------------------------- |
+| Yapılacaklar | Görev açıldı, henüz başlanmadı              |
+| Yapılıyor    | Sorumlu kişi üzerinde çalışıyor             |
+| İnceleme     | PR açıldı, bir ekip arkadaşı inceliyor      |
+| Test         | Kabul kriterleri deneniyor                  |
+| Yapıldı      | PR birleşti ya da issue kapandı             |
+
+Her kartın bir **Öncelik** alanı vardır (En yüksek / Yüksek / Orta / Düşük). Takip listesine göre gecikmiş
+1–2. hafta işleri **En yüksek**, 3. hafta işleri **Yüksek**, 4. hafta işleri **Orta** önceliklidir.
+
 Etiketler:
 
 | Etiket                | Anlamı                                   |
@@ -92,7 +106,7 @@ Etiketler:
 
 ### Görev akışı
 
-1. Issue'yu kendinize atayın (sorumlular atanmış durumda).
+1. Issue'yu kendinize atayın (sorumlular atanmış durumda) ve kartı panoda **Yapılıyor** sütununa taşıyın.
 2. `main`'den, issue numarasıyla bir dal açın:
 
    ```bash
@@ -103,7 +117,7 @@ Etiketler:
 
 3. Küçük ve anlamlı commitler atın (aşağıdaki kurallara göre).
 4. Dalı gönderin ve PR açın. Şablondaki `Closes #` satırını issue numarasıyla tamamlayın (`Closes #13`).
-5. En az bir ekip arkadaşı PR'ı inceler ve onaylar. Test sorumlusu kabul kriterlerini dener.
+5. En az bir ekip arkadaşı PR'ı inceler ve onaylar. Kart **Test** sütununa taşınır; test sorumlusu kabul kriterlerini dener.
 6. PR `main`'e **Create a merge commit** ile birleştirilir; issue kendiliğinden kapanır.
 
 Hatalar `bug` etiketiyle ayrı issue olarak açılır ve düzeltme PR'ına bağlanır.
