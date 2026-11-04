@@ -65,7 +65,7 @@ function renderSummary() {
   const r = 40;
   const c = 2 * Math.PI * r;
   el.summary.innerHTML = `
-    <div class="overview__inner" style="display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap">
+    <div class="overview__inner">
       <svg class="ring" viewBox="0 0 100 100" role="progressbar" aria-label="Genel ilerleme"
            aria-valuemin="0" aria-valuemax="100" aria-valuenow="${percent}" aria-valuetext="%${percent}">
         <circle class="ring__track" cx="50" cy="50" r="${r}" fill="none" stroke-width="10"></circle>

@@ -123,6 +123,7 @@ main { display: grid; gap: 2rem; padding-bottom: 3rem; }
   padding: 1.25rem; border-radius: var(--radius);
   background: var(--surface); border: 1px solid var(--line);
 }
+.overview__inner { display: flex; flex-wrap: wrap; align-items: center; gap: 1.25rem; }
 .ring { width: 5.5rem; height: 5.5rem; flex: none; }
 .ring__track { stroke: var(--surface-2); }
 .ring__value { stroke: var(--done); transition: stroke-dashoffset 0.3s ease; }
