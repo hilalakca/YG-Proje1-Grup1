@@ -50,6 +50,36 @@ Anahtarlar `ldp:v1:` önekini taşır.
 - Hafta ilerlemesi = haftanın `done` görevleri / haftanın görev sayısı
 - Gecikmiş görev = `dueDate` bugünden önce ve durum `done` değil
 
+### İlerleme nasıl hesaplanır? (P1-12)
+
+Hesap `js/logic.js` içindeki iki saf fonksiyondadır:
+
+```js
+computeProgress(tasks, progress)          // → { done, total, percent }
+computeWeekProgress(weeks, tasks, progress) // → { [weekId]: { done, total, percent } }
+```
+
+1. `total` = içerikteki (doğrulanmış) görev sayısı. İçerikten silinmiş görevlerin eski kayıtları sayılmaz,
+   çünkü sayım `course.json`'daki görevler üzerinden yapılır.
+2. `done` = durumu `done` olan görev sayısı. Kaydı olmayan ya da geçersiz durumlu görev `todo` sayılır.
+3. `percent` = `Math.round(done / total * 100)`. **`total` 0 ise `percent` 0'dır**; sıfıra bölme yapılmaz.
+4. Hafta ilerlemesi, aynı hesabın yalnızca o haftanın görevlerine uygulanmasıdır.
+
+Yüzde saklanmaz. Bir görevin durumu değişince `main.js` yeni durumu kaydeder ve `renderSummary` ile
+`renderWeeks`'i yeniden çağırır; halka ve çubuklar CSS geçişiyle (0,3 sn) yeni değere kayar. Hareket azaltma
+tercihi açık olan kullanıcıda geçiş kapalıdır.
+
+| Durum                         | `done` | `total` | Gösterilen                         |
+| ----------------------------- | -----: | ------: | ---------------------------------- |
+| Hiç görev yok                 |      0 |       0 | %0, "Henüz görev eklenmemiş."      |
+| 12 görevden 3'ü tamamlandı    |      3 |      12 | %25, "3 / 12 görev tamamlandı"     |
+| 3 görevden 2'si tamamlandı    |      2 |       3 | %67 (66,67 yuvarlanır)             |
+| Bütün görevler tamamlandı     |     12 |      12 | %100                               |
+
+Ekranda: genel ilerleme bir halkayla (`role="progressbar"`, `aria-valuenow`), hafta ilerlemesi kartta bir
+çubuk ve "%67 · 2 / 3 görev tamamlandı" metniyle gösterilir. Hafta kartı bir düğme olduğu için çubuk
+dekoratiftir; yüzde metin olarak okunur.
+
 ## 4. Doğrulama ve hata durumları
 
 - Yinelenen `id` veya `weekNo`, bilinmeyen `weekId` veya eksik zorunlu alan: kayıt atlanır, uyarı verilir.
