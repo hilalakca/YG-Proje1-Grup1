@@ -1,6 +1,7 @@
 import {
   STATUSES, STATUS_LABELS, validateCourse, getStatus, setStatus,
   computeProgress, computeWeekProgress, filterTasks, isOverdue,
+  validateTaskInput, createUserTask, sanitizeUserTasks,
 } from './logic.js';
 import { KEYS, load, save, clearAll, isPersistent } from './storage.js';
 
@@ -11,10 +12,32 @@ const el = {
   title: $('course-title'), term: $('course-term'), search: $('search'), theme: $('theme-toggle'),
   notice: $('notice'), summary: $('progress-summary'), weeks: $('weeks'), detail: $('week-detail'),
   status: $('filter-status'), week: $('filter-week'), clear: $('filter-clear'),
-  count: $('result-count'), list: $('task-list'), reset: $('reset'),
+  count: $('result-count'), list: $('task-list'), reset: $('reset'), announce: $('announce'),
+  add: $('task-add'), form: $('task-form'), formHeading: $('task-form-heading'), cancel: $('task-form-cancel'),
 };
 
-const state = { course: { weeks: [], tasks: [] }, progress: {}, prefs: structuredClone(DEFAULT_PREFS) };
+// Form alanları: ad → [input id, hata mesajı id]
+const FIELDS = {
+  title: ['tf-title', 'tf-title-error'], weekId: ['tf-week', 'tf-week-error'], dueDate: ['tf-due', 'tf-due-error'],
+  description: ['tf-desc', 'tf-desc-error'], tags: ['tf-tags', 'tf-tags-error'],
+};
+const field = Object.fromEntries(Object.entries(FIELDS).map(([k, [i, e]]) => [k, { input: $(i), error: $(e) }]));
+
+const state = {
+  course: { weeks: [], tasks: [] }, userTasks: [], progress: {}, prefs: structuredClone(DEFAULT_PREFS),
+  editingId: null, // düzenlenen kendi görevinin id'si; null ise form "yeni görev" modunda
+};
+
+/** Ders içeriğindeki görevler + kullanıcının eklediği görevler. */
+function allTasks() {
+  return [...state.course.tasks, ...state.userTasks];
+}
+
+function announce(message) {
+  el.announce.textContent = '';
+  // Aynı mesaj üst üste gelirse de okunsun diye bir sonraki karede yazılır.
+  setTimeout(() => { el.announce.textContent = message; }, 50);
+}
 
 function esc(value) {
   return String(value ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -61,7 +84,7 @@ function warnNotPersistent() {
 /* ---------- Çizim ---------- */
 
 function renderSummary() {
-  const { done, total, percent } = computeProgress(state.course.tasks, state.progress);
+  const { done, total, percent } = computeProgress(allTasks(), state.progress);
   const r = 40;
   const c = 2 * Math.PI * r;
   el.summary.innerHTML = `
@@ -81,7 +104,8 @@ function renderSummary() {
 }
 
 function renderWeeks() {
-  const { weeks, tasks } = state.course;
+  const { weeks } = state.course;
+  const tasks = allTasks();
   if (weeks.length === 0) {
     el.weeks.innerHTML = '<p class="empty">Henüz içerik eklenmemiş. data/course.json dosyasına hafta ekleyebilirsin.</p>';
     return;
@@ -122,7 +146,7 @@ function renderFilters() {
 
 function renderTasks(focusTarget) {
   const f = state.prefs.filters;
-  const visible = filterTasks(state.course.tasks, state.progress, f);
+  const visible = filterTasks(allTasks(), state.progress, f);
   const weekNo = Object.fromEntries(state.course.weeks.map((w) => [w.id, w.weekNo]));
 
   el.count.textContent = `${visible.length} görev gösteriliyor`;
@@ -140,10 +164,16 @@ function renderTasks(focusTarget) {
       `<button type="button" data-task="${esc(t.id)}" data-status="${s}" aria-pressed="${s === status}">${STATUS_LABELS[s]}</button>`).join('');
     const due = t.dueDate
       ? `<span class="${overdue ? 'overdue' : ''}">${overdue ? 'Süresi geçti: ' : 'Son tarih: '}${formatDate(t.dueDate)}</span>` : '';
-    return `<li class="task" data-status="${status}">
-      <h3 class="task__title">${esc(t.title)}</h3>
+    const tools = t.custom
+      ? `<div class="task__tools">
+          <button class="btn btn--quiet" type="button" data-edit="${esc(t.id)}" aria-label="${esc(t.title)} görevini düzenle">Düzenle</button>
+          <button class="btn btn--quiet" type="button" data-delete="${esc(t.id)}" aria-label="${esc(t.title)} görevini sil">Sil</button>
+        </div>` : '';
+    const own = t.custom ? '<span class="tag tag--own">Kendi görevim</span>' : '';
+    return `<li class="task" data-status="${status}" data-id="${esc(t.id)}">
+      <div class="task__head"><h3 class="task__title">${esc(t.title)}</h3>${tools}</div>
       ${t.description ? `<p class="muted">${esc(t.description)}</p>` : ''}
-      <div class="task__meta"><span>${weekNo[t.weekId]}. hafta</span>${due}${t.tags.map((g) => `<span class="tag">${esc(g)}</span>`).join('')}</div>
+      <div class="task__meta"><span>${weekNo[t.weekId]}. hafta</span>${due}${own}${t.tags.map((g) => `<span class="tag">${esc(g)}</span>`).join('')}</div>
       <div class="status" role="group" aria-label="${esc(t.title)} durumu">${buttons}</div>
     </li>`;
   }).join('');
@@ -154,8 +184,100 @@ function renderTasks(focusTarget) {
 }
 
 function renderWeekOptions() {
-  el.week.innerHTML = '<option value="all">Tüm haftalar</option>' +
-    state.course.weeks.map((w) => `<option value="${esc(w.id)}">${w.weekNo}. hafta: ${esc(w.title)}</option>`).join('');
+  const options = state.course.weeks.map((w) => `<option value="${esc(w.id)}">${w.weekNo}. hafta: ${esc(w.title)}</option>`).join('');
+  el.week.innerHTML = '<option value="all">Tüm haftalar</option>' + options;
+  field.weekId.input.innerHTML = '<option value="">Hafta seç</option>' + options;
+}
+
+/* ---------- Kendi görevini ekleme / düzenleme / silme (#85) ---------- */
+
+function setFieldErrors(errors) {
+  for (const [name, { input, error }] of Object.entries(field)) {
+    const message = errors[name];
+    input.setAttribute('aria-invalid', String(Boolean(message)));
+    error.textContent = message ?? '';
+    error.hidden = !message;
+  }
+}
+
+function openForm(task = null) {
+  state.editingId = task?.id ?? null;
+  el.formHeading.textContent = task ? 'Görevi düzenle' : 'Yeni görev';
+  const f = state.prefs.filters;
+  field.title.input.value = task?.title ?? '';
+  field.weekId.input.value = task?.weekId ?? (f.weekId !== 'all' ? f.weekId : '');
+  field.dueDate.input.value = task?.dueDate ?? '';
+  field.description.input.value = task?.description ?? '';
+  field.tags.input.value = task ? task.tags.join(', ') : '';
+  setFieldErrors({});
+  el.form.hidden = false;
+  el.add.setAttribute('aria-expanded', 'true');
+  field.title.input.focus();
+}
+
+function closeForm(returnFocusTo = el.add) {
+  el.form.hidden = true;
+  el.add.setAttribute('aria-expanded', 'false');
+  state.editingId = null;
+  setFieldErrors({});
+  returnFocusTo?.focus();
+}
+
+function persistUserTasks() {
+  if (!save(KEYS.userTasks, state.userTasks)) warnNotPersistent();
+}
+
+function onFormSubmit(event) {
+  event.preventDefault();
+  const input = Object.fromEntries(Object.entries(field).map(([name, { input: i }]) => [name, i.value]));
+  // Tarih alanına geçersiz değer girilince value boş gelir; bunu "boş" değil "geçersiz" say.
+  if (!input.dueDate && field.dueDate.input.validity.badInput) input.dueDate = 'geçersiz';
+  const { value, errors } = validateTaskInput(input, state.course.weeks);
+  setFieldErrors(errors);
+  const firstInvalid = Object.keys(FIELDS).find((name) => errors[name]);
+  if (firstInvalid) {
+    field[firstInvalid].input.focus();
+    announce(`Görev kaydedilmedi: ${Object.keys(errors).length} alanda hata var.`);
+    return;
+  }
+
+  const wasEditing = Boolean(state.editingId);
+  let id = state.editingId;
+  if (id) {
+    state.userTasks = state.userTasks.map((t) => (t.id === id ? { ...t, ...value } : t));
+  } else {
+    const task = createUserTask(value);
+    id = task.id;
+    state.userTasks = [...state.userTasks, task];
+  }
+  persistUserTasks();
+  renderAll();
+
+  const visible = filterTasks(allTasks(), state.progress, state.prefs.filters).some((t) => t.id === id);
+  closeForm(visible ? el.list.querySelector(`button[data-edit="${CSS.escape(id)}"]`) : el.add);
+  announce(`"${value.title}" ${wasEditing ? 'güncellendi' : 'eklendi'}.${visible ? '' : ' Seçili filtreler yüzünden listede görünmüyor.'}`);
+}
+
+function onTaskToolClick(event) {
+  const edit = event.target.closest('button[data-edit]');
+  const del = event.target.closest('button[data-delete]');
+  if (edit) {
+    const task = state.userTasks.find((t) => t.id === edit.dataset.edit);
+    if (task) openForm(task);
+    return;
+  }
+  if (!del) return;
+  const task = state.userTasks.find((t) => t.id === del.dataset.delete);
+  if (!task || !window.confirm(`"${task.title}" görevi silinsin mi?`)) return;
+  state.userTasks = state.userTasks.filter((t) => t.id !== task.id);
+  const { [task.id]: _removed, ...rest } = state.progress;
+  state.progress = rest;
+  persistUserTasks();
+  if (!save(KEYS.progress, state.progress)) warnNotPersistent();
+  if (state.editingId === task.id) closeForm(null);
+  renderAll();
+  el.add.focus();
+  announce(`"${task.title}" silindi.`);
 }
 
 function renderAll() {
@@ -196,6 +318,11 @@ function debounce(fn, ms) {
 
 function bindEvents() {
   el.list.addEventListener('click', onStatusClick);
+  el.list.addEventListener('click', onTaskToolClick);
+  el.add.addEventListener('click', () => (el.form.hidden ? openForm() : closeForm()));
+  el.cancel.addEventListener('click', () => closeForm());
+  el.form.addEventListener('submit', onFormSubmit);
+  el.form.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeForm(); });
   el.weeks.addEventListener('click', (e) => {
     const card = e.target.closest('button[data-week]');
     if (!card) return;
@@ -216,8 +343,10 @@ function bindEvents() {
     if (state.prefs.theme === 'system') applyTheme();
   });
   el.reset.addEventListener('click', () => {
-    if (!window.confirm('Tüm ilerlemen silinecek. Devam edilsin mi?')) return;
+    if (!window.confirm('Tüm ilerlemen ve eklediğin görevler silinecek. Devam edilsin mi?')) return;
     state.progress = {};
+    state.userTasks = [];
+    if (!el.form.hidden) closeForm(null);
     clearAll();
     state.prefs = structuredClone(DEFAULT_PREFS);
     applyTheme();
@@ -250,6 +379,8 @@ async function init() {
     console.error(error);
     showNotice('Ders içeriği yüklenemedi. Sayfayı bir yerel sunucu üzerinden açtığından emin ol (README’ye bak).');
   }
+
+  state.userTasks = sanitizeUserTasks(load(KEYS.userTasks, []), state.course.weeks, state.course.tasks);
 
   // İçerik güncellenip kayıtlı hafta silindiyse filtre boş liste göstermesin.
   if (!state.course.weeks.some((w) => w.id === state.prefs.filters.weekId)) {

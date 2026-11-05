@@ -43,6 +43,7 @@ mantığını arayüzden bağımsız tutup tek başına test edilebilir kılmakt
 | Hafta detayı           | `#week-detail`                               | `renderDetail`                | —                                  | P1-06         |
 | Filtreler              | `#filter-status`, `#filter-week`, `#filter-clear` | `renderFilters`, `renderWeekOptions` | —                         | P1-11         |
 | Görev listesi          | `#task-list`, `#result-count`                | `renderTasks`                 | `filterTasks`, `getStatus`, `setStatus`, `isOverdue` | P1-07, P1-11 |
+| Görev ekleme formu     | `#task-add`, `#task-form`                    | `openForm`, `onFormSubmit`, `onTaskToolClick` | `validateTaskInput`, `createUserTask`, `sanitizeUserTasks` | P1-07 (#85) |
 | Uyarı alanı            | `#notice`                                    | `showNotice`                  | —                                  | P1-14         |
 | İlerlemeyi sıfırlama   | `#reset`                                     | `bindEvents`                  | —                                  | P1-14         |
 
@@ -55,6 +56,9 @@ mantığını arayüzden bağımsız tutup tek başına test edilebilir kılmakt
 | `state.course`   | `data/course.json` (doğrulanmış)  | Yalnızca açılışta                   |
 | `state.progress` | `localStorage` → `ldp:v1:progress` | Görev durumu değişince              |
 | `state.prefs`    | `localStorage` → `ldp:v1:prefs`   | Tema, filtre ya da hafta seçilince  |
+| `state.userTasks` | `localStorage` → `ldp:v1:userTasks` (doğrulanmış) | Kendi görevi eklenince, düzenlenince ya da silinince |
+
+Ekrandaki görev listesi, ilerleme ve filtreler `allTasks()` ile ders görevleri ve kendi görevleri birlikte kullanır.
 
 Akış her değişiklikte aynıdır: **olay → `state` güncellenir → `storage.save` → ilgili `render*` çağrılır.**
 Yüzdeler saklanmaz; her çizimde `logic.js` ile yeniden hesaplanır.
