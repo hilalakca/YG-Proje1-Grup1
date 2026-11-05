@@ -65,7 +65,7 @@ Bütün üyeler aynı zamanda geliştiricidir. Roller hocanın takip listesindek
 
 ### Kim ne yaptı?
 
-Git geçmişine ve issue kayıtlarına göre, 5 Kasım 2026 itibarıyla. Teslimden önce
+Git geçmişine ve issue kayıtlarına göre, 6 Kasım 2026 itibarıyla. Teslimden önce
 `docs/katki-tablosu.md` ile bağlantılı hâle getirilecek (P1-19).
 
 **Hilal Akça (Lider + Geliştirici)**
@@ -75,6 +75,14 @@ Git geçmişine ve issue kayıtlarına göre, 5 Kasım 2026 itibarıyla. Teslimd
   `js/storage.js`, `data/course.json`, `docs/data-model.md`.
 - Takip listesindeki 20 maddeyi issue olarak açtı; etiketleri, milestone'u ve görev panosunu kurdu
   (5 Kasım; P1-03).
+- Maddeleri alt görevlere bölüp atadı; `docs/mimari.md`, `.editorconfig` ve ortak editör ayarlarını ekledi
+  ([#60](https://github.com/hilalakca/YG-Proje1-Grup1/pull/60); P1-05).
+- Hafta kartına ilerleme yüzdesini ekledi, hesabı `docs/data-model.md`'de anlattı
+  ([#61](https://github.com/hilalakca/YG-Proje1-Grup1/pull/61); P1-12).
+- Açılışta tema yanıp sönmesini ve sistem teması değişikliğini düzeltti, iki temada kontrastı ölçtü
+  ([#62](https://github.com/hilalakca/YG-Proje1-Grup1/pull/62); P1-13).
+- Yusuf'un bulduğu gecikme hatasını düzeltti ve regresyon testi ekledi
+  ([#68](https://github.com/hilalakca/YG-Proje1-Grup1/pull/68)).
 
 **Fatih Ulupınar (Analist + Geliştirici)**
 
@@ -82,11 +90,18 @@ Git geçmişine ve issue kayıtlarına göre, 5 Kasım 2026 itibarıyla. Teslimd
 - İlk iskelet ve temel JS dosyaları (27 Ekim; sonradan `main`'deki sürümle değiştirildi); analiz ve veri
   modeli raporu (2 Kasım).
 
-**Ayşe Yurtseven (Dokümantasyon + Geliştirici)** ve **Yusuf Veis (Test / Kalite + Geliştirici)**
+**Ayşe Yurtseven (Dokümantasyon + Geliştirici)**
 
-- İşleri atandı ([#3](https://github.com/hilalakca/YG-Proje1-Grup1/issues/3),
-  [#2](https://github.com/hilalakca/YG-Proje1-Grup1/issues/2) ve takip listesindeki diğer maddeler);
-  depoda henüz commit'leri yok.
+- Sayfa haritası, kullanıcı akışı, masaüstü wireframe, kullanıcı kılavuzu ve rapor/sunum taslağını hazırladı
+  ([#65](https://github.com/hilalakca/YG-Proje1-Grup1/pull/65), incelemede; mobil wireframe bekleniyor).
+
+**Yusuf Veis (Test / Kalite + Geliştirici)**
+
+- `js/logic.js` için 37 birim testi yazdı ([#63](https://github.com/hilalakca/YG-Proje1-Grup1/pull/63); P1-10.1).
+- Testleri her push ve PR'da çalıştıran GitHub Actions iş akışını ve test senaryoları belgesinin ilk taslağını
+  ekledi ([#67](https://github.com/hilalakca/YG-Proje1-Grup1/pull/67); P1-10.2, P1-15).
+- Gecikme kontrolündeki saat dilimi hatasını buldu ve kaydetti
+  ([#66](https://github.com/hilalakca/YG-Proje1-Grup1/issues/66)).
 
 ## Özellikler
 
@@ -105,6 +120,10 @@ Git geçmişine ve issue kayıtlarına göre, 5 Kasım 2026 itibarıyla. Teslimd
 
 "Test bekliyor": özellik kodda var ama kabul kriterlerine göre henüz test edilmedi. Bir özellik, PR'ı
 birleşip kabul kriterleri denenmeden **Hazır** sayılmaz.
+
+Arayüzün arkasındaki hesaplar (ilerleme, filtre ve arama, durum değiştirme, gecikme, veri doğrulama) birim
+testleriyle denetleniyor (`tests/logic.test.mjs`). Ekranda elle yapılacak kabul testleri
+[`docs/test-senaryolari.md`](docs/test-senaryolari.md) belgesinde.
 
 ## Ekranın bölümleri
 
@@ -131,6 +150,8 @@ Sayfa haritası ve wireframe: [P1-04 #7](https://github.com/hilalakca/YG-Proje1-
 | JSON                              | Ders içeriği (`data/course.json`)                                                 |
 | Git ve GitHub                     | Sürüm kontrolü ve bireysel katkının kaydı                                         |
 | GitHub Projects                   | Görev takibi ve iş bölümü (issue'lar ve pano)                                     |
+| Node.js test çalıştırıcısı        | Birim testleri (`node --test`), ek paket gerekmez                                 |
+| GitHub Actions                    | Her push ve PR'da testleri otomatik çalıştırmak                                   |
 
 ## Kurulum ve çalıştırma
 
@@ -164,6 +185,17 @@ npx serve .
 Ardından tarayıcıda `http://localhost:8000` adresini açın. VS Code kullanıyorsanız **Live Server**
 eklentisiyle `index.html`'i açmak da yeterlidir.
 
+### Testleri çalıştırma
+
+Node.js 20 veya üstü gerekir; ek paket kurulmaz.
+
+```bash
+node --test tests/logic.test.mjs
+```
+
+Aynı testler her push ve PR'da GitHub Actions'ta da çalışır; sonuç PR sayfasındaki **Checks** bölümünde
+görünür. Testi geçmeyen PR birleştirilmez.
+
 ## Proje yapısı: hangi dosya ne işe yarar?
 
 ```
@@ -173,9 +205,13 @@ js/main.js            Arayüz: çizim ve olaylar
 js/logic.js           Saf iş mantığı: doğrulama, ilerleme, filtre, arama (DOM'a dokunmaz)
 js/storage.js         localStorage sarmalayıcısı (hata toleranslı)
 data/course.json      Ders içeriği (örnek veri)
-docs/data-model.md    Veri modeli
-docs/                 Analiz, test ve teslim belgeleri
-.github/              PR şablonu
+tests/logic.test.mjs  logic.js için birim testleri
+docs/data-model.md    Veri modeli ve ilerleme hesabı
+docs/mimari.md        Modüller, veri akışı, ekran bölümü ↔ kod eşlemesi
+docs/tema-ve-kontrast.md  Tema davranışı ve kontrast ölçümleri
+docs/test-senaryolari.md  Elle yapılan test senaryoları ve sonuçları
+docs/                 Diğer analiz ve teslim belgeleri
+.github/              PR şablonu, GitHub Actions test iş akışı
 ```
 
 ### İçeriği düzenleme
@@ -327,17 +363,19 @@ veri yoktur.
 
 - Veriler cihaza ve tarayıcıya özeldir; başka cihazda ilerleme görünmez.
 - Ders sorumlusu öğrencilerin ilerlemesini göremez (backend kapsam dışı).
-- Otomatik testler ve CI henüz yok ([P1-10 #12](https://github.com/hilalakca/YG-Proje1-Grup1/issues/12)).
+- Testler yalnızca `js/logic.js`'i kapsıyor; arayüz (`js/main.js`) ve `js/storage.js` elle test ediliyor.
+- Gereksinim belgesi henüz yok; `docs/` altındaki iki PDF eski taslaktır ve arşive taşınacak
+  ([P1-02 #5](https://github.com/hilalakca/YG-Proje1-Grup1/issues/5)).
 
 ## Teslim dosyaları
 
-5 Kasım 2026 itibarıyla:
+6 Kasım 2026 itibarıyla:
 
 | Dosya                        | İçerik                                                                                                     | Durum     |
 | ---------------------------- | ---------------------------------------------------------------------------------------------------------- | --------- |
 | `docs/gereksinimler.md`      | Gereksinimler ve kabul kriterleri ([P1-02 #5](https://github.com/hilalakca/YG-Proje1-Grup1/issues/5))      | Henüz yok |
 | `docs/wireframe/`            | Sayfa haritası ve wireframe ([P1-04 #7](https://github.com/hilalakca/YG-Proje1-Grup1/issues/7))            | Henüz yok |
-| `docs/test-senaryolari.md`   | Test senaryoları ve hata kaydı ([P1-15 #2](https://github.com/hilalakca/YG-Proje1-Grup1/issues/2))         | Henüz yok |
+| `docs/test-senaryolari.md`   | Test senaryoları ve hata kaydı ([P1-15 #2](https://github.com/hilalakca/YG-Proje1-Grup1/issues/2))         | Taslak    |
 | `docs/kullanici-kilavuzu.md` | Kullanıcı kılavuzu ([P1-17 #3](https://github.com/hilalakca/YG-Proje1-Grup1/issues/3))                     | Henüz yok |
 | `docs/proje-raporu.pdf`      | Proje raporu ([P1-18 #18](https://github.com/hilalakca/YG-Proje1-Grup1/issues/18))                         | Henüz yok |
 | `presentation/`              | Sunum ([P1-18 #18](https://github.com/hilalakca/YG-Proje1-Grup1/issues/18))                                | Henüz yok |
