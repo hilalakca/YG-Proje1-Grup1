@@ -115,10 +115,36 @@ export function computeWeekProgress(weeks, tasks, progress) {
 /** Son tarihi geçmiş ve tamamlanmamış mı? Tarihler ISO (YYYY-MM-DD). */
 export function isOverdue(task, progress, today = new Date()) {
   if (!task.dueDate || getStatus(progress, task.id) === 'done') return false;
-  // Yerel tarih kullanılır; toISOString() UTC verdiği için Türkiye'de 00:00-03:00 arası bir önceki günü gösterir (#66).
+  return task.dueDate < localIsoDate(today);
+}
+
+/** Yerel takvim gününü YYYY-MM-DD olarak verir. toISOString() UTC verdiği için Türkiye'de 00:00-03:00 arası bir önceki günü gösterir (#66). */
+export function localIsoDate(date) {
   const pad = (n) => String(n).padStart(2, '0');
-  const todayIso = `${today.getFullYear()}-${pad(today.getMonth() + 1)}-${pad(today.getDate())}`;
-  return task.dueDate < todayIso;
+  return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`;
+}
+
+/** İki ISO tarih (YYYY-MM-DD) arasındaki gün farkı: to - from. */
+export function daysBetween(fromIso, toIso) {
+  const toUtc = (iso) => { const [y, m, d] = iso.split('-').map(Number); return Date.UTC(y, m - 1, d); };
+  return Math.round((toUtc(toIso) - toUtc(fromIso)) / 86400000);
+}
+
+/**
+ * "Yaklaşan görevler" paneli için (#86): tamamlanmamış ve son tarihi olan görevler.
+ * overdue: süresi geçmiş olanlar (en eskisi önce); upcoming: bugün ve sonraki `days` gün içindekiler (en yakını önce, en çok `limit`).
+ * Her öğe { task, daysLeft } biçimindedir; daysLeft 0 = bugün, negatif = gecikmiş.
+ */
+export function upcomingTasks(tasks, progress, today = new Date(), { days = 7, limit = 5 } = {}) {
+  const todayIso = localIsoDate(today);
+  const open = tasks
+    .filter((t) => t.dueDate && getStatus(progress, t.id) !== 'done')
+    .map((task) => ({ task, daysLeft: daysBetween(todayIso, task.dueDate) }))
+    .sort((a, b) => a.daysLeft - b.daysLeft || a.task.title.localeCompare(b.task.title, 'tr'));
+  return {
+    overdue: open.filter((x) => x.daysLeft < 0),
+    upcoming: open.filter((x) => x.daysLeft >= 0 && x.daysLeft <= days).slice(0, limit),
+  };
 }
 
 /** Durum + hafta + arama filtrelerini VE mantığıyla uygular. */

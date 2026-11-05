@@ -130,6 +130,18 @@ main { display: grid; gap: 2rem; padding-bottom: 3rem; }
 .ring text { fill: var(--ink); font-weight: 700; font-size: 1.1rem; }
 .overview__text strong { font-size: 1.25rem; }
 
+/* Yaklaşan görevler (#86) */
+.overview { flex-wrap: wrap; justify-content: space-between; }
+.upcoming { flex: 1 1 18rem; max-width: 30rem; display: grid; gap: 0.5rem; }
+.upcoming h3 { font-size: 1rem; }
+.upcoming ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.35rem; }
+.upcoming li { display: flex; justify-content: space-between; gap: 0.75rem; padding: 0.4rem 0.6rem; border-radius: 8px; background: var(--surface-2); }
+.upcoming li span:first-child { overflow-wrap: anywhere; }
+.upcoming .when { flex: none; font-weight: 600; color: var(--ink-soft); }
+.upcoming .when--today { color: var(--accent); }
+.upcoming__overdue { margin: 0; color: var(--warn); font-weight: 600; }
+.upcoming__overdue button { font: inherit; color: inherit; background: none; border: 0; padding: 0; min-height: 44px; text-decoration: underline; cursor: pointer; }
+
 /* Hafta kartları */
 .weeks { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); }
 

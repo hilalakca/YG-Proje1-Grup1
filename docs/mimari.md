@@ -39,6 +39,7 @@ mantığını arayüzden bağımsız tutup tek başına test edilebilir kılmakt
 | ---------------------- | -------------------------------------------- | ----------------------------- | ---------------------------------- | ------------- |
 | Üst çubuk: arama, tema | `#search`, `#theme-toggle`                   | `renderFilters`, `applyTheme` | `normalizeText`                    | P1-11, P1-13  |
 | Genel ilerleme         | `#progress-summary`                          | `renderSummary`               | `computeProgress`                  | P1-12         |
+| Önümüzdeki 7 gün       | `#upcoming`                                  | `renderUpcoming`              | `upcomingTasks`, `daysBetween`     | #86           |
 | Hafta kartları         | `#weeks`                                     | `renderWeeks`                 | `computeWeekProgress`              | P1-06, P1-12  |
 | Hafta detayı           | `#week-detail`                               | `renderDetail`                | —                                  | P1-06         |
 | Filtreler              | `#filter-status`, `#filter-week`, `#filter-clear` | `renderFilters`, `renderWeekOptions` | —                         | P1-11         |
