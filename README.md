@@ -349,7 +349,7 @@ veri yoktur.
 
 - [Sayfa haritası ve kullanıcı akışı](docs/sayfa-haritasi-ve-kullanici-akisi.md)
 - [Masaüstü wireframe taslağı](docs/wireframes.svg)
-- [Mobil wireframe taslağı (360 px)](docs/wireframe-mobil.svg)
+- Mobil wireframe taslağı (360 px): eklenecek ([#27](https://github.com/hilalakca/YG-Proje1-Grup1/issues/27))
 - [Kullanıcı kılavuzu](docs/kullanici-kilavuzu.md)
 - [Kısa proje raporu](docs/kisa-proje-raporu.md)
 - [Rapor (DOCX)](docs/kisa-proje-raporu.docx)
