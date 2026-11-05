@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ders Deneyimi Panosu</title>
   <meta name="description" content="Haftalık ders içeriklerini, görevleri ve ilerlemeni takip et.">
+  <script>
+    // Kayıtlı temayı CSS yüklenmeden uygula; koyu tema seçiliyken sayfa bir an açık görünmesin (#51).
+    try {
+      const theme = JSON.parse(localStorage.getItem('ldp:v1:prefs'))?.theme;
+      if (theme === 'light' || theme === 'dark') document.documentElement.setAttribute('data-theme', theme);
+    } catch { /* depolama yoksa sistem teması kullanılır */ }
+  </script>
   <link rel="stylesheet" href="css/styles.css">
   <script type="module" src="js/main.js"></script>
 </head>

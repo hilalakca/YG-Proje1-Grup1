@@ -211,6 +211,10 @@ function bindEvents() {
     persistPrefs();
     applyTheme();
   });
+  // Tema "sistem" iken işletim sistemi teması değişirse düğme yazısı da güncellensin.
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    if (state.prefs.theme === 'system') applyTheme();
+  });
   el.reset.addEventListener('click', () => {
     if (!window.confirm('Tüm ilerlemen silinecek. Devam edilsin mi?')) return;
     state.progress = {};
