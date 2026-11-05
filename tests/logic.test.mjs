@@ -205,6 +205,10 @@ describe('isOverdue', () => {
   it('son tarihi olmayan görev gecikmiş değildir', () => {
     assert.equal(isOverdue(task('t1', 'w1'), {}, today), false);
   });
+  it('gün yerel saate göre değişir (#66)', () => {
+    const yerelGeceYarisiSonrasi = new Date(2026, 10, 6, 1, 0); // yerel saatle 6 Kasım 01:00
+    assert.equal(isOverdue(task('t1', 'w1', { dueDate: '2026-11-05' }), {}, yerelGeceYarisiSonrasi), true);
+  });
 });
 
 describe('filterTasks', () => {
