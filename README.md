@@ -9,7 +9,7 @@ sayfada, etkileşimli bir web arayüzüyle takip edebildiği uygulama.
 - **Görevler:** [Issues](https://github.com/hilalakca/YG-Proje1-Grup1/issues) ·
   [Teslim milestone'u](https://github.com/hilalakca/YG-Proje1-Grup1/milestone/1)
 - **Teslim tarihi:** 11 Kasım 2026
-- **Canlı demo:** henüz yok (GitHub Pages, [P1-20 #20](https://github.com/hilalakca/YG-Proje1-Grup1/issues/20))
+- **Canlı demo:** https://hilalakca.github.io/YG-Proje1-Grup1/ (GitHub Pages; `main`'e her birleşmede kendiliğinden güncellenir)
 
 ## İçindekiler
 
