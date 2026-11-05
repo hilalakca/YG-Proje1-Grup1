@@ -343,3 +343,17 @@ veri yoktur.
 | `presentation/`              | Sunum ([P1-18 #18](https://github.com/hilalakca/YG-Proje1-Grup1/issues/18))                                | Henüz yok |
 | `docs/screenshots/`          | Masaüstü ve mobil ekran görüntüleri ([P1-08 #10](https://github.com/hilalakca/YG-Proje1-Grup1/issues/10)) | Henüz yok |
 | `docs/katki-tablosu.md`      | Ekip katkı tablosu ([P1-19 #19](https://github.com/hilalakca/YG-Proje1-Grup1/issues/19))                   | Henüz yok |
+
+
+## Kullanıcı ve tasarım belgeleri
+
+- [Sayfa haritası ve kullanıcı akışı](docs/sayfa-haritasi-ve-kullanici-akisi.md)
+- [Masaüstü wireframe taslağı](docs/wireframes.svg)
+- [Mobil wireframe taslağı (360 px)](docs/wireframe-mobil.svg)
+- [Kullanıcı kılavuzu](docs/kullanici-kilavuzu.md)
+- [Kısa proje raporu](docs/kisa-proje-raporu.md)
+- [Rapor (DOCX)](docs/kisa-proje-raporu.docx)
+- [Grup sunumu (PPTX)](docs/proje-sunumu.pptx)
+
+### Ekran görüntüsü kanıtları
+Gerçek tarayıcı görüntülerini `docs/screenshots/` klasörüne `responsive-360.png`, `responsive-768.png` ve `responsive-1280.png` adlarıyla ekleyin. Wireframe taslağı gerçek ekran görüntüsü yerine kullanılmamalıdır.
