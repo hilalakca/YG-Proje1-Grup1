@@ -115,7 +115,9 @@ export function computeWeekProgress(weeks, tasks, progress) {
 /** Son tarihi geçmiş ve tamamlanmamış mı? Tarihler ISO (YYYY-MM-DD). */
 export function isOverdue(task, progress, today = new Date()) {
   if (!task.dueDate || getStatus(progress, task.id) === 'done') return false;
-  const todayIso = today.toISOString().slice(0, 10);
+  // Yerel tarih kullanılır; toISOString() UTC verdiği için Türkiye'de 00:00-03:00 arası bir önceki günü gösterir (#66).
+  const pad = (n) => String(n).padStart(2, '0');
+  const todayIso = `${today.getFullYear()}-${pad(today.getMonth() + 1)}-${pad(today.getDate())}`;
   return task.dueDate < todayIso;
 }
 
