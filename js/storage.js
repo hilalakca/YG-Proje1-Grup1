@@ -2,7 +2,7 @@
 // uygulama bellekte çalışmaya devam eder; çağıran taraf isPersistent() ile uyarı gösterebilir.
 
 const PREFIX = 'ldp:v1:';
-export const KEYS = { progress: 'progress', prefs: 'prefs', meta: 'meta' };
+export const KEYS = { progress: 'progress', prefs: 'prefs', meta: 'meta', userTasks: 'userTasks' };
 
 const memory = new Map();
 let persistent = detect();

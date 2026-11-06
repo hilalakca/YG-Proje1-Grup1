@@ -134,3 +134,69 @@ export function filterTasks(tasks, progress, { status = 'all', weekId = 'all', q
     return true;
   });
 }
+
+/* ---------- Kendi görevleri (#85) ---------- */
+
+export const TASK_LIMITS = { title: 120, description: 500, tag: 30, tags: 5 };
+
+function isValidIsoDate(value) {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
+  const [y, m, d] = value.split('-').map(Number);
+  const date = new Date(y, m - 1, d);
+  return date.getFullYear() === y && date.getMonth() === m - 1 && date.getDate() === d;
+}
+
+/**
+ * Formdan gelen görev girdisini doğrular.
+ * Dönen değer: { value, errors }. errors boşsa value kaydedilebilir; değilse { alan: mesaj }.
+ * tags virgülle ayrılmış metin ya da dizi olabilir.
+ */
+export function validateTaskInput(input, weeks) {
+  const errors = {};
+  const title = String(input?.title ?? '').trim();
+  const description = String(input?.description ?? '').trim();
+  const weekId = String(input?.weekId ?? '');
+  const dueDate = String(input?.dueDate ?? '').trim();
+  const rawTags = Array.isArray(input?.tags) ? input.tags : String(input?.tags ?? '').split(',');
+  const tags = [...new Set(rawTags.map((t) => String(t).trim()).filter(Boolean))];
+
+  if (!title) errors.title = 'Başlık boş olamaz.';
+  else if (title.length > TASK_LIMITS.title) errors.title = `Başlık en çok ${TASK_LIMITS.title} karakter olabilir.`;
+
+  if (!weeks.some((w) => w.id === weekId)) errors.weekId = 'Bir hafta seç.';
+
+  if (dueDate && !isValidIsoDate(dueDate)) errors.dueDate = 'Geçerli bir tarih gir (gg.aa.yyyy).';
+
+  if (description.length > TASK_LIMITS.description) {
+    errors.description = `Açıklama en çok ${TASK_LIMITS.description} karakter olabilir.`;
+  }
+
+  if (tags.length > TASK_LIMITS.tags) errors.tags = `En çok ${TASK_LIMITS.tags} etiket ekleyebilirsin.`;
+  else if (tags.some((t) => t.length > TASK_LIMITS.tag)) errors.tags = `Bir etiket en çok ${TASK_LIMITS.tag} karakter olabilir.`;
+
+  return { value: { title, description, weekId, dueDate: dueDate || null, tags }, errors };
+}
+
+/** Doğrulanmış girdiden yeni kendi görevi üretir. */
+export function createUserTask(value, now = new Date()) {
+  const id = `u-${now.getTime().toString(36)}-${Math.random().toString(36).slice(2, 6)}`;
+  return { ...value, id, custom: true, createdAt: now.toISOString() };
+}
+
+/**
+ * localStorage'dan okunan kendi görevlerini temizler: bozuk, yinelenen ya da
+ * artık var olmayan haftaya ait kayıtlar atılır; ders görevlerinin id'leriyle çakışanlar da atılır.
+ */
+export function sanitizeUserTasks(stored, weeks, courseTasks = []) {
+  if (!Array.isArray(stored)) return [];
+  const seen = new Set(courseTasks.map((t) => t.id));
+  const result = [];
+  for (const t of stored) {
+    if (!t || typeof t.id !== 'string' || seen.has(t.id)) continue;
+    const { value, errors } = validateTaskInput(t, weeks);
+    if (Object.keys(errors).length) continue;
+    seen.add(t.id);
+    result.push({ ...value, id: t.id, custom: true, createdAt: t.createdAt ?? null });
+  }
+  return result;
+}

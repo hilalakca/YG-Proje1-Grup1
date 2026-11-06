@@ -33,6 +33,7 @@ Anahtarlar `ldp:v1:` önekini taşır.
 | --- | --- |
 | `ldp:v1:progress` | `{ [taskId]: { status, updatedAt, completedAt } }`; `status`: `todo` \| `in_progress` \| `done`. Kaydı olmayan görev `todo` sayılır. `completedAt` yalnızca `done` iken doludur. |
 | `ldp:v1:prefs` | `{ theme: "light" \| "dark" \| "system", filters: { status, weekId, query }, lastViewedWeekId }` |
+| `ldp:v1:userTasks` | Kullanıcının eklediği görevler: `[{ id, weekId, title, description, dueDate, tags, custom: true, createdAt }]`. `id` `u-` ile başlar. Açılışta `sanitizeUserTasks` ile doğrulanır; bozuk, yinelenen ya da artık olmayan haftaya ait kayıtlar atılır. |
 | `ldp:v1:meta` | `{ schemaVersion, createdAt }` |
 
 Örnek `ldp:v1:progress`:
@@ -81,6 +82,18 @@ Ekranda: genel ilerleme bir halkayla (`role="progressbar"`, `aria-valuenow`), ha
 dekoratiftir; yüzde metin olarak okunur.
 
 ## 4. Doğrulama ve hata durumları
+
+Kendi görevi formu (`validateTaskInput`):
+
+| Alan | Kural |
+| --- | --- |
+| Başlık | Zorunlu; boşluklar kırpılır; en çok 120 karakter |
+| Hafta | Zorunlu; var olan bir hafta olmalı |
+| Son tarih | İsteğe bağlı; geçerli bir takvim günü (`YYYY-MM-DD`) |
+| Açıklama | İsteğe bağlı; en çok 500 karakter |
+| Etiketler | Virgülle ayrılır; boş ve yinelenenler atılır; en çok 5 etiket, her biri en çok 30 karakter |
+
+Ders içeriği (`validateCourse`):
 
 - Yinelenen `id` veya `weekNo`, bilinmeyen `weekId` veya eksik zorunlu alan: kayıt atlanır, uyarı verilir.
 - Geçersiz `status` değeri `todo` kabul edilir.

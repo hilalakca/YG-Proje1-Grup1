@@ -34,6 +34,7 @@
 
   <main>
     <div id="notice" class="notice" role="status" hidden></div>
+    <p id="announce" class="visually-hidden" role="status" aria-live="polite"></p>
 
     <section class="overview" aria-labelledby="progress-heading">
       <h2 id="progress-heading" class="visually-hidden">Genel ilerleme</h2>
@@ -47,7 +48,48 @@
     </section>
 
     <section id="gorevler" aria-labelledby="tasks-heading" tabindex="-1">
-      <h2 id="tasks-heading">Görevler</h2>
+      <div class="section-head">
+        <h2 id="tasks-heading">Görevler</h2>
+        <button id="task-add" class="btn btn--primary" type="button" aria-expanded="false" aria-controls="task-form">Görev ekle</button>
+      </div>
+
+      <form id="task-form" class="task-form" novalidate hidden aria-labelledby="task-form-heading">
+        <h3 id="task-form-heading">Yeni görev</h3>
+        <p class="muted">Kendi eklediğin görevler yalnızca bu tarayıcıda saklanır. <span aria-hidden="true">*</span> işaretli alanlar zorunlu.</p>
+        <div class="task-form__grid">
+          <div class="field field--wide">
+            <label for="tf-title">Başlık <span aria-hidden="true">*</span></label>
+            <input id="tf-title" name="title" type="text" maxlength="120" required aria-describedby="tf-title-error" autocomplete="off">
+            <p id="tf-title-error" class="field-error" hidden></p>
+          </div>
+          <div class="field">
+            <label for="tf-week">Hafta <span aria-hidden="true">*</span></label>
+            <select id="tf-week" name="weekId" required aria-describedby="tf-week-error"></select>
+            <p id="tf-week-error" class="field-error" hidden></p>
+          </div>
+          <div class="field">
+            <label for="tf-due">Son tarih</label>
+            <input id="tf-due" name="dueDate" type="date" aria-describedby="tf-due-error">
+            <p id="tf-due-error" class="field-error" hidden></p>
+          </div>
+          <div class="field field--wide">
+            <label for="tf-desc">Açıklama</label>
+            <textarea id="tf-desc" name="description" rows="3" maxlength="500" aria-describedby="tf-desc-error"></textarea>
+            <p id="tf-desc-error" class="field-error" hidden></p>
+          </div>
+          <div class="field field--wide">
+            <label for="tf-tags">Etiketler</label>
+            <input id="tf-tags" name="tags" type="text" autocomplete="off" aria-describedby="tf-tags-hint tf-tags-error">
+            <p id="tf-tags-hint" class="muted field-hint">Virgülle ayır, en çok 5 etiket. Örnek: ödev, okuma</p>
+            <p id="tf-tags-error" class="field-error" hidden></p>
+          </div>
+        </div>
+        <div class="task-form__actions">
+          <button class="btn btn--primary" type="submit">Kaydet</button>
+          <button id="task-form-cancel" class="btn btn--quiet" type="button">Vazgeç</button>
+        </div>
+      </form>
+
       <div class="filters" role="group" aria-label="Görev filtreleri">
         <label>Durum
           <select id="filter-status">

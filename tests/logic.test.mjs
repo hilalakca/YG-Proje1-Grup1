@@ -10,6 +10,10 @@ import {
   computeWeekProgress,
   isOverdue,
   filterTasks,
+  validateTaskInput,
+  createUserTask,
+  sanitizeUserTasks,
+  TASK_LIMITS,
 } from '../js/logic.js';
 
 const week = (id, weekNo, extra = {}) => ({ id, weekNo, title: `Hafta ${weekNo}`, ...extra });
@@ -243,5 +247,81 @@ describe('filterTasks', () => {
   });
   it('eşleşme yoksa boş liste döner', () => {
     assert.deepEqual(filterTasks(tasks, progress, { query: 'yokyok' }), []);
+  });
+});
+describe('validateTaskInput (#85)', () => {
+  const weeks = [week('w1', 1), week('w2', 2)];
+  const ok = { title: '  Okuma notu  ', weekId: 'w1', dueDate: '2026-11-10', description: ' kısa ', tags: 'ödev, okuma, ödev' };
+
+  it('geçerli girdiyi temizleyip kabul eder', () => {
+    const { value, errors } = validateTaskInput(ok, weeks);
+    assert.deepEqual(errors, {});
+    assert.deepEqual(value, { title: 'Okuma notu', weekId: 'w1', dueDate: '2026-11-10', description: 'kısa', tags: ['ödev', 'okuma'] });
+  });
+  it('boş ya da yalnız boşluk başlığı reddeder', () => {
+    assert.ok(validateTaskInput({ ...ok, title: '   ' }, weeks).errors.title);
+  });
+  it('çok uzun başlığı reddeder', () => {
+    assert.ok(validateTaskInput({ ...ok, title: 'a'.repeat(TASK_LIMITS.title + 1) }, weeks).errors.title);
+  });
+  it('olmayan haftayı reddeder', () => {
+    assert.ok(validateTaskInput({ ...ok, weekId: 'w9' }, weeks).errors.weekId);
+    assert.ok(validateTaskInput({ ...ok, weekId: '' }, weeks).errors.weekId);
+  });
+  it('geçersiz tarihi reddeder, boş tarihi kabul eder', () => {
+    assert.ok(validateTaskInput({ ...ok, dueDate: '2026-02-30' }, weeks).errors.dueDate);
+    assert.ok(validateTaskInput({ ...ok, dueDate: '10.11.2026' }, weeks).errors.dueDate);
+    const empty = validateTaskInput({ ...ok, dueDate: '' }, weeks);
+    assert.equal(empty.errors.dueDate, undefined);
+    assert.equal(empty.value.dueDate, null);
+  });
+  it('çok uzun açıklamayı reddeder', () => {
+    assert.ok(validateTaskInput({ ...ok, description: 'a'.repeat(TASK_LIMITS.description + 1) }, weeks).errors.description);
+  });
+  it('fazla ya da çok uzun etiketi reddeder', () => {
+    assert.ok(validateTaskInput({ ...ok, tags: 'a,b,c,d,e,f' }, weeks).errors.tags);
+    assert.ok(validateTaskInput({ ...ok, tags: 'x'.repeat(TASK_LIMITS.tag + 1) }, weeks).errors.tags);
+  });
+  it('etiketleri dizi olarak da kabul eder', () => {
+    assert.deepEqual(validateTaskInput({ ...ok, tags: [' a ', '', 'b'] }, weeks).value.tags, ['a', 'b']);
+  });
+});
+
+describe('createUserTask ve sanitizeUserTasks (#85)', () => {
+  const weeks = [week('w1', 1)];
+  const value = { title: 'Kendi görevim', weekId: 'w1', dueDate: null, description: '', tags: [] };
+
+  it('kendi görevine benzersiz id ve custom işareti verir', () => {
+    const now = new Date('2026-11-06T10:00:00Z');
+    const a = createUserTask(value, now);
+    const b = createUserTask(value, now);
+    assert.equal(a.custom, true);
+    assert.ok(a.id.startsWith('u-'));
+    assert.notEqual(a.id, b.id);
+    assert.equal(a.createdAt, now.toISOString());
+  });
+  it('bozuk, yinelenen, haftası silinmiş ve ders göreviyle çakışan kayıtları atar', () => {
+    const stored = [
+      { ...value, id: 'u-1' },
+      { ...value, id: 'u-1' },
+      { ...value, id: 'u-2', weekId: 'w9' },
+      { ...value, id: 'u-3', title: '' },
+      { ...value, id: 't1' },
+      null,
+      'metin',
+    ];
+    const result = sanitizeUserTasks(stored, weeks, [task('t1', 'w1')]);
+    assert.deepEqual(result.map((t) => t.id), ['u-1']);
+    assert.equal(result[0].custom, true);
+  });
+  it('dizi olmayan kayıt için boş liste döner', () => {
+    assert.deepEqual(sanitizeUserTasks({ a: 1 }, weeks), []);
+    assert.deepEqual(sanitizeUserTasks(null, weeks), []);
+  });
+  it('kendi görevleri ilerleme hesabına katılır', () => {
+    const own = createUserTask(value);
+    const all = [task('t1', 'w1'), own];
+    const progress = { [own.id]: { status: 'done' } };
+    assert.deepEqual(computeProgress(all, progress), { done: 1, total: 2, percent: 50 });
   });
 });
