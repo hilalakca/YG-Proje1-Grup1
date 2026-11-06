@@ -14,6 +14,8 @@ import {
   createUserTask,
   sanitizeUserTasks,
   TASK_LIMITS,
+  upcomingTasks,
+  daysBetween,
 } from '../js/logic.js';
 
 const week = (id, weekNo, extra = {}) => ({ id, weekNo, title: `Hafta ${weekNo}`, ...extra });
@@ -323,5 +325,41 @@ describe('createUserTask ve sanitizeUserTasks (#85)', () => {
     const all = [task('t1', 'w1'), own];
     const progress = { [own.id]: { status: 'done' } };
     assert.deepEqual(computeProgress(all, progress), { done: 1, total: 2, percent: 50 });
+  });
+});
+
+describe('upcomingTasks (#86)', () => {
+  const today = new Date(2026, 10, 6, 10, 0); // yerel 6 Kasım
+  const tasks = [
+    task('a', 'w1', { title: 'Geçen hafta', dueDate: '2026-10-30' }),
+    task('b', 'w1', { title: 'Dün', dueDate: '2026-11-05' }),
+    task('c', 'w1', { title: 'Bugün', dueDate: '2026-11-06' }),
+    task('d', 'w1', { title: 'Yarın', dueDate: '2026-11-07' }),
+    task('e', 'w1', { title: 'Yedi gün sonra', dueDate: '2026-11-13' }),
+    task('f', 'w1', { title: 'Sekiz gün sonra', dueDate: '2026-11-14' }),
+    task('g', 'w1', { title: 'Tarihsiz' }),
+    task('h', 'w1', { title: 'Tamamlanmış', dueDate: '2026-11-07' }),
+  ];
+  const progress = { h: { status: 'done' } };
+
+  it('gecikmişleri en eskisi önce verir', () => {
+    const { overdue } = upcomingTasks(tasks, progress, today);
+    assert.deepEqual(overdue.map((x) => [x.task.id, x.daysLeft]), [['a', -7], ['b', -1]]);
+  });
+  it('bugün ve sonraki 7 günü en yakını önce verir; tarihsiz ve tamamlanmışları almaz', () => {
+    const { upcoming } = upcomingTasks(tasks, progress, today);
+    assert.deepEqual(upcoming.map((x) => [x.task.id, x.daysLeft]), [['c', 0], ['d', 1], ['e', 7]]);
+  });
+  it('limit ve gün aralığı ayarlanabilir', () => {
+    const { upcoming } = upcomingTasks(tasks, progress, today, { days: 30, limit: 2 });
+    assert.deepEqual(upcoming.map((x) => x.task.id), ['c', 'd']);
+  });
+  it('görev yoksa boş listeler döner', () => {
+    assert.deepEqual(upcomingTasks([], {}, today), { overdue: [], upcoming: [] });
+  });
+  it('daysBetween ay ve yaz saati geçişlerinde doğru sayar', () => {
+    assert.equal(daysBetween('2026-10-31', '2026-11-01'), 1);
+    assert.equal(daysBetween('2026-03-28', '2026-03-30'), 2);
+    assert.equal(daysBetween('2026-11-06', '2026-11-06'), 0);
   });
 });

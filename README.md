@@ -117,6 +117,8 @@ Git geçmişine ve issue kayıtlarına göre, 6 Kasım 2026 itibarıyla. Teslimd
 | Açık/koyu tema, tercih kalıcılığı                            | P1-13         | Kodda var, test bekliyor |
 | Görev durumlarının `localStorage`'da saklanması              | P1-14         | Kodda var, test bekliyor |
 | İlerlemeyi sıfırlama (onaylı)                                | P1-14         | Kodda var, test bekliyor |
+| Kendi görevini ekleme, düzenleme, silme; form doğrulaması    | P1-07 (#85)   | Kodda var, test bekliyor |
+| Önümüzdeki 7 gün: yaklaşan ve süresi geçen görevler          | #86 (ek)      | Kodda var, test bekliyor |
 
 "Test bekliyor": özellik kodda var ama kabul kriterlerine göre henüz test edilmedi. Bir özellik, PR'ı
 birleşip kabul kriterleri denenmeden **Hazır** sayılmaz.
@@ -132,9 +134,9 @@ Uygulama tek sayfadır; bölümler yukarıdan aşağıya:
 | Bölüm          | İçerik                                                                                           |
 | -------------- | ------------------------------------------------------------------------------------------------ |
 | Üst çubuk      | Dersin adı ve dönemi, görev arama kutusu, tema düğmesi                                           |
-| Genel ilerleme | Halka gösterge (%), "tamamlanan / toplam görev" sayısı                                           |
+| Genel ilerleme | Halka gösterge (%), "tamamlanan / toplam görev" sayısı; önümüzdeki 7 günün görevleri ve gecikenler |
 | Haftalar       | Hafta kartları (no, başlık, açıklama, ilerleme çubuğu); seçilen haftanın hedefleri ve kaynakları |
-| Görevler       | Durum ve hafta filtresi, sonuç sayısı, görev listesi ve durum düğmeleri                          |
+| Görevler       | **Görev ekle** formu, durum ve hafta filtresi, sonuç sayısı, görev listesi ve durum düğmeleri; kendi görevlerinde Düzenle/Sil |
 | Alt bilgi      | İlerlemeyi sıfırlama                                                                             |
 
 Sayfa haritası ve wireframe: [P1-04 #7](https://github.com/hilalakca/YG-Proje1-Grup1/issues/7).

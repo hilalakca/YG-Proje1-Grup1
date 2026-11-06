@@ -1,7 +1,7 @@
 import {
   STATUSES, STATUS_LABELS, validateCourse, getStatus, setStatus,
   computeProgress, computeWeekProgress, filterTasks, isOverdue,
-  validateTaskInput, createUserTask, sanitizeUserTasks,
+  validateTaskInput, createUserTask, sanitizeUserTasks, upcomingTasks,
 } from './logic.js';
 import { KEYS, load, save, clearAll, isPersistent } from './storage.js';
 
@@ -12,7 +12,7 @@ const el = {
   title: $('course-title'), term: $('course-term'), search: $('search'), theme: $('theme-toggle'),
   notice: $('notice'), summary: $('progress-summary'), weeks: $('weeks'), detail: $('week-detail'),
   status: $('filter-status'), week: $('filter-week'), clear: $('filter-clear'),
-  count: $('result-count'), list: $('task-list'), reset: $('reset'), announce: $('announce'),
+  count: $('result-count'), list: $('task-list'), reset: $('reset'), announce: $('announce'), upcoming: $('upcoming'),
   add: $('task-add'), form: $('task-form'), formHeading: $('task-form-heading'), cancel: $('task-form-cancel'),
 };
 
@@ -101,6 +101,27 @@ function renderSummary() {
         <p class="muted">${total === 0 ? 'Henüz görev eklenmemiş.' : 'Bir görevi işaretlediğinde ilerleme anında güncellenir.'}</p>
       </div>
     </div>`;
+}
+
+function whenLabel(daysLeft) {
+  if (daysLeft === 0) return 'Bugün';
+  if (daysLeft === 1) return 'Yarın';
+  return `${daysLeft} gün kaldı`;
+}
+
+function renderUpcoming() {
+  const { overdue, upcoming } = upcomingTasks(allTasks(), state.progress);
+  const weekNo = Object.fromEntries(state.course.weeks.map((w) => [w.id, w.weekNo]));
+  const items = upcoming.map(({ task, daysLeft }) => `<li>
+      <span>${esc(task.title)} <span class="muted">· ${weekNo[task.weekId]}. hafta</span></span>
+      <span class="when${daysLeft === 0 ? ' when--today' : ''}">${whenLabel(daysLeft)}</span>
+    </li>`).join('');
+  const late = overdue.length
+    ? `<p class="upcoming__overdue">${overdue.length} görevin süresi geçti. <button type="button" data-show-overdue>Yapılacak görevleri göster</button></p>` : '';
+  el.upcoming.innerHTML = `
+    <h3 id="upcoming-heading">Önümüzdeki 7 gün</h3>
+    ${items ? `<ul>${items}</ul>` : '<p class="muted">Önümüzdeki 7 günde son tarihi olan açık görev yok.</p>'}
+    ${late}`;
 }
 
 function renderWeeks() {
@@ -282,6 +303,7 @@ function onTaskToolClick(event) {
 
 function renderAll() {
   renderSummary();
+  renderUpcoming();
   renderWeeks();
   renderDetail();
   renderFilters();
@@ -307,6 +329,7 @@ function onStatusClick(event) {
   state.progress = setStatus(state.progress, task, status);
   if (!save(KEYS.progress, state.progress)) warnNotPersistent();
   renderSummary();
+  renderUpcoming();
   renderWeeks();
   renderTasks({ task, status });
 }
@@ -321,6 +344,11 @@ function bindEvents() {
   el.list.addEventListener('click', onTaskToolClick);
   el.add.addEventListener('click', () => (el.form.hidden ? openForm() : closeForm()));
   el.cancel.addEventListener('click', () => closeForm());
+  el.upcoming.addEventListener('click', (e) => {
+    if (!e.target.closest('button[data-show-overdue]')) return;
+    updateFilters({ status: 'todo', weekId: 'all', query: '' });
+    document.getElementById('gorevler').focus();
+  });
   el.form.addEventListener('submit', onFormSubmit);
   el.form.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeForm(); });
   el.weeks.addEventListener('click', (e) => {
