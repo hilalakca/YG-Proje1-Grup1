@@ -49,8 +49,9 @@ ders deneyimi panosudur. Backend ve veri tabanı yoktur: ders içeriği statik b
 | Öğrenci        | Haftalık akışı, görevleri ve ilerlemesini tek bakışta görmek; tamamlananları işaretlemek.          |
 | Ders sorumlusu | Ders akışının anlaşılır görünmesi; içeriği kod yazmadan, yalnızca JSON'u düzenleyerek güncellemek. |
 
-Kullanıcı hikâyeleri ve kabul kriterleri: [P1-01 #1](https://github.com/hilalakca/YG-Proje1-Grup1/issues/1),
-[P1-02 #5](https://github.com/hilalakca/YG-Proje1-Grup1/issues/5).
+Gereksinimler, kullanıcı hikâyeleri ve kabul kriterleri: [docs/gereksinimler.md](docs/gereksinimler.md)
+([P1-01 #1](https://github.com/hilalakca/YG-Proje1-Grup1/issues/1),
+[P1-02 #5](https://github.com/hilalakca/YG-Proje1-Grup1/issues/5)).
 
 ## Ekip, roller ve katkılar
 
@@ -65,7 +66,7 @@ Bütün üyeler aynı zamanda geliştiricidir. Roller hocanın takip listesindek
 
 ### Kim ne yaptı?
 
-Git geçmişine ve issue kayıtlarına göre, 6 Kasım 2026 itibarıyla. Teslimden önce
+Git geçmişine ve issue kayıtlarına göre, 7 Kasım 2026 itibarıyla. Teslimden önce
 `docs/katki-tablosu.md` ile bağlantılı hâle getirilecek (P1-19).
 
 **Hilal Akça (Lider + Geliştirici)**
@@ -83,17 +84,26 @@ Git geçmişine ve issue kayıtlarına göre, 6 Kasım 2026 itibarıyla. Teslimd
   ([#62](https://github.com/hilalakca/YG-Proje1-Grup1/pull/62); P1-13).
 - Yusuf'un bulduğu gecikme hatasını düzeltti ve regresyon testi ekledi
   ([#68](https://github.com/hilalakca/YG-Proje1-Grup1/pull/68)).
+- Uygulamayı GitHub Pages'te yayına aldı ([#84](https://github.com/hilalakca/YG-Proje1-Grup1/pull/84)).
+- Kendi görevini ekleme, düzenleme, silme formunu ([#91](https://github.com/hilalakca/YG-Proje1-Grup1/pull/91);
+  P1-07'ye ek) ve "Önümüzdeki 7 gün" panelini ([#92](https://github.com/hilalakca/YG-Proje1-Grup1/pull/92)) yazdı.
+- 7 Kasım'da entegrasyon denemesi yaptı: kabul kriterleri karşılanan 17 issue'yu kanıtıyla kapattı, bulunan
+  hatayı kaydetti ([#98](https://github.com/hilalakca/YG-Proje1-Grup1/issues/98)).
 
 **Fatih Ulupınar (Analist + Geliştirici)**
 
 - Kullanıcı ihtiyaç analizi ve kullanıcı hikâyeleri ([#1](https://github.com/hilalakca/YG-Proje1-Grup1/issues/1), kapandı).
 - İlk iskelet ve temel JS dosyaları (27 Ekim; sonradan `main`'deki sürümle değiştirildi); analiz ve veri
   modeli raporu (2 Kasım).
+- Gereksinim belgesini yazdı: 13 fonksiyonel, 13 fonksiyonel olmayan gereksinim, 17 kullanıcı hikâyesi ve
+  kabul kriterleri; eski taslakları arşive taşıdı ([#95](https://github.com/hilalakca/YG-Proje1-Grup1/pull/95); P1-02).
+- Örnek veri tutarlılığı ve `localStorage` dayanıklılığı için 10 birim testi ekledi
+  ([#96](https://github.com/hilalakca/YG-Proje1-Grup1/pull/96); P1-09, P1-14).
 
 **Ayşe Yurtseven (Dokümantasyon + Geliştirici)**
 
 - Sayfa haritası, kullanıcı akışı, masaüstü wireframe, kullanıcı kılavuzu ve rapor/sunum taslağını hazırladı
-  ([#65](https://github.com/hilalakca/YG-Proje1-Grup1/pull/65), incelemede; mobil wireframe bekleniyor).
+  ([#65](https://github.com/hilalakca/YG-Proje1-Grup1/pull/65), birleşti; mobil wireframe bekleniyor).
 
 **Yusuf Veis (Test / Kalite + Geliştirici)**
 
@@ -105,27 +115,28 @@ Git geçmişine ve issue kayıtlarına göre, 6 Kasım 2026 itibarıyla. Teslimd
 
 ## Özellikler
 
-| Özellik                                                      | Takip listesi | Durum                    |
-| ------------------------------------------------------------ | ------------- | ------------------------ |
-| Haftalık ders kartları ve hafta detayı (hedefler, kaynaklar) | P1-06         | Kodda var, test bekliyor |
-| Görev listesi ve durum değiştirme                            | P1-07         | Kodda var, test bekliyor |
-| Son tarihi geçmiş görevin işaretlenmesi                      | P1-07         | Kodda var, test bekliyor |
-| Responsive düzen (mobil / masaüstü)                          | P1-08         | Kodda var, test bekliyor |
-| Klavyeyle kullanım, "Görevlere geç" bağlantısı               | P1-08         | Kodda var, test bekliyor |
-| Duruma ve haftaya göre filtre, Türkçe karakter uyumlu arama  | P1-11         | Kodda var, test bekliyor |
-| Genel ve haftalık ilerleme göstergesi                        | P1-12         | Kodda var, test bekliyor |
-| Açık/koyu tema, tercih kalıcılığı                            | P1-13         | Kodda var, test bekliyor |
-| Görev durumlarının `localStorage`'da saklanması              | P1-14         | Kodda var, test bekliyor |
-| İlerlemeyi sıfırlama (onaylı)                                | P1-14         | Kodda var, test bekliyor |
-| Kendi görevini ekleme, düzenleme, silme; form doğrulaması    | P1-07 (#85)   | Kodda var, test bekliyor |
-| Önümüzdeki 7 gün: yaklaşan ve süresi geçen görevler          | #86 (ek)      | Kodda var, test bekliyor |
+7 Kasım 2026 itibarıyla:
 
-"Test bekliyor": özellik kodda var ama kabul kriterlerine göre henüz test edilmedi. Bir özellik, PR'ı
-birleşip kabul kriterleri denenmeden **Hazır** sayılmaz.
+| Özellik                                                      | Takip listesi | Durum                                                                                                   |
+| ------------------------------------------------------------ | ------------- | ------------------------------------------------------------------------------------------------------- |
+| Haftalık ders kartları ve hafta detayı (hedefler, kaynaklar) | P1-06         | Çalışıyor; klavye erişimi için iki açık hata: [#93](https://github.com/hilalakca/YG-Proje1-Grup1/issues/93), [#98](https://github.com/hilalakca/YG-Proje1-Grup1/issues/98) |
+| Görev listesi ve durum değiştirme                            | P1-07         | Test edildi                                                                                             |
+| Son tarihi geçmiş görevin işaretlenmesi                      | P1-07         | Test edildi                                                                                             |
+| Responsive düzen: 360, 768, 1280 px'de taşma yok, ≥ 44 px dokunma hedefleri | P1-08 | Test edildi; ekran görüntüleri bekleniyor ([#39](https://github.com/hilalakca/YG-Proje1-Grup1/issues/39)) |
+| Klavyeyle kullanım, "Görevlere geç" bağlantısı               | P1-08         | Test edildi (hafta kartları hariç, bkz. #98)                                                            |
+| Duruma ve haftaya göre filtre, Türkçe karakter uyumlu arama  | P1-11         | Test edildi                                                                                             |
+| Genel ve haftalık ilerleme göstergesi                        | P1-12         | Test edildi                                                                                             |
+| Açık/koyu tema, tercih kalıcılığı                            | P1-13         | Test edildi                                                                                             |
+| Görev durumlarının `localStorage`'da saklanması, bozuk kayda dayanıklılık | P1-14 | Test edildi                                                                                         |
+| İlerlemeyi sıfırlama (onaylı)                                | P1-14         | Test edildi                                                                                             |
+| Kendi görevini ekleme, düzenleme, silme; form doğrulaması    | P1-07 (#85)   | Çalışıyor, birim testli; test senaryosu bekleniyor ([#71](https://github.com/hilalakca/YG-Proje1-Grup1/issues/71)) |
+| Önümüzdeki 7 gün: yaklaşan ve süresi geçen görevler          | #86 (ek)      | Çalışıyor, birim testli; test senaryosu bekleniyor ([#71](https://github.com/hilalakca/YG-Proje1-Grup1/issues/71)) |
 
-Arayüzün arkasındaki hesaplar (ilerleme, filtre ve arama, durum değiştirme, gecikme, veri doğrulama) birim
-testleriyle denetleniyor (`tests/logic.test.mjs`). Ekranda elle yapılacak kabul testleri
-[`docs/test-senaryolari.md`](docs/test-senaryolari.md) belgesinde.
+"Test edildi": kabul kriterleri tarayıcıda denendi; kanıtı ilgili issue'nun kapanış yorumunda ve
+[`docs/test-senaryolari.md`](docs/test-senaryolari.md)'de (TC-01–TC-23).
+
+Arayüzün arkasındaki hesaplar (ilerleme, filtre ve arama, durum değiştirme, gecikme, form doğrulaması, veri
+doğrulama, depolama) **65 birim testiyle** denetleniyor (`tests/`).
 
 ## Ekranın bölümleri
 
@@ -139,7 +150,10 @@ Uygulama tek sayfadır; bölümler yukarıdan aşağıya:
 | Görevler       | **Görev ekle** formu, durum ve hafta filtresi, sonuç sayısı, görev listesi ve durum düğmeleri; kendi görevlerinde Düzenle/Sil |
 | Alt bilgi      | İlerlemeyi sıfırlama                                                                             |
 
-Sayfa haritası ve wireframe: [P1-04 #7](https://github.com/hilalakca/YG-Proje1-Grup1/issues/7).
+Sayfa haritası ve kullanıcı akışı: [docs/sayfa-haritasi-ve-kullanici-akisi.md](docs/sayfa-haritasi-ve-kullanici-akisi.md);
+masaüstü wireframe: [docs/wireframes.svg](docs/wireframes.svg)
+([P1-04 #7](https://github.com/hilalakca/YG-Proje1-Grup1/issues/7); mobil wireframe bekleniyor,
+[#27](https://github.com/hilalakca/YG-Proje1-Grup1/issues/27)).
 
 ## Kullanılan teknolojiler
 
@@ -192,8 +206,11 @@ eklentisiyle `index.html`'i açmak da yeterlidir.
 Node.js 20 veya üstü gerekir; ek paket kurulmaz.
 
 ```bash
-node --test tests/logic.test.mjs
+node --test "tests/*.test.mjs"
 ```
+
+Üç test dosyası var: `logic.test.mjs` (iş mantığı), `course-data.test.mjs` (örnek verinin tutarlılığı),
+`storage.test.mjs` (`localStorage` kapalı ya da bozukken davranış). 7 Kasım itibarıyla 65 testin hepsi geçiyor.
 
 Aynı testler her push ve PR'da GitHub Actions'ta da çalışır; sonuç PR sayfasındaki **Checks** bölümünde
 görünür. Testi geçmeyen PR birleştirilmez.
@@ -207,12 +224,16 @@ js/main.js            Arayüz: çizim ve olaylar
 js/logic.js           Saf iş mantığı: doğrulama, ilerleme, filtre, arama (DOM'a dokunmaz)
 js/storage.js         localStorage sarmalayıcısı (hata toleranslı)
 data/course.json      Ders içeriği (örnek veri)
-tests/logic.test.mjs  logic.js için birim testleri
+favicon.svg           Sekme simgesi
+tests/                Birim testleri: logic, course-data, storage
+docs/gereksinimler.md Gereksinimler, kullanıcı hikâyeleri, kabul kriterleri
 docs/data-model.md    Veri modeli ve ilerleme hesabı
 docs/mimari.md        Modüller, veri akışı, ekran bölümü ↔ kod eşlemesi
 docs/tema-ve-kontrast.md  Tema davranışı ve kontrast ölçümleri
 docs/test-senaryolari.md  Elle yapılan test senaryoları ve sonuçları
-docs/                 Diğer analiz ve teslim belgeleri
+docs/kullanici-kilavuzu.md  Kullanıcı kılavuzu
+docs/kisa-proje-raporu.*  Kısa proje raporu (md, docx); docs/proje-sunumu.pptx sunum
+docs/arsiv/           Eski taslaklar (yalnızca geçmiş kaydı)
 .github/              PR şablonu, GitHub Actions test iş akışı
 ```
 
@@ -229,6 +250,7 @@ Alan açıklamaları [docs/data-model.md](docs/data-model.md)'de. `data/course.j
 | ------------------ | ---------------------------------- | ---------------------------- |
 | Haftalar, görevler | `data/course.json`                 | Ders sorumlusu (salt okunur) |
 | Görev durumları    | `localStorage` → `ldp:v1:progress` | Öğrenci                      |
+| Kendi eklediği görevler | `localStorage` → `ldp:v1:userTasks` | Öğrenci                 |
 | Tema ve filtreler  | `localStorage` → `ldp:v1:prefs`    | Öğrenci                      |
 
 Akış: sayfa açılınca `main.js` içeriği `fetch` ile okur, `logic.js`'teki `validateCourse` ile doğrular
@@ -357,43 +379,37 @@ kuruldu. Bu tarihten önceki geçmiş olduğu gibi bırakıldı.
 
 ## Gizlilik
 
-Uygulama hiçbir veriyi sunucuya göndermez. Görev durumları ve tercihler yalnızca kullanıcının kendi
-tarayıcısında (`localStorage`) tutulur; **İlerlemeyi sıfırla** düğmesiyle silinir. Hesap, giriş ya da kişisel
+Uygulama hiçbir veriyi sunucuya göndermez. Görev durumları, eklenen görevler ve tercihler yalnızca
+kullanıcının kendi tarayıcısında (`localStorage`) tutulur; **İlerlemeyi sıfırla** düğmesiyle silinir. Hesap, giriş ya da kişisel
 veri yoktur.
 
 ## Bilinen eksikler
 
+7 Kasım 2026 itibarıyla:
+
+- Hafta kartları klavyeyle açılabiliyor ama açılınca odak kayboluyor; kart, başlığı (`h3`) düğmenin içinde
+  taşıyor ([#98](https://github.com/hilalakca/YG-Proje1-Grup1/issues/98),
+  [#93](https://github.com/hilalakca/YG-Proje1-Grup1/issues/93)).
+- Gereksinim belgesinde görev formu ve 7 gün paneli henüz yok; "ders yolculuğu (zaman çizelgesi)" hikâyesi
+  (US-16) uygulanmadı ([#97](https://github.com/hilalakca/YG-Proje1-Grup1/issues/97)).
 - Veriler cihaza ve tarayıcıya özeldir; başka cihazda ilerleme görünmez.
 - Ders sorumlusu öğrencilerin ilerlemesini göremez (backend kapsam dışı).
-- Testler yalnızca `js/logic.js`'i kapsıyor; arayüz (`js/main.js`) ve `js/storage.js` elle test ediliyor.
-- Gereksinim belgesi henüz yok; `docs/` altındaki iki PDF eski taslaktır ve arşive taşınacak
-  ([P1-02 #5](https://github.com/hilalakca/YG-Proje1-Grup1/issues/5)).
+- Arayüz kodu (`js/main.js`) otomatik testle değil, tarayıcıda elle test ediliyor.
 
 ## Teslim dosyaları
 
-6 Kasım 2026 itibarıyla:
+7 Kasım 2026 itibarıyla:
 
-| Dosya                        | İçerik                                                                                                     | Durum     |
-| ---------------------------- | ---------------------------------------------------------------------------------------------------------- | --------- |
-| `docs/gereksinimler.md`      | Gereksinimler ve kabul kriterleri ([P1-02 #5](https://github.com/hilalakca/YG-Proje1-Grup1/issues/5))      | Henüz yok |
-| `docs/wireframe/`            | Sayfa haritası ve wireframe ([P1-04 #7](https://github.com/hilalakca/YG-Proje1-Grup1/issues/7))            | Henüz yok |
-| `docs/test-senaryolari.md`   | Test senaryoları ve hata kaydı ([P1-15 #2](https://github.com/hilalakca/YG-Proje1-Grup1/issues/2))         | Taslak    |
-| `docs/kullanici-kilavuzu.md` | Kullanıcı kılavuzu ([P1-17 #3](https://github.com/hilalakca/YG-Proje1-Grup1/issues/3))                     | Henüz yok |
-| `docs/proje-raporu.pdf`      | Proje raporu ([P1-18 #18](https://github.com/hilalakca/YG-Proje1-Grup1/issues/18))                         | Henüz yok |
-| `presentation/`              | Sunum ([P1-18 #18](https://github.com/hilalakca/YG-Proje1-Grup1/issues/18))                                | Henüz yok |
-| `docs/screenshots/`          | Masaüstü ve mobil ekran görüntüleri ([P1-08 #10](https://github.com/hilalakca/YG-Proje1-Grup1/issues/10)) | Henüz yok |
-| `docs/katki-tablosu.md`      | Ekip katkı tablosu ([P1-19 #19](https://github.com/hilalakca/YG-Proje1-Grup1/issues/19))                   | Henüz yok |
+| Dosya                                    | İçerik                                                                                                     | Durum      |
+| ---------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------- |
+| [`docs/gereksinimler.md`](docs/gereksinimler.md) | Gereksinimler ve kabul kriterleri ([P1-02 #5](https://github.com/hilalakca/YG-Proje1-Grup1/issues/5)) | Var; güncelleme bekliyor (#97) |
+| [`docs/sayfa-haritasi-ve-kullanici-akisi.md`](docs/sayfa-haritasi-ve-kullanici-akisi.md), [`docs/wireframes.svg`](docs/wireframes.svg) | Sayfa haritası ve masaüstü wireframe ([P1-04 #7](https://github.com/hilalakca/YG-Proje1-Grup1/issues/7)) | Var; mobil wireframe bekleniyor (#27) |
+| [`docs/test-senaryolari.md`](docs/test-senaryolari.md) | Test senaryoları ve hata kaydı ([P1-15 #2](https://github.com/hilalakca/YG-Proje1-Grup1/issues/2)) | Var (TC-01–TC-23); form, panel senaryoları ve hata tablosu bekleniyor (#71, #2) |
+| [`docs/kullanici-kilavuzu.md`](docs/kullanici-kilavuzu.md) | Kullanıcı kılavuzu ([P1-17 #3](https://github.com/hilalakca/YG-Proje1-Grup1/issues/3)) | Var; ekran görüntüleri bekleniyor (#74) |
+| [`docs/kisa-proje-raporu.md`](docs/kisa-proje-raporu.md) (+ `.docx`) | Kısa proje raporu ([P1-18 #18](https://github.com/hilalakca/YG-Proje1-Grup1/issues/18)) | Var; `.docx` ve PDF güncel değil (#76) |
+| [`docs/proje-sunumu.pptx`](docs/proje-sunumu.pptx) | Grup sunumu ([P1-18 #18](https://github.com/hilalakca/YG-Proje1-Grup1/issues/18))                         | Taslak (#77) |
+| `docs/screenshots/`                      | Masaüstü ve mobil ekran görüntüleri ([P1-08 #10](https://github.com/hilalakca/YG-Proje1-Grup1/issues/10)) | Henüz yok (#39) |
+| `docs/katki-tablosu.md`                  | Ekip katkı tablosu ([P1-19 #19](https://github.com/hilalakca/YG-Proje1-Grup1/issues/19))                   | Henüz yok (#78) |
 
-
-## Kullanıcı ve tasarım belgeleri
-
-- [Sayfa haritası ve kullanıcı akışı](docs/sayfa-haritasi-ve-kullanici-akisi.md)
-- [Masaüstü wireframe taslağı](docs/wireframes.svg)
-- Mobil wireframe taslağı (360 px): eklenecek ([#27](https://github.com/hilalakca/YG-Proje1-Grup1/issues/27))
-- [Kullanıcı kılavuzu](docs/kullanici-kilavuzu.md)
-- [Kısa proje raporu](docs/kisa-proje-raporu.md)
-- [Rapor (DOCX)](docs/kisa-proje-raporu.docx)
-- [Grup sunumu (PPTX)](docs/proje-sunumu.pptx)
-
-### Ekran görüntüsü kanıtları
-Gerçek tarayıcı görüntülerini `docs/screenshots/` klasörüne `responsive-360.png`, `responsive-768.png` ve `responsive-1280.png` adlarıyla ekleyin. Wireframe taslağı gerçek ekran görüntüsü yerine kullanılmamalıdır.
+Ekran görüntüleri `docs/screenshots/` klasörüne `responsive-360.png`, `responsive-768.png` ve
+`responsive-1280.png` adlarıyla eklenecek; wireframe gerçek ekran görüntüsü yerine kullanılmaz.
