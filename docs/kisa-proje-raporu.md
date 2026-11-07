@@ -6,19 +6,23 @@
 Öğrencilerin haftalık ders içeriğini, öğrenme hedeflerini, görevlerini ve ilerleme durumlarını tek sayfada takip etmelerini sağlayan istemci taraflı web uygulamasıdır. HTML5, CSS3 ve modüler JavaScript kullanılır; backend ve sunucu veritabanı kapsam dışıdır.
 
 ## 2. Gereksinimler
-Haftaları görüntüleme, hedeflere erişme, görev durumunu değiştirme, ilerlemeyi görme, görev arama ve durum/hafta filtrelerini birlikte kullanma temel gereksinimlerdir. Mobil uyumluluk, erişilebilir etiketler, klavye ile kullanım, tema kontrastı ve depolama hatalarına tolerans da dikkate alınır.
+Haftaları görüntüleme, hedeflere erişme, görev durumunu değiştirme, ilerlemeyi görme, görev arama ve durum/hafta filtrelerini birlikte kullanma temel gereksinimlerdir. Bunlara ek olarak öğrenci kendi görevini ekleyip düzenleyebilir, silebilir ve önümüzdeki 7 günde son tarihi gelen görevleri ayrı bir panelde görebilir. Gereksinimlerin tamamı ve kabul kriterleri `gereksinimler.md` dosyasındadır. Mobil uyumluluk, erişilebilir etiketler, klavye ile kullanım, tema kontrastı ve depolama hatalarına tolerans da dikkate alınır.
 
 ## 3. Tasarım
-Tek sayfalı yapıda üst çubuk, genel ilerleme, hafta kartları, seçili hafta detayları ve görev listesi bulunur. Sayfa haritası `sayfa-haritasi-ve-kullanici-akisi.md`, wireframe taslağı `wireframes.svg` dosyasındadır.
+Tek sayfalı yapıda üst çubuk, genel ilerleme ve "Önümüzdeki 7 gün" paneli, hafta kartları, seçili hafta detayları, görev ekleme formu ve görev listesi bulunur. Sayfa haritası `sayfa-haritasi-ve-kullanici-akisi.md`, wireframe taslağı `wireframes.svg` dosyasındadır.
 
 ## 4. Teknik uygulama
-`index.html` semantik iskeleti; `css/styles.css` tema ve responsive düzeni; `js/main.js` arayüz çizimi ve olayları; `js/logic.js` doğrulama, Türkçe metin normalizasyonu, ilerleme ve filtre mantığını; `js/storage.js` localStorage işlemlerini; `data/course.json` örnek ders içeriğini sağlar.
+`index.html` semantik iskeleti; `css/styles.css` tema ve responsive düzeni; `js/main.js` arayüz çizimi ve olayları; `js/logic.js` doğrulama, Türkçe metin normalizasyonu, ilerleme, filtre, form doğrulaması ve yaklaşan görev hesabını; `js/storage.js` localStorage işlemlerini; `data/course.json` örnek ders içeriğini sağlar.
 
 ## 5. Doğrulama ve test
-`tests/logic.test.mjs` iş mantığı test dosyasıdır. Bu rapor testlerin tamamının geçtiğini iddia etmez. Ekran boyutu kontrolleri ve kabul testi sonuçları ekip tarafından gerçek tarayıcıda çalıştırılıp kaydedilmelidir.
+**Otomatik testler:** `tests/` klasöründe üç dosyada 65 birim testi vardır (iş mantığı, örnek verinin tutarlılığı, `localStorage` dayanıklılığı). Testler her push ve PR'da GitHub Actions'ta çalışır; 7 Kasım 2026 itibarıyla 65 testin hepsi geçmektedir.
+
+**Elle yapılan testler:** `test-senaryolari.md` belgesinde 23 senaryo (TC-01–TC-23) temel özellikleri, 360/768/1280 px ekran genişliklerini, klavye kullanımını, kontrastı ve form etiketlerini kapsar. 7 Kasım'daki entegrasyon denemesinde filtrelerin birlikte çalışması, Türkçe karakterle arama, durum değişikliğinde odağın korunması, bozuk kayıtla açılış, üç genişlikte yatay taşma olmaması ve 44 px dokunma hedefleri tarayıcıda doğrulanmıştır.
+
+**Bulunan hatalar:** Gecikme kontrolünde saat dilimi hatası (#66) ve eksik sekme simgesi (#94) düzeltildi. Hafta kartlarında iki erişilebilirlik hatası (#93, #98) açık durumdadır.
 
 ## 6. Sınırlamalar
-Ders içeriği JSON dosyasından gelir. Kullanıcı ilerlemesi yalnızca kullanılan tarayıcıda saklanır ve cihazlar arasında eşitlenmez. Backend, kullanıcı hesabı, merkezi raporlama ve canlı demo yayını ayrıca yapılandırılmalıdır.
+Ders içeriği JSON dosyasından gelir. Kullanıcı ilerlemesi yalnızca kullanılan tarayıcıda saklanır ve cihazlar arasında eşitlenmez. Backend, kullanıcı hesabı ve merkezi raporlama kapsam dışıdır. "Ders yolculuğu (zaman çizelgesi)" görünümü (US-16) uygulanmamıştır; haftalar kart ızgarasıyla gösterilir.
 
 ## 7. Sonuç ve sonraki adımlar
-Uygulama haftalık ders akışını ve görev ilerlemesini tek arayüzde birleştirir. Teslim öncesinde gerçek test sonuçları, ekran görüntüleri, katkı/PR bağlantıları ve canlı demo durumu ekipçe tamamlanmalıdır.
+Uygulama haftalık ders akışını ve görev ilerlemesini tek arayüzde birleştirir ve GitHub Pages'te yayındadır: https://hilalakca.github.io/YG-Proje1-Grup1/. Teslim öncesinde açık erişilebilirlik hatalarının kapatılması, form ve panel için test senaryolarının eklenmesi, ekran görüntüleri ve ekip katkı tablosu tamamlanacaktır.
