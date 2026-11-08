@@ -15,7 +15,7 @@ Tek sayfalı yapıda üst çubuk, genel ilerleme ve "Önümüzdeki 7 gün" panel
 `index.html` semantik iskeleti; `css/styles.css` tema ve responsive düzeni; `js/main.js` arayüz çizimi ve olayları; `js/logic.js` doğrulama, Türkçe metin normalizasyonu, ilerleme, filtre, form doğrulaması ve yaklaşan görev hesabını; `js/storage.js` localStorage işlemlerini; `data/course.json` örnek ders içeriğini sağlar.
 
 ## 5. Doğrulama ve test
-**Otomatik testler:** `tests/` klasöründe üç dosyada 65 birim testi vardır (iş mantığı, örnek verinin tutarlılığı, `localStorage` dayanıklılığı). Testler her push ve PR'da GitHub Actions'ta çalışır; 7 Kasım 2026 itibarıyla 65 testin hepsi geçmektedir.
+**Otomatik testler:** `tests/` klasöründe üç dosyada 65 birim testi vardır (iş mantığı, örnek verinin tutarlılığı, `localStorage` dayanıklılığı). Testler her push ve PR'da GitHub Actions'ta çalışır; 8 Kasım 2026 itibarıyla 65 testin hepsi geçmektedir.
 
 **Elle yapılan testler:** `test-senaryolari.md` belgesinde 23 senaryo (TC-01–TC-23) temel özellikleri, 360/768/1280 px ekran genişliklerini, klavye kullanımını, kontrastı ve form etiketlerini kapsar. 7 Kasım'daki entegrasyon denemesinde filtrelerin birlikte çalışması, Türkçe karakterle arama, durum değişikliğinde odağın korunması, bozuk kayıtla açılış, üç genişlikte yatay taşma olmaması ve 44 px dokunma hedefleri tarayıcıda doğrulanmıştır.
 

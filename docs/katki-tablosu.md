@@ -1,19 +1,19 @@
 # Ekip Katkı Tablosu
 
 **Proje:** Etkileşimli Ders Deneyimi Panosu · Grup 1
-**Durum:** 8 Kasım 2026 akşamı itibarıyla. Açık PR'lar birleşince ve teslimden önce son kez güncellenecek (P1-19, #78).
+**Durum:** 8 Kasım 2026, 23:30 itibarıyla. Açık PR'lar birleşince ve teslimden önce son kez güncellenecek (P1-19, #78).
 
 Veriler GitHub'dan alındı: `main` dalındaki commitler, birleşen PR'lar ve issue kayıtları. Kişi bazında commit
 listesi: [Insights → Contributors](https://github.com/hilalakca/YG-Proje1-Grup1/graphs/contributors).
 
 ## Özet
 
-| Üye | Rol | `main`'deki commit | Birleşen PR | Değişen satır* |
-| --- | --- | ---: | ---: | ---: |
-| Hilal Akça ([@hilalakca](https://github.com/hilalakca)) | Lider + Geliştirici | 29 | 11 (+1 açık) | +2175 / −1173 |
-| Fatih Ulupınar ([@fatih-software](https://github.com/fatih-software)) | Analist + Geliştirici | 4 | 2 | +1391 / −0 |
-| Yusuf Veis ([@ManufactoredConductor](https://github.com/ManufactoredConductor)) | Test / Kalite + Geliştirici | 5 | 2 (+1 açık) | +498 / −3 |
-| Ayşe Yurtseven ([@ayseyurtseven](https://github.com/ayseyurtseven)) | Dokümantasyon + Geliştirici | 1 | 1 | +111 / −0 (+ `.docx`, `.pptx`) |
+| Üye | Rol | `main`'deki commit | Birleşen PR | PR incelemesi | Değişen satır* |
+| --- | --- | ---: | ---: | ---: | ---: |
+| Hilal Akça ([@hilalakca](https://github.com/hilalakca)) | Lider + Geliştirici | 31 | 13 | 8 | +2272 / −1184 |
+| Fatih Ulupınar ([@fatih-software](https://github.com/fatih-software)) | Analist + Geliştirici | 5 | 3 | 0 | +1434 / −3 |
+| Yusuf Veis ([@ManufactoredConductor](https://github.com/ManufactoredConductor)) | Test / Kalite + Geliştirici | 5 | 2 (+1 incelemede) | 2 | +498 / −3 |
+| Ayşe Yurtseven ([@ayseyurtseven](https://github.com/ayseyurtseven)) | Dokümantasyon + Geliştirici | 1 | 1 | 0 | +111 / −0 (+ `.docx`, `.pptx`) |
 
 \* Birleştirme commitleri hariç; ikili dosyalar (`.docx`, `.pptx`, PDF) satır olarak sayılmaz. Satır sayısı emeğin
 ölçüsü değildir, yalnızca kayıttır.
@@ -36,8 +36,9 @@ Yusuf'un yerel git adı `Conductor-exe`'dir; commitleri e-posta üzerinden @Manu
 | GitHub Pages canlı demo (P1-20.1) | [#84](https://github.com/hilalakca/YG-Proje1-Grup1/pull/84) |
 | Kendi görevini ekleme/düzenleme/silme formu (P1-07'ye ek) | [#91](https://github.com/hilalakca/YG-Proje1-Grup1/pull/91) |
 | "Önümüzdeki 7 gün" paneli, simge hatası (#94) | [#92](https://github.com/hilalakca/YG-Proje1-Grup1/pull/92) |
-| README ve belge güncellemeleri | [#69](https://github.com/hilalakca/YG-Proje1-Grup1/pull/69), [#100](https://github.com/hilalakca/YG-Proje1-Grup1/pull/100) |
-| PR incelemeleri | #65, #95, #96, #101, #102 |
+| README ve belge güncellemeleri | [#69](https://github.com/hilalakca/YG-Proje1-Grup1/pull/69), [#100](https://github.com/hilalakca/YG-Proje1-Grup1/pull/100), [#104](https://github.com/hilalakca/YG-Proje1-Grup1/pull/104) |
+| Ekip katkı tablosu ve hesap kontrolü (P1-19) | [#105](https://github.com/hilalakca/YG-Proje1-Grup1/pull/105) |
+| PR incelemeleri | #65, #95, #96, #101, #102, #106 |
 | 7 Kasım entegrasyon denemesi, bulunan hata kaydı | [#98](https://github.com/hilalakca/YG-Proje1-Grup1/issues/98) |
 
 ### Fatih Ulupınar — Analist + Geliştirici
@@ -49,6 +50,7 @@ Yusuf'un yerel git adı `Conductor-exe`'dir; commitleri e-posta üzerinden @Manu
 | Kullanıcı ihtiyaç analizi ve kullanıcı hikâyeleri (P1-01) | [#1](https://github.com/hilalakca/YG-Proje1-Grup1/issues/1) |
 | Gereksinim belgesi: 13 FR, 13 NFR, 17 kullanıcı hikâyesi, kabul kriterleri (P1-02) | [#95](https://github.com/hilalakca/YG-Proje1-Grup1/pull/95) |
 | Örnek veri ve `localStorage` dayanıklılık testleri, 10 test (P1-09, P1-14) | [#96](https://github.com/hilalakca/YG-Proje1-Grup1/pull/96) |
+| Gereksinimlere görev formu (FR-14/US-18) ve 7 gün paneli (FR-15/US-19); US-16 "sonraki sürüm" | [#106](https://github.com/hilalakca/YG-Proje1-Grup1/pull/106) |
 
 ### Yusuf Veis — Test / Kalite + Geliştirici
 
@@ -58,7 +60,8 @@ Yusuf'un yerel git adı `Conductor-exe`'dir; commitleri e-posta üzerinden @Manu
 | GitHub Actions test iş akışı, test senaryoları belgesi TC-01–TC-23 (P1-10.2, P1-15) | [#67](https://github.com/hilalakca/YG-Proje1-Grup1/pull/67) |
 | Gecikme hatasını bulup kaydetme | [#66](https://github.com/hilalakca/YG-Proje1-Grup1/issues/66) |
 | Hafta kartında odak kaybı ve başlık yapısı düzeltmesi (#93, #98) | [#101](https://github.com/hilalakca/YG-Proje1-Grup1/pull/101) |
-| TC-24/TC-25, hata kayıtları, gereksinim–test eşleştirmesi (P1-16) | [#102](https://github.com/hilalakca/YG-Proje1-Grup1/pull/102) (düzeltme bekliyor) |
+| TC-24/TC-25, hata kayıtları, gereksinim–test eşleştirmesi (P1-16) | [#102](https://github.com/hilalakca/YG-Proje1-Grup1/pull/102) (incelemede, son düzeltmeler isteniyor) |
+| #104 ve #105'in incelenip onaylanması | [#104](https://github.com/hilalakca/YG-Proje1-Grup1/pull/104), [#105](https://github.com/hilalakca/YG-Proje1-Grup1/pull/105) |
 
 ### Ayşe Yurtseven — Dokümantasyon + Geliştirici
 
@@ -73,7 +76,7 @@ Yusuf'un yerel git adı `Conductor-exe`'dir; commitleri e-posta üzerinden @Manu
 | Üye | Kendi hesabından commit | Kendi hesabından PR | GitHub hesabına bağlı | Sonuç |
 | --- | --- | --- | --- | --- |
 | Hilal | Var | Var | Evet | Uygun |
-| Fatih | Var | Var (#95, #96) | Evet | Uygun |
+| Fatih | Var | Var (#95, #96, #106) | Evet | Uygun |
 | Yusuf | Var | Var (#63, #101, #102) | Evet (`Conductor-exe` adıyla) | Uygun |
 | Ayşe | Var | Var (#65) | Evet | Uygun |
 
