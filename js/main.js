@@ -356,6 +356,7 @@ function bindEvents() {
     if (!card) return;
     const same = state.prefs.filters.weekId === card.dataset.week;
     updateFilters({ weekId: same ? 'all' : card.dataset.week });
+    el.weeks.querySelector(`button[data-week="${CSS.escape(card.dataset.week)}"]`)?.focus();
   });
   el.status.addEventListener('change', () => updateFilters({ status: el.status.value }));
   el.week.addEventListener('change', () => updateFilters({ weekId: el.week.value }));
