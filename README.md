@@ -66,8 +66,8 @@ Bütün üyeler aynı zamanda geliştiricidir. Roller hocanın takip listesindek
 
 ### Kim ne yaptı?
 
-Git geçmişine ve issue kayıtlarına göre, 7 Kasım 2026 itibarıyla. Teslimden önce
-`docs/katki-tablosu.md` ile bağlantılı hâle getirilecek (P1-19).
+Git geçmişine ve issue kayıtlarına göre, 7 Kasım 2026 itibarıyla. Commit, PR ve satır
+sayılarıyla ayrıntılı tablo: [docs/katki-tablosu.md](docs/katki-tablosu.md) (P1-19).
 
 **Hilal Akça (Lider + Geliştirici)**
 
@@ -408,7 +408,7 @@ veri yoktur.
 | [`docs/kisa-proje-raporu.md`](docs/kisa-proje-raporu.md) (+ `.docx`) | Kısa proje raporu ([P1-18 #18](https://github.com/hilalakca/YG-Proje1-Grup1/issues/18)) | Var; `.docx` ve PDF güncel değil (#76) |
 | [`docs/proje-sunumu.pptx`](docs/proje-sunumu.pptx) | Grup sunumu ([P1-18 #18](https://github.com/hilalakca/YG-Proje1-Grup1/issues/18))                         | Taslak (#77) |
 | `docs/screenshots/`                      | Masaüstü ve mobil ekran görüntüleri ([P1-08 #10](https://github.com/hilalakca/YG-Proje1-Grup1/issues/10)) | Henüz yok (#39) |
-| `docs/katki-tablosu.md`                  | Ekip katkı tablosu ([P1-19 #19](https://github.com/hilalakca/YG-Proje1-Grup1/issues/19))                   | Henüz yok (#78) |
+| [`docs/katki-tablosu.md`](docs/katki-tablosu.md) | Ekip katkı tablosu ([P1-19 #19](https://github.com/hilalakca/YG-Proje1-Grup1/issues/19)) | Var (8 Kasım); teslimden önce son güncelleme |
 
 Ekran görüntüleri `docs/screenshots/` klasörüne `responsive-360.png`, `responsive-768.png` ve
 `responsive-1280.png` adlarıyla eklenecek; wireframe gerçek ekran görüntüsü yerine kullanılmaz.
