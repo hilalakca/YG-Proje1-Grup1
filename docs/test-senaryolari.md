@@ -176,14 +176,12 @@ Gerçek sonuçlar test tamamlandıktan sonra yazılacaktır.
 - **Beklenen:** Etkileşimli elemanlara klavyeyle erişilebilir ve gerekli işlemler gerçekleştirilebilir.
 - **Gerçek:** Test edildi.
 - **Sonuç:** Tuşlar çalışıyor. seçenekler seçilebiliyor focus kaybolmuyor.
-- **Not:** Bu testte hafta kartlarında Enter sonrası odak kaybı bulundu (H-04, #98). Düzeltme PR'ı birleşince yeniden test edilecek.
 
 ### TC-21: Klavye odağı
 - **Adımlar:** Tab tuşuyla sayfadaki etkileşimli elemanlar arasında gezinilir.
 - **Beklenen:** Klavye odağı görsel olarak anlaşılır.
 - **Gerçek:** Test edildi.
 - **Sonuç:** Tab ile sayfa içerisinde her tuşun üzerine focus olunabiliyor.
-- **Not:** Bu testte hafta kartlarında Enter sonrası odağın kaybolması (H-04, #98) bulundu. Düzeltme PR'ı birleşince yeniden test edilecek.
 
 ### TC-22: Renk kontrastı
 - **Adımlar:** Açık ve koyu temada metinlerin arka planla kontrastı kontrol edilir.
@@ -241,8 +239,8 @@ Test sırasında bulunan hatalar burada kayıt altına alınır.
 |---|---|---|---|---|
 | H-01 | TC-07 | Gecikme kontrolü bugünün tarihini UTC'ye göre hesaplıyordu. Türkiye'de 00:00–03:00 arasında bir önceki gün kullanıldığı için geciken görevler gecikmiş görünmüyordu. | #66 | Düzeltildi (PR #68) |
 | H-02 | TC-01 | Sayfada simge yoktu. Tarayıcı `favicon.ico` istediği için her açılışta konsolda 404 hatası çıkıyordu. | #94 | Düzeltildi (`favicon.svg` eklendi) |
-| H-03 | TC-23 | Hafta kartında başlık (`h3`) düğmenin içindeydi. Düğme içinde başlık bulunması geçersiz HTML'dir ve başlıkla gezinen ekran okuyucu kullanıcıları başlığı bulamaz. | #93 | Düzeltme hazır, PR inceleme bekliyor |
-| H-04 | TC-20, TC-21 | Hafta kartına Enter veya Boşlukla basınca kartlar yeniden çizildiği için klavye odağı kayboluyordu; kart klavyeyle tekrar kapatılamıyordu. | #98 | Düzeltme hazır, PR inceleme bekliyor |
+| H-03 | TC-23 | Hafta kartında başlık (`h3`) düğmenin içindeydi. Düğme içinde başlık bulunması geçersiz HTML'dir ve başlıkla gezinen ekran okuyucu kullanıcıları başlığı bulamaz. | #93 | Düzeltildi (PR #101) |
+| H-04 | TC-20, TC-21 | Hafta kartına Enter veya Boşlukla basınca kartlar yeniden çizildiği için klavye odağı kayboluyordu; kart klavyeyle tekrar kapatılamıyordu. | #98 | Düzeltildi (PR #101) |
 
 Her hata için GitHub üzerinde `bug` etiketiyle ayrı bir issue açılacaktır.
 
