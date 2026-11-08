@@ -3,7 +3,7 @@
 **Proje:** Etkileşimli Ders Deneyimi Panosu  
 **Test Sorumlusu:** Yusuf Veis  
 **İlgili Issue'lar:** #57, #58, #59, #70, #71  
-**Belge Durumu:** Taslak (8 Kasım 2026: görev formu ve 7 gün paneli testleri, hata kayıtları ve gereksinim–test eşleştirmesi eklendi)
+**Belge Durumu:** "Güncel (8 Kasım 2026)" (8 Kasım 2026: görev formu ve 7 gün paneli testleri, hata kayıtları ve gereksinim–test eşleştirmesi eklendi)
 
 ---
 
@@ -53,7 +53,7 @@ Gerçek sonuçlar test tamamlandıktan sonra yazılacaktır.
 ### TC-01: Uygulamanın açılması
 - **Adımlar:** Uygulama tarayıcıda açılır.
 - **Beklenen:** Ders bilgileri ve uygulamanın ana bölümleri yüklenir.
-- **Gerçek:** Tarayıcıda Uyfulama Açıldı.
+- **Gerçek:** Tarayıcıda Uygulama Açıldı.
 - **Sonuç:** Başarılı.
 
 ### TC-02: Haftalık ders kartlarının görüntülenmesi
@@ -71,7 +71,7 @@ Gerçek sonuçlar test tamamlandıktan sonra yazılacaktır.
 ### TC-04: Boş hafta kontrolü
 - **Adımlar:** İçeriğinde hedef veya kaynak bulunmayan bir hafta seçilir.
 - **Beklenen:** Uygulama hata vermeden uygun boş durum gösterir.
-- **Gerçek:** Bir haftanın içeriği boşken içeriği gözlemlendi (burası henüz boş) yazısı görüldü.
+- **Gerçek:** Course.json dosyasının içerinde bir haftanın içeriği boş değerle değiştirildiğinde içeriği gözlemlendi. ("Bu hafta için hedef girilmemiş.") yazısı görüldü.
 - **Sonuç:** Başarılı.
 
 ### TC-05: Görev kartlarının görüntülenmesi
@@ -113,13 +113,13 @@ Gerçek sonuçlar test tamamlandıktan sonra yazılacaktır.
 ### TC-11: Genel ilerleme göstergesi
 - **Adımlar:** Bir görev tamamlandı olarak işaretlenir.
 - **Beklenen:** Genel ilerleme yüzdesi ve tamamlanan görev sayısı güncellenir.
-- **Gerçek:** Görevlerin durumu değiştiğinde tamamlanan görev yüzdesi 0/30 -> 1/30 oluyor.
+- **Gerçek:** Görevlerin durumu değiştiğinde tamamlanan görev yüzdesi 0/12 -> 1/12 oluyor.
 - **Sonuç:** Başarılı.
 
 ### TC-12: Haftalık ilerleme göstergesi
 - **Adımlar:** Belirli bir haftadaki görev tamamlanır.
 - **Beklenen:** İlgili haftanın ilerleme yüzdesi güncellenir.
-- **Gerçek:** Haftalık ilerleme görevlerin durumu değişince 0/6 -> 1/6 değişiyor.
+- **Gerçek:** Haftalık ilerleme görevlerin durumu değişince 0/3 -> 1/3 değişiyor.
 - **Sonuç:** Başarılı.
 
 ### TC-13: Tema değiştirme
@@ -174,25 +174,25 @@ Gerçek sonuçlar test tamamlandıktan sonra yazılacaktır.
 ### TC-20: Klavye ile gezinme
 - **Adımlar:** Fare kullanılmadan Tab, Enter, Space ve yön tuşlarıyla uygulama kullanılır.
 - **Beklenen:** Etkileşimli elemanlara klavyeyle erişilebilir ve gerekli işlemler gerçekleştirilebilir.
-- **Gerçek:** elemanlara klavye ile kolayca erişilebiliyor.
+- **Gerçek:** Tab ile tüm etkileşimli öğelere sırayla ulaşıldı; Enter ve Boşluk düğmeleri çalıştırdı. Klavye tuzağı yoktu. Hafta kartlarındaki odak kaybı hariç (H-04), düzeltmeden sonra tekrar denendi, sorun yok.
 - **Sonuç:** Tuşlar çalışıyor. seçenekler seçilebiliyor focus kaybolmuyor.
 
 ### TC-21: Klavye odağı
 - **Adımlar:** Tab tuşuyla sayfadaki etkileşimli elemanlar arasında gezinilir.
 - **Beklenen:** Klavye odağı görsel olarak anlaşılır.
-- **Gerçek:** Klavye odağı olan seçeneğin etrafında görsel destek var.
+- **Gerçek:** Tab ile gezerken odaktaki her öğede belirgin bir odak halkası göründü; hafta kartlarında halka kartın tamamını çevreliyor.
 - **Sonuç:** Tab ile sayfa içerisinde her tuşun üzerine focus olunabiliyor.
 
 ### TC-22: Renk kontrastı
 - **Adımlar:** Açık ve koyu temada metinlerin arka planla kontrastı kontrol edilir.
 - **Beklenen:** Normal metinlerde en az 4.5:1, büyük metinlerde en az 3:1 kontrast oranı sağlanır.
-- **Gerçek:** Görünürlük yeterli.
+- **Gerçek:** Kontrast oranları WCAG formülüyle hesaplandı (docs/tema-ve-kontrast.md). Ana metin açık temada 14,73:1, koyu temada 15,52:1; ikincil metin en düşük 6,23:1; ilerleme çubuğu (grafik öğe) açık temada 4,57:1. Hepsi eşiğin üstünde.
 - **Sonuç:** Başarılı.
 
 ### TC-23: Form ve kontrol etiketleri
 - **Adımlar:** Arama alanı, filtreler ve etkileşimli kontroller incelenir.
 - **Beklenen:** Kontrollerin anlaşılır ve erişilebilir isimleri bulunur.
-- **Gerçek:** İşlemler anlaşılabilir isimlere sahip ve görünürlükleri yüksek.
+- **Gerçek:** Arama kutusu, durum ve hafta filtreleri, tema düğmesi ve durum düğmeleri anlaşılır isimlere sahip.
 - **Sonuç:** Başarılı.
 
 ---
@@ -255,8 +255,6 @@ Her hata için GitHub üzerinde `bug` etiketiyle ayrı bir issue açılacaktır.
 | Erişilebilirlik | 4 | 4 | 0 | 0 |
 | Görev formu ve 7 gün paneli | 2 | 2 | 0 | 0 |
 | **Toplam** | **25** | **25** | **0** | **0** |
-
-**Not:** Test sonuçları gerçek uygulama üzerinde yapılan kontrollerden sonra güncellenecektir.
 
 ---
 
