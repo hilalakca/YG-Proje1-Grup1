@@ -19,10 +19,10 @@ Tek sayfalı yapıda üst çubuk, genel ilerleme ve "Önümüzdeki 7 gün" panel
 
 **Elle yapılan testler:** `test-senaryolari.md` belgesinde 23 senaryo (TC-01–TC-23) temel özellikleri, 360/768/1280 px ekran genişliklerini, klavye kullanımını, kontrastı ve form etiketlerini kapsar. 7 Kasım'daki entegrasyon denemesinde filtrelerin birlikte çalışması, Türkçe karakterle arama, durum değişikliğinde odağın korunması, bozuk kayıtla açılış, üç genişlikte yatay taşma olmaması ve 44 px dokunma hedefleri tarayıcıda doğrulanmıştır.
 
-**Bulunan hatalar:** Gecikme kontrolünde saat dilimi hatası (#66) ve eksik sekme simgesi (#94) düzeltildi. Hafta kartlarında iki erişilebilirlik hatası (#93, #98) açık durumdadır.
+**Bulunan hatalar:** Gecikme kontrolünde saat dilimi hatası (#66) ve eksik sekme simgesi (#94) düzeltildi. Hafta kartlarındaki iki erişilebilirlik hatası (#93 düğme içinde başlık, #98 klavyeyle açınca odak kaybı) da PR #101 ile düzeltildi; şu an bilinen açık hata yoktur.
 
 ## 6. Sınırlamalar
 Ders içeriği JSON dosyasından gelir. Kullanıcı ilerlemesi yalnızca kullanılan tarayıcıda saklanır ve cihazlar arasında eşitlenmez. Backend, kullanıcı hesabı ve merkezi raporlama kapsam dışıdır. "Ders yolculuğu (zaman çizelgesi)" görünümü (US-16) uygulanmamıştır; haftalar kart ızgarasıyla gösterilir.
 
 ## 7. Sonuç ve sonraki adımlar
-Uygulama haftalık ders akışını ve görev ilerlemesini tek arayüzde birleştirir ve GitHub Pages'te yayındadır: https://hilalakca.github.io/YG-Proje1-Grup1/. Teslim öncesinde açık erişilebilirlik hatalarının kapatılması, form ve panel için test senaryolarının eklenmesi, ekran görüntüleri ve ekip katkı tablosu tamamlanacaktır.
+Uygulama haftalık ders akışını ve görev ilerlemesini tek arayüzde birleştirir ve GitHub Pages'te yayındadır: https://hilalakca.github.io/YG-Proje1-Grup1/. Teslim öncesinde form ve panel test senaryolarının birleştirilmesi, ekran görüntüleri ve ekip katkı tablosu tamamlanacaktır.

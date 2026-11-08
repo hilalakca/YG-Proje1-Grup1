@@ -110,6 +110,8 @@ Git geçmişine ve issue kayıtlarına göre, 7 Kasım 2026 itibarıyla. Teslimd
 - `js/logic.js` için 37 birim testi yazdı ([#63](https://github.com/hilalakca/YG-Proje1-Grup1/pull/63); P1-10.1).
 - Testleri her push ve PR'da çalıştıran GitHub Actions iş akışını ve test senaryoları belgesinin ilk taslağını
   ekledi ([#67](https://github.com/hilalakca/YG-Proje1-Grup1/pull/67); P1-10.2, P1-15).
+- Hafta kartlarındaki iki erişilebilirlik hatasını düzeltti: klavyeyle açınca odak kaybı ve düğme içindeki
+  başlık ([#101](https://github.com/hilalakca/YG-Proje1-Grup1/pull/101); #93, #98).
 - Gecikme kontrolündeki saat dilimi hatasını buldu ve kaydetti
   ([#66](https://github.com/hilalakca/YG-Proje1-Grup1/issues/66)).
 
@@ -119,11 +121,11 @@ Git geçmişine ve issue kayıtlarına göre, 7 Kasım 2026 itibarıyla. Teslimd
 
 | Özellik                                                      | Takip listesi | Durum                                                                                                   |
 | ------------------------------------------------------------ | ------------- | ------------------------------------------------------------------------------------------------------- |
-| Haftalık ders kartları ve hafta detayı (hedefler, kaynaklar) | P1-06         | Çalışıyor; klavye erişimi için iki açık hata: [#93](https://github.com/hilalakca/YG-Proje1-Grup1/issues/93), [#98](https://github.com/hilalakca/YG-Proje1-Grup1/issues/98) |
+| Haftalık ders kartları ve hafta detayı (hedefler, kaynaklar) | P1-06         | Test edildi; klavye hataları [#101](https://github.com/hilalakca/YG-Proje1-Grup1/pull/101) ile düzeltildi |
 | Görev listesi ve durum değiştirme                            | P1-07         | Test edildi                                                                                             |
 | Son tarihi geçmiş görevin işaretlenmesi                      | P1-07         | Test edildi                                                                                             |
 | Responsive düzen: 360, 768, 1280 px'de taşma yok, ≥ 44 px dokunma hedefleri | P1-08 | Test edildi; ekran görüntüleri bekleniyor ([#39](https://github.com/hilalakca/YG-Proje1-Grup1/issues/39)) |
-| Klavyeyle kullanım, "Görevlere geç" bağlantısı               | P1-08         | Test edildi (hafta kartları hariç, bkz. #98)                                                            |
+| Klavyeyle kullanım, "Görevlere geç" bağlantısı               | P1-08         | Test edildi                                                                                             |
 | Duruma ve haftaya göre filtre, Türkçe karakter uyumlu arama  | P1-11         | Test edildi                                                                                             |
 | Genel ve haftalık ilerleme göstergesi                        | P1-12         | Test edildi                                                                                             |
 | Açık/koyu tema, tercih kalıcılığı                            | P1-13         | Test edildi                                                                                             |
@@ -385,11 +387,8 @@ veri yoktur.
 
 ## Bilinen eksikler
 
-7 Kasım 2026 itibarıyla:
+8 Kasım 2026 itibarıyla:
 
-- Hafta kartları klavyeyle açılabiliyor ama açılınca odak kayboluyor; kart, başlığı (`h3`) düğmenin içinde
-  taşıyor ([#98](https://github.com/hilalakca/YG-Proje1-Grup1/issues/98),
-  [#93](https://github.com/hilalakca/YG-Proje1-Grup1/issues/93)).
 - Gereksinim belgesinde görev formu ve 7 gün paneli henüz yok; "ders yolculuğu (zaman çizelgesi)" hikâyesi
   (US-16) uygulanmadı ([#97](https://github.com/hilalakca/YG-Proje1-Grup1/issues/97)).
 - Veriler cihaza ve tarayıcıya özeldir; başka cihazda ilerleme görünmez.
