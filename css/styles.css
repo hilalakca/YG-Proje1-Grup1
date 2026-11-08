@@ -152,6 +152,15 @@ main { display: grid; gap: 2rem; padding-bottom: 3rem; }
 }
 .week-card:hover { border-color: var(--accent); }
 .week-card[aria-pressed="true"] { border-color: var(--accent); box-shadow: inset 0 0 0 2px var(--accent); }
+.week-card { position: relative; }
+.week-card__toggle {
+  font: inherit; color: inherit; text-align: left;
+  background: none; border: 0; padding: 0; cursor: pointer;
+}
+.week-card__toggle::after { content: ""; position: absolute; inset: 0; border-radius: var(--radius); }
+.week-card__toggle:focus-visible { outline: none; }
+.week-card__toggle:focus-visible::after { outline: 3px solid var(--focus); outline-offset: 2px; }
+.week-card:has(.week-card__toggle[aria-pressed="true"]) { border-color: var(--accent); box-shadow: inset 0 0 0 2px var(--accent); }
 .week-card__no { font-size: 2rem; font-weight: 800; line-height: 1; color: var(--accent); }
 .bar { height: 0.5rem; border-radius: 99px; background: var(--surface-2); overflow: hidden; }
 .bar > span { display: block; height: 100%; background: var(--done); transition: width 0.3s ease; }
