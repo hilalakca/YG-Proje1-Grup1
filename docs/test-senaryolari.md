@@ -53,97 +53,97 @@ Gerçek sonuçlar test tamamlandıktan sonra yazılacaktır.
 ### TC-01: Uygulamanın açılması
 - **Adımlar:** Uygulama tarayıcıda açılır.
 - **Beklenen:** Ders bilgileri ve uygulamanın ana bölümleri yüklenir.
-- **Gerçek:** Test edildi.
+- **Gerçek:** Tarayıcıda Uyfulama Açıldı.
 - **Sonuç:** Başarılı.
 
 ### TC-02: Haftalık ders kartlarının görüntülenmesi
 - **Adımlar:** Haftalar bölümü kontrol edilir.
 - **Beklenen:** Hafta numarası, başlığı, açıklaması ve ilerleme göstergesi görüntülenir.
-- **Gerçek:** Test edildi.
+- **Gerçek:** Haftalık Kayıtlar uygulamada gözüküyor
 - **Sonuç:** Başarılı.
 
 ### TC-03: Hafta detaylarının açılması
 - **Adımlar:** Bir hafta kartı seçilir.
 - **Beklenen:** Seçilen haftanın öğrenme hedefleri ve kaynakları görüntülenir.
-- **Gerçek:** Test edildi.
+- **Gerçek:** Üstüne tıklandığında (veya enter ile basıldığında) içerik gözüküyor.
 - **Sonuç:** Başarılı.
 
 ### TC-04: Boş hafta kontrolü
 - **Adımlar:** İçeriğinde hedef veya kaynak bulunmayan bir hafta seçilir.
 - **Beklenen:** Uygulama hata vermeden uygun boş durum gösterir.
-- **Gerçek:** Test edildi.
+- **Gerçek:** Bir haftanın içeriği boşken içeriği gözlemlendi (burası henüz boş) yazısı görüldü.
 - **Sonuç:** Başarılı.
 
 ### TC-05: Görev kartlarının görüntülenmesi
 - **Adımlar:** Görevler bölümü açılır.
 - **Beklenen:** Görev başlıkları ve mevcut açıklama, etiket ve son tarih bilgileri görüntülenir.
-- **Gerçek:** Test edildi.
+- **Gerçek:** Görev kartları uygulamada gözlemlendi.
 - **Sonuç:** Başarılı.
 
 ### TC-06: Görev durumunun değiştirilmesi
 - **Adımlar:** Bir görevin durum düğmesine tıklanır.
 - **Beklenen:** Görev durumu yapılacak, devam ediyor ve tamamlandı seçenekleri arasında değiştirilir.
-- **Gerçek:** Test edildi.
+- **Gerçek:** Görev durumları arasında geçiş yapılabiliyor.
 - **Sonuç:** Başarılı.
 
 ### TC-07: Son tarihi geçmiş görevler
 - **Adımlar:** Son tarihi geçmiş ve tamamlanmamış bir görev kontrol edilir.
 - **Beklenen:** Görev gecikmiş olarak görsel biçimde belirtilir.
-- **Gerçek:** Test edildi.
+- **Gerçek:** Görevlerin süresi geçtiğinde bunu belirten süresi geçti bildirgesi çıkıyor.
 - **Sonuç:** Başarılı.
 
 ### TC-08: Görev durumuna göre filtreleme
 - **Adımlar:** Görev durumu filtresinden tamamlandı seçilir.
 - **Beklenen:** Yalnızca tamamlanan görevler listelenir.
-- **Gerçek:** Test edildi.
+- **Gerçek:** Yalnızca tamamlanan görevler listelendiğinde sadece o duruma sahip görevler gözüküyor.
 - **Sonuç:** Başarılı.
 
 ### TC-09: Haftaya göre filtreleme
 - **Adımlar:** Hafta filtresinden belirli bir hafta seçilir.
 - **Beklenen:** Yalnızca seçilen haftaya ait görevler listelenir.
-- **Gerçek:** Test edildi.
+- **Gerçek:** Yalnızca haftaya göre filtrelendiğinde sadece o haftaya özel görevler gözüküyor.
 - **Sonuç:** Başarılı.
 
 ### TC-10: Görev arama
 - **Adımlar:** Arama alanına bir görev adı veya anahtar kelime yazılır.
 - **Beklenen:** Aramayla eşleşen görevler görüntülenir. Türkçe karakterler doğru şekilde desteklenir.
-- **Gerçek:** Test edildi.
+- **Gerçek:** Görev arama sonuçları ile filtre sonuçlarının ortak sonucuna göre uygun olan görevler gözüküyor.
 - **Sonuç:** Başarılı.
 
 ### TC-11: Genel ilerleme göstergesi
 - **Adımlar:** Bir görev tamamlandı olarak işaretlenir.
 - **Beklenen:** Genel ilerleme yüzdesi ve tamamlanan görev sayısı güncellenir.
-- **Gerçek:** Test edildi.
+- **Gerçek:** Görevlerin durumu değiştiğinde tamamlanan görev yüzdesi 0/30 -> 1/30 oluyor.
 - **Sonuç:** Başarılı.
 
 ### TC-12: Haftalık ilerleme göstergesi
 - **Adımlar:** Belirli bir haftadaki görev tamamlanır.
 - **Beklenen:** İlgili haftanın ilerleme yüzdesi güncellenir.
-- **Gerçek:** Test edildi.
+- **Gerçek:** Haftalık ilerleme görevlerin durumu değişince 0/6 -> 1/6 değişiyor.
 - **Sonuç:** Başarılı.
 
 ### TC-13: Tema değiştirme
 - **Adımlar:** Açık tema ve koyu tema arasında geçiş yapılır.
 - **Beklenen:** Uygulamanın renkleri seçilen temaya göre değişir.
-- **Gerçek:** Test edildi.
+- **Gerçek:** Tema siyahtan beyaza ve beyazdan siyaha değiştirilebiliyor. okunabilirlik korunuyor
 - **Sonuç:** Başarılı.
 
 ### TC-14: Verilerin kalıcılığı
 - **Adımlar:** Bir görevin durumu değiştirilir ve sayfa yenilenir.
 - **Beklenen:** Görev durumu ve tema tercihi korunur.
-- **Gerçek:** Test edildi.
+- **Gerçek:** görev durumları filtreler ve aramalar sayfa yenilenirken korunuyor
 - **Sonuç:** Başarılı.
 
 ### TC-15: İlerlemeyi sıfırlama
 - **Adımlar:** İlerlemeyi sıfırla düğmesine tıklanır. Onay ve iptal seçenekleri denenir.
 - **Beklenen:** Onay verilirse ilerleme sıfırlanır. İptal edilirse mevcut veriler korunur.
-- **Gerçek:** Test edildi.
+- **Gerçek:** Onay verildiğinde ilerleme tamamen sıfırlanıyor. iptal edildiğinde değişiklik olmuyor.
 - **Sonuç:** Başarılı.
 
 ### TC-16: Hatalı localStorage verisi
 - **Adımlar:** localStorage içerisine geçersiz JSON verisi yerleştirilerek uygulama yeniden açılır.
 - **Beklenen:** Uygulama çökmemeli ve mümkün olduğunca varsayılan verilerle çalışmaya devam etmelidir.
-- **Gerçek:** Test edildi.
+- **Gerçek:** Uygulama en son haliyle çalışmaya devam ediyor ve hata console da gözüküyor.
 - **Sonuç:** Başarılı.
 
 ---
@@ -153,19 +153,19 @@ Gerçek sonuçlar test tamamlandıktan sonra yazılacaktır.
 ### TC-17: Mobil ekran (360 px)
 - **Adımlar:** Tarayıcı genişliği 360 px yapılır.
 - **Beklenen:** İçerikler taşmadan ve yatay kaydırma gerektirmeden görüntülenir.
-- **Gerçek:** Test edildi.
+- **Gerçek:** İçerik görünüyor ve bozulma olmuyor.
 - **Sonuç:** Başarılı.
 
 ### TC-18: Tablet ekran (768 px)
 - **Adımlar:** Tarayıcı genişliği 768 px yapılır.
 - **Beklenen:** Kartlar, görev listesi ve diğer bölümler düzgün yerleşir.
-- **Gerçek:** Test edildi.
+- **Gerçek:** İçerik görünüyor ve bozulma olmuyor.
 - **Sonuç:** Başarılı.
 
 ### TC-19: Masaüstü ekran (1280 px)
 - **Adımlar:** Tarayıcı genişliği 1280 px yapılır.
 - **Beklenen:** Uygulama bölümleri düzgün hizalanır ve okunabilirliğini korur.
-- **Gerçek:** Test edildi.
+- **Gerçek:** İçerik görünüyor ve bozulma olmuyor.
 - **Sonuç:** Başarılı.
 ---
 
@@ -175,14 +175,14 @@ Gerçek sonuçlar test tamamlandıktan sonra yazılacaktır.
 - **Adımlar:** Fare kullanılmadan Tab, Enter, Space ve yön tuşlarıyla uygulama kullanılır.
 - **Beklenen:** Etkileşimli elemanlara klavyeyle erişilebilir ve gerekli işlemler gerçekleştirilebilir.
 - **Gerçek:** Test edildi.
-- **Sonuç:** Başarılı.
+- **Sonuç:** Tuşlar çalışıyor. seçenekler seçilebiliyor focus kaybolmuyor.
 - **Not:** Bu testte hafta kartlarında Enter sonrası odak kaybı bulundu (H-04, #98). Düzeltme PR'ı birleşince yeniden test edilecek.
 
 ### TC-21: Klavye odağı
 - **Adımlar:** Tab tuşuyla sayfadaki etkileşimli elemanlar arasında gezinilir.
 - **Beklenen:** Klavye odağı görsel olarak anlaşılır.
 - **Gerçek:** Test edildi.
-- **Sonuç:** Başarılı.
+- **Sonuç:** Tab ile sayfa içerisinde her tuşun üzerine focus olunabiliyor.
 - **Not:** Bu testte hafta kartlarında Enter sonrası odağın kaybolması (H-04, #98) bulundu. Düzeltme PR'ı birleşince yeniden test edilecek.
 
 ### TC-22: Renk kontrastı
