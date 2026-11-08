@@ -176,12 +176,14 @@ Gerçek sonuçlar test tamamlandıktan sonra yazılacaktır.
 - **Beklenen:** Etkileşimli elemanlara klavyeyle erişilebilir ve gerekli işlemler gerçekleştirilebilir.
 - **Gerçek:** Test edildi.
 - **Sonuç:** Başarılı.
+- **Not:** Bu testte hafta kartlarında Enter sonrası odak kaybı bulundu (H-04, #98). Düzeltme PR'ı birleşince yeniden test edilecek.
 
 ### TC-21: Klavye odağı
 - **Adımlar:** Tab tuşuyla sayfadaki etkileşimli elemanlar arasında gezinilir.
 - **Beklenen:** Klavye odağı görsel olarak anlaşılır.
 - **Gerçek:** Test edildi.
 - **Sonuç:** Başarılı.
+- **Not:** Bu testte hafta kartlarında Enter sonrası odağın kaybolması (H-04, #98) bulundu. Düzeltme PR'ı birleşince yeniden test edilecek.
 
 ### TC-22: Renk kontrastı
 - **Adımlar:** Açık ve koyu temada metinlerin arka planla kontrastı kontrol edilir.
