@@ -174,25 +174,25 @@ Gerçek sonuçlar test tamamlandıktan sonra yazılacaktır.
 ### TC-20: Klavye ile gezinme
 - **Adımlar:** Fare kullanılmadan Tab, Enter, Space ve yön tuşlarıyla uygulama kullanılır.
 - **Beklenen:** Etkileşimli elemanlara klavyeyle erişilebilir ve gerekli işlemler gerçekleştirilebilir.
-- **Gerçek:** Test edildi.
+- **Gerçek:** elemanlara klavye ile kolayca erişilebiliyor.
 - **Sonuç:** Tuşlar çalışıyor. seçenekler seçilebiliyor focus kaybolmuyor.
 
 ### TC-21: Klavye odağı
 - **Adımlar:** Tab tuşuyla sayfadaki etkileşimli elemanlar arasında gezinilir.
 - **Beklenen:** Klavye odağı görsel olarak anlaşılır.
-- **Gerçek:** Test edildi.
+- **Gerçek:** Klavye odağı olan seçeneğin etrafında görsel destek var.
 - **Sonuç:** Tab ile sayfa içerisinde her tuşun üzerine focus olunabiliyor.
 
 ### TC-22: Renk kontrastı
 - **Adımlar:** Açık ve koyu temada metinlerin arka planla kontrastı kontrol edilir.
 - **Beklenen:** Normal metinlerde en az 4.5:1, büyük metinlerde en az 3:1 kontrast oranı sağlanır.
-- **Gerçek:** Test edildi.
+- **Gerçek:** Görünürlük yeterli.
 - **Sonuç:** Başarılı.
 
 ### TC-23: Form ve kontrol etiketleri
 - **Adımlar:** Arama alanı, filtreler ve etkileşimli kontroller incelenir.
 - **Beklenen:** Kontrollerin anlaşılır ve erişilebilir isimleri bulunur.
-- **Gerçek:** Test edildi.
+- **Gerçek:** İşlemler anlaşılabilir isimlere sahip ve görünürlükleri yüksek.
 - **Sonuç:** Başarılı.
 
 ---
