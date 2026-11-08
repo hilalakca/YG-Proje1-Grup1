@@ -31,8 +31,10 @@ Bu belge projenin **tek geçerli gereksinim belgesidir**. Çelişen eski belgele
 | FR-09 | Açık/koyu tema seçilebilir | Must | US-11 |
 | FR-10 | İçerik tek JSON dosyasından beslenir | Must | US-14 |
 | FR-11 | Son tarihi geçen görevler işaretlenir | Should | US-15 |
-| FR-12 | Haftalar ders yolculuğu (zaman çizelgesi) olarak görüntülenir | Should | US-16 |
+| FR-12 | Haftalar ders yolculuğu (zaman çizelgesi) olarak görüntülenir. **Uygulanmadı:** v1.0'da hafta kartları `weekNo` sırasıyla ızgara olarak gösterilir. | Should | US-16 |
 | FR-13 | İlerleme onaylı şekilde sıfırlanabilir | Could | US-17 |
+| FR-14 | Kullanıcı kendi görevini ekleyebilir, düzenleyebilir ve silebilir | Should | US-18 |
+| FR-15 | “Önümüzdeki 7 gün” panelinde yaklaşan görevler ve gecikmiş görev sayısı gösterilir | Should | US-19 |
 
 ## 3. Fonksiyonel olmayan gereksinimler
 
@@ -52,7 +54,7 @@ Bu belge projenin **tek geçerli gereksinim belgesidir**. Çelişen eski belgele
 | NFR-05 | **Kontrast:** normal metin için en az **4,5:1**, büyük metin ve arayüz bileşeni sınırları (düğme, giriş kutusu kenarlığı) için en az **3:1**. Açık ve koyu temada ayrı ayrı sağlanır. |
 | NFR-06 | **Klavye:** Tüm etkileşimli öğelere yalnızca Tab / Shift+Tab ile ulaşılır; düğmeler Enter ve Boşluk ile çalışır; **klavye tuzağı yoktur**. |
 | NFR-07 | **Odak:** Odaktaki öğede görünür odak halkası bulunur (en az 2 px). Durum değişince odak aynı düğmede kalır. |
-| NFR-08 | **Etiketler:** Her form alanı ve ikon/düğme erişilebilir bir ada sahiptir. İlerleme göstergesi `progressbar` rolü ve değer metni taşır. |
+| NFR-08 | **Etiketler:** Her form alanı ve ikon/düğme erişilebilir bir ada sahiptir. **Genel ilerleme göstergesi** `progressbar` rolü ve değer metni taşır. Hafta kartlarındaki ilerleme çubukları süs amaçlıdır (`aria-hidden="true"`); aynı bilgi kartta “%67 · 2 / 3 görev tamamlandı” metniyle okunur, böylece ekran okuyucu aynı bilgiyi iki kez duyurmaz. |
 | NFR-09 | **Duyuru:** Arama/filtre sonuç sayısı `aria-live` bölgesiyle duyurulur. |
 | NFR-10 | **Renge bağımlılık yok:** Durum ve gecikme bilgisi yalnızca renkle verilmez; metin veya ikon da içerir. |
 | NFR-11 | **Hareket:** `prefers-reduced-motion: reduce` açıkken geçiş animasyonları kapanır. |
@@ -139,7 +141,7 @@ Kabul kriterleri:
 2. Her hafta kartında o haftanın ilerlemesi gösterilir; örnek: 3 görevli haftada 1 tamamlanınca **1 / 3**.
 3. Durum değişince göstergeler NFR-13’teki süre içinde güncellenir.
 4. Toplam görev sayısı 0 ise yüzde **%0** gösterilir, hata oluşmaz.
-5. Gösterge `role="progressbar"`, `aria-valuenow`, `aria-valuemin`, `aria-valuemax` taşır (NFR-08).
+5. Genel ilerleme göstergesi `role="progressbar"`, `aria-valuenow`, `aria-valuemin`, `aria-valuemax` taşır; hafta kartlarındaki çubuk süstür ve yüzde metin olarak yazılıdır (NFR-08).
 
 ### US-06 Duruma göre filtreleme
 
@@ -271,6 +273,8 @@ Kabul kriterleri:
 
 ### US-16 Ders yolculuğu görünümü
 
+> **Durum: uygulanmadı (sonraki sürüme ertelendi).** v1.0'da haftalar zaman çizelgesi yerine hafta kartı ızgarası olarak gösterilir (US-01). Aşağıdaki kriterler gelecek sürüm için korunmuştur ve v1.0 kabulünde sınanmaz.
+
 - **Kullanıcı:** Öğrenci · **Öncelik:** Should
 - **İhtiyaç:** Dönemi sıradan bir yapılacaklar listesinden öte, görsel bir akış olarak görmek
 - **Amaç:** Dersin ilerleyişini bir bakışta kavramak
@@ -294,6 +298,37 @@ Kabul kriterleri:
 2. Yalnızca bu uygulamanın localStorage anahtarları (`ldp:v1:*`) silinir.
 3. Ders içeriği (`course.json`) değişmez; sıfırlamadan sonra genel ilerleme %0 olur.
 
+### US-18 Kendi görevini ekleme, düzenleme ve silme
+
+- **Kullanıcı:** Öğrenci · **Öncelik:** Should
+- **İhtiyaç:** Ders görevlerinin yanına kendi görevlerini ekleyip yönetmek
+- **Amaç:** Kişisel işlerini de aynı panoda izlemek
+
+Kabul kriterleri:
+
+1. “Görev ekle” düğmesi formu açar. Zorunlu alanlar **başlık** (en çok 120 karakter) ve **hafta**tır; açıklama (en çok 500 karakter), son tarih ve etiketler (en çok 5 etiket, her biri en çok 30 karakter) isteğe bağlıdır.
+2. Geçersiz girişte kayıt yapılmaz; ilgili alanın yanında anlamlı hata mesajı görünür (örn. “Başlık boş olamaz.”, “Bir hafta seç.”, “Geçerli bir tarih gir (gg.aa.yyyy).”) ve hata ekran okuyucuya iletilir (NFR-08).
+3. Kaydedilen görev listede “Kendi görevim” etiketiyle görünür; ilerleme ve filtre hesaplarına ders görevleri gibi dahil edilir.
+4. **Yalnızca kendi eklediği** görevlerde “Düzenle” ve “Sil” düğmesi bulunur; `course.json`'daki ders görevleri düzenlenemez ve silinemez.
+5. Silme, bir onay adımından sonra yapılır; onaylanmazsa görev silinmez. Silinen görevin ilerleme kaydı da temizlenir.
+6. Kendi görevleri `ldp:v1:userTasks` anahtarında saklanır; sayfa yenilenince aynen görünür. Bozuk, yinelenen veya artık var olmayan haftaya ait kayıtlar atılır, uygulama çökmez (NFR-15).
+7. localStorage kullanılamıyorsa görev bellekte tutulur ve “veriler kalıcı saklanamıyor” uyarısı gösterilir (US-09).
+
+### US-19 “Önümüzdeki 7 gün” paneli
+
+- **Kullanıcı:** Öğrenci · **Öncelik:** Should
+- **İhtiyaç:** Yaklaşan son tarihleri ve geciken işleri tek bakışta görmek
+- **Amaç:** Teslim tarihlerini kaçırmamak
+
+Kabul kriterleri:
+
+1. Panel, son tarihi **bugünden başlayarak 7 gün içinde** olan ve “tamamlandı” olmayan görevleri, tarihe göre yakından uzağa sıralı gösterir. Her öğede kalan gün bilgisi metin olarak yazılır (NFR-10).
+2. Panelde **en çok 5** görev listelenir.
+3. Süresi geçmiş ve tamamlanmamış görevlerin sayısı “N görevin süresi geçti.” olarak yazılır; gecikmiş görevler 5'lik sınıra dahil değildir.
+4. Gecikmiş görev varsa “Yapılacak görevleri göster” düğmesi görev listesinde durum filtresini “Yapılacak”a, hafta filtresini “Tüm haftalar”a getirir, aramayı temizler ve odağı görev alanına taşır (US-06, US-07).
+5. 7 gün içinde açık görev yoksa “Önümüzdeki 7 günde son tarihi olan açık görev yok.” yazar; son tarihi olmayan görevler panelde yer almaz.
+6. Görev durumu değişince panel NFR-13'teki süre içinde güncellenir.
+
 ## 5. Kapsam dışı
 
 Aşağıdaki özellikler bu sürümde **yapılmayacaktır**. Gerekçeler:
@@ -315,6 +350,11 @@ Bu özellikler ileride, temel gereksinimler tamamlandıktan sonra ayrı bir kaps
 | FR-06, FR-07 | US-06 … US-08 | Birim test (filtre/arama) |
 | FR-08, FR-09 | US-09, US-11, US-13 | Elle senaryo (yenileme, bozuk veri, localStorage kapalı) |
 | FR-10 | US-14 | Birim test (doğrulama) + hatalı JSON ile elle deneme |
+| FR-11 | US-15 | Birim test (gecikme hesabı) |
+| FR-12 | US-16 | **Uygulanmadı** (sonraki sürüm); v1.0 kabulünde sınanmaz |
+| FR-13 | US-17 | Elle senaryo (onay iptal/kabul, yalnızca `ldp:v1:*` silinir) |
+| FR-14 | US-18 | Birim test (`validateTaskInput`, `sanitizeUserTasks`) + elle senaryo (ekle/düzenle/sil, yenileme) |
+| FR-15 | US-19 | Birim test (`upcomingTasks`) + elle senaryo (7 gün sınırı, 5 görev sınırı, gecikmiş sayısı) |
 | NFR-01 … NFR-04 | US-10 | Tarayıcıda 360/768/1280 px elle kontrol |
 | NFR-05 … NFR-12 | US-11, US-12 | Kontrast ölçümü + yalnızca klavyeyle gezinme testi |
 
