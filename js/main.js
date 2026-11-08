@@ -135,13 +135,13 @@ function renderWeeks() {
   const selected = state.prefs.filters.weekId;
   el.weeks.innerHTML = weeks.map((w) => {
     const p = progress[w.id];
-    return `<button class="week-card" type="button" data-week="${esc(w.id)}" aria-pressed="${selected === w.id}">
+    return `<article class="week-card">
       <span class="week-card__no" aria-hidden="true">${w.weekNo}</span>
-      <h3>${w.weekNo}. hafta: ${esc(w.title)}</h3>
+      <h3><button class="week-card__toggle" type="button" data-week="${esc(w.id)}" aria-pressed="${selected === w.id}">${w.weekNo}. hafta: ${esc(w.title)}</button></h3>
       <span class="muted">${esc(w.description)}</span>
       <span class="bar" aria-hidden="true"><span style="width:${p.percent}%"></span></span>
       <span class="muted">${p.total === 0 ? 'Bu haftada görev yok' : `%${p.percent} · ${p.done} / ${p.total} görev tamamlandı`}</span>
-    </button>`;
+    </article>`;
   }).join('');
 }
 
