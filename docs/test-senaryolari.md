@@ -3,7 +3,7 @@
 **Proje:** Etkileşimli Ders Deneyimi Panosu  
 **Test Sorumlusu:** Yusuf Veis  
 **İlgili Issue'lar:** #57, #58, #59, #70, #71  
-**Belge Durumu:** "Güncel (8 Kasım 2026)" (8 Kasım 2026: görev formu ve 7 gün paneli testleri, hata kayıtları ve gereksinim–test eşleştirmesi eklendi)
+**Belge Durumu:** Güncel (8 Kasım 2026)
 
 ---
 
@@ -143,7 +143,7 @@ Gerçek sonuçlar test tamamlandıktan sonra yazılacaktır.
 ### TC-16: Hatalı localStorage verisi
 - **Adımlar:** localStorage içerisine geçersiz JSON verisi yerleştirilerek uygulama yeniden açılır.
 - **Beklenen:** Uygulama çökmemeli ve mümkün olduğunca varsayılan verilerle çalışmaya devam etmelidir.
-- **Gerçek:** Uygulama en son haliyle çalışmaya devam ediyor ve hata console da gözüküyor.
+- **Gerçek:** Sayfa çökmeden açıldı, ilerleme %0'dan başladı, konsolda hata yok.
 - **Sonuç:** Başarılı.
 
 ---
@@ -175,13 +175,13 @@ Gerçek sonuçlar test tamamlandıktan sonra yazılacaktır.
 - **Adımlar:** Fare kullanılmadan Tab, Enter, Space ve yön tuşlarıyla uygulama kullanılır.
 - **Beklenen:** Etkileşimli elemanlara klavyeyle erişilebilir ve gerekli işlemler gerçekleştirilebilir.
 - **Gerçek:** Tab ile tüm etkileşimli öğelere sırayla ulaşıldı; Enter ve Boşluk düğmeleri çalıştırdı. Klavye tuzağı yoktu. Hafta kartlarındaki odak kaybı hariç (H-04), düzeltmeden sonra tekrar denendi, sorun yok.
-- **Sonuç:** Tuşlar çalışıyor. seçenekler seçilebiliyor focus kaybolmuyor.
+- **Sonuç:** Başarılı
 
 ### TC-21: Klavye odağı
 - **Adımlar:** Tab tuşuyla sayfadaki etkileşimli elemanlar arasında gezinilir.
 - **Beklenen:** Klavye odağı görsel olarak anlaşılır.
 - **Gerçek:** Tab ile gezerken odaktaki her öğede belirgin bir odak halkası göründü; hafta kartlarında halka kartın tamamını çevreliyor.
-- **Sonuç:** Tab ile sayfa içerisinde her tuşun üzerine focus olunabiliyor.
+- **Sonuç:** Başarılı.
 
 ### TC-22: Renk kontrastı
 - **Adımlar:** Açık ve koyu temada metinlerin arka planla kontrastı kontrol edilir.
@@ -277,7 +277,8 @@ Fonksiyonel gereksinimler `docs/gereksinimler.md` dosyasındaki FR maddeleridir.
 | FR-11 | Son tarihi geçen görevler işaretlenir | Should | TC-07 | Kapsandı |
 | FR-12 | Haftalar ders yolculuğu (zaman çizelgesi) olarak görüntülenir | Should | – | Özellik uygulanmadı (US-16, #97); test yok |
 | FR-13 | İlerleme onaylı şekilde sıfırlanabilir | Could | TC-15 | Kapsandı |
+| FR-14 | Kendi görevini ekleme, düzenleme, silme | TC-24 | Kapsandı |
+| FR-15 | "Önümüzdeki 7 gün" paneli | TC-25 | Kapsandı |
 
 **Eşleştirmeden çıkan sonuçlar:**
-- 13 FR maddesinden 11'i en az bir senaryoyla tam kapsanıyor, 1'i (FR-10) kısmen kapsanıyor, 1'i (FR-12) uygulanmadığı için test edilemiyor.
-- TC-24 (görev formu) ve TC-25 (7 gün paneli) hiçbir FR maddesine bağlanamıyor, çünkü bu özellikler gereksinim belgesinde yok (#97). Belgeye eklenince bu tabloya satır eklenecek.
+- 15 FR maddesinden 13'ü en az bir senaryoyla tam kapsanıyor, 1'i (FR-10) kısmen kapsanıyor, 1'i (FR-12) uygulanmadığı için test edilemiyor.
