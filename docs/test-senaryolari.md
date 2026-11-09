@@ -227,8 +227,6 @@ Bu iki özellik ilk senaryo takımı yazıldıktan sonra eklendi (#85, #86). Aş
 - **Gerçek:** Panelde sırasıyla "Bugün", "Yarın", iki "2 gün kaldı" (ders içeriğindeki görevler) ve "5 gün kaldı" göründü; 8 gün sonraki görev yoktu. "5 görevin süresi geçti" uyarısı çıktı. "Bugün biten" görevi tamamlanınca panelden kalktı. Düğme durum filtresini "Yapılacak"a aldı ve odak görev bölümüne gitti. Konsolda hata yoktu.
 - **Sonuç:** Başarılı.
 
-**Not:** Bu iki özellik `docs/gereksinimler.md` içinde henüz tanımlı değil (#97), bu yüzden TC-24 ve TC-25 Bölüm 9'daki eşleştirmede bir FR koduna bağlanamıyor.
-
 ---
 
 ## 7. Hata Kayıtları
@@ -277,8 +275,8 @@ Fonksiyonel gereksinimler `docs/gereksinimler.md` dosyasındaki FR maddeleridir.
 | FR-11 | Son tarihi geçen görevler işaretlenir | Should | TC-07 | Kapsandı |
 | FR-12 | Haftalar ders yolculuğu (zaman çizelgesi) olarak görüntülenir | Should | – | Özellik uygulanmadı (US-16, #97); test yok |
 | FR-13 | İlerleme onaylı şekilde sıfırlanabilir | Could | TC-15 | Kapsandı |
-| FR-14 | Kendi görevini ekleme, düzenleme, silme | TC-24 | Kapsandı |
-| FR-15 | "Önümüzdeki 7 gün" paneli | TC-25 | Kapsandı |
+| FR-14 | Kendi görevini ekleme, düzenleme, silme | Should | TC-24 | Kapsandı |
+| FR-15 | "Önümüzdeki 7 gün" paneli | Should | TC-25 | Kapsandı |
 
 **Eşleştirmeden çıkan sonuçlar:**
 - 15 FR maddesinden 13'ü en az bir senaryoyla tam kapsanıyor, 1'i (FR-10) kısmen kapsanıyor, 1'i (FR-12) uygulanmadığı için test edilemiyor.
