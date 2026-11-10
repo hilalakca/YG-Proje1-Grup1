@@ -11,35 +11,38 @@ sayfada, etkileşimli bir web arayüzüyle takip edebildiği uygulama.
 - **Teslim tarihi:** 11 Kasım 2026
 - **Canlı demo:** https://hilalakca.github.io/YG-Proje1-Grup1/ (GitHub Pages; `main`'e her birleşmede kendiliğinden güncellenir)
 
-## Güncel durum (8 Kasım 2026)
+## Güncel durum (10 Kasım 2026)
 
-Lider özeti; teslime 3 gün var. Ayrıntılar aşağıdaki bölümlerde ve [katkı tablosunda](docs/katki-tablosu.md).
+Lider özeti; teslim yarın (11 Kasım). Ayrıntılar: [katkı tablosu](docs/katki-tablosu.md),
+[teslim kontrol listesi](docs/teslim-kontrol-listesi.md).
 
 **Bitti**
 
 - **Uygulama:** Hocanın belgesindeki zorunlu işlevlerin hepsi çalışıyor ve [canlı demoda](https://hilalakca.github.io/YG-Proje1-Grup1/)
   yayında: hafta kartları ve detayı, görev durumu, filtre ve Türkçe arama, ilerleme, tema, kalıcılık. Ek olarak kendi
   görevini ekleme/düzenleme/silme ve "Önümüzdeki 7 gün" paneli var.
-- **Test:** 65 birim testi her push ve PR'da GitHub Actions'ta çalışıyor, hepsi geçiyor. 23 elle test senaryosu
-  sonuçlarıyla yazılı. Bulunan 4 hatanın 4'ü de düzeltildi (#66, #93, #94, #98); bilinen açık hata yok.
+- **Test:** 65 birim testi her push ve PR'da GitHub Actions'ta çalışıyor, hepsi geçiyor. 25 elle test senaryosu
+  (TC-01–TC-25) sonuçlarıyla yazılı; 15 fonksiyonel gereksinim test senaryolarıyla eşleştirildi. Bulunan 4 hatanın
+  4'ü de düzeltildi (#66, #93, #94, #98); bilinen açık hata yok.
 - **Belgeler:** Gereksinimler (FR-01–FR-15, US-01–US-19), mimari, veri modeli, tema ve kontrast, sayfa haritası,
-  masaüstü wireframe, kullanıcı kılavuzu, kısa rapor (md), katkı tablosu.
+  masaüstü wireframe, kullanıcı kılavuzu, kısa rapor (md), test senaryoları, katkı tablosu, teslim kontrol listesi,
+  v1.0.0 sürüm notu taslağı.
 - **Süreç:** 20 takip listesi maddesi issue ve alt görevlere bölündü; bütün işler dal + PR + inceleme ile
-  `main`'e giriyor. 85 issue'nun 64'ü kapandı.
+  `main`'e giriyor.
 
 **Kalan**
 
 | Kim | İş | Hedef |
 | --- | --- | --- |
-| Yusuf | Test belgesine TC-24/TC-25, hata kayıtları ve gereksinim–test eşleştirmesi ([#102](https://github.com/hilalakca/YG-Proje1-Grup1/pull/102), son düzeltmeler isteniyor) | 9 Kasım öğlen |
-| Ayşe | Ekran görüntüleri ([#39](https://github.com/hilalakca/YG-Proje1-Grup1/issues/39), #73, #74), mobil wireframe ([#27](https://github.com/hilalakca/YG-Proje1-Grup1/issues/27)), raporun PDF'i ([#76](https://github.com/hilalakca/YG-Proje1-Grup1/issues/76)), README denemesi (#75) | 9 Kasım akşam |
-| Ayşe + ekip | Sunum ve demo akışı ([#77](https://github.com/hilalakca/YG-Proje1-Grup1/issues/77)) | 10 Kasım |
-| Hilal | Katkı tablosunun son güncellemesi (#78), v1.0.0 etiketi (#81), demo provası (#82), LMS teslimi (#83) | 10–11 Kasım |
-| Herkes | Bireysel yansıtma raporu ve akran değerlendirmesi (#87–#90) | 10 Kasım |
+| Ayşe | [#108](https://github.com/hilalakca/YG-Proje1-Grup1/pull/108)'in düzeltilmesi: ekran görüntüleri (#39, #73, #74), mobil wireframe (#27), raporun PDF'i (#76); README denemesi (#75) | 10 Kasım |
+| Ayşe + ekip | Sunumun son hali ([#77](https://github.com/hilalakca/YG-Proje1-Grup1/issues/77)) | 10 Kasım prova |
+| Hilal + ekip | Demo provası ([#82](https://github.com/hilalakca/YG-Proje1-Grup1/issues/82)) | 10 Kasım akşam |
+| Hilal | Katkı tablosunun son hali (#78), v1.0.0 etiketi (#81), LMS teslimi (#83) | 11 Kasım |
+| Herkes | Bireysel yansıtma raporu ve akran değerlendirmesi (#87–#90) | 11 Kasım teslimden önce |
 
 ## İçindekiler
 
-1. [Güncel durum](#güncel-durum-8-kasım-2026)
+1. [Güncel durum](#güncel-durum-10-kasım-2026)
 1. [Projenin amacı](#projenin-amacı)
 2. [Ekip, roller ve katkılar](#ekip-roller-ve-katkılar)
 3. [Özellikler](#özellikler)
@@ -93,7 +96,7 @@ Bütün üyeler aynı zamanda geliştiricidir. Roller hocanın takip listesindek
 
 ### Kim ne yaptı?
 
-Git geçmişine ve issue kayıtlarına göre, 8 Kasım 2026 itibarıyla. Commit, PR ve satır
+Git geçmişine ve issue kayıtlarına göre, 10 Kasım 2026 itibarıyla. Commit, PR ve satır
 sayılarıyla ayrıntılı tablo: [docs/katki-tablosu.md](docs/katki-tablosu.md) (P1-19).
 
 **Hilal Akça (Lider + Geliştirici)**
@@ -116,9 +119,10 @@ sayılarıyla ayrıntılı tablo: [docs/katki-tablosu.md](docs/katki-tablosu.md)
   P1-07'ye ek) ve "Önümüzdeki 7 gün" panelini ([#92](https://github.com/hilalakca/YG-Proje1-Grup1/pull/92)) yazdı.
 - 7 Kasım'da entegrasyon denemesi yaptı: kabul kriterleri karşılanan 17 issue'yu kanıtıyla kapattı, bulunan
   hatayı kaydetti ([#98](https://github.com/hilalakca/YG-Proje1-Grup1/issues/98)).
-- Ekip arkadaşlarının PR'larını inceledi (#65, #95, #96, #101, #102, #106); belgeleri her birleşmeden sonra güncel
+- Ekip arkadaşlarının PR'larını inceledi (#65, #95, #96, #101, #102, #106, #108); belgeleri her birleşmeden sonra güncel
   tuttu ([#69](https://github.com/hilalakca/YG-Proje1-Grup1/pull/69), [#100](https://github.com/hilalakca/YG-Proje1-Grup1/pull/100), [#104](https://github.com/hilalakca/YG-Proje1-Grup1/pull/104)) ve katkı tablosunu hazırladı
-  ([#105](https://github.com/hilalakca/YG-Proje1-Grup1/pull/105); P1-19).
+  ([#105](https://github.com/hilalakca/YG-Proje1-Grup1/pull/105); P1-19); teslim kontrol listesini ve v1.0.0 sürüm notu taslağını yazdı
+  ([#109](https://github.com/hilalakca/YG-Proje1-Grup1/pull/109); P1-20).
 
 **Fatih Ulupınar (Analist + Geliştirici)**
 
@@ -147,11 +151,11 @@ sayılarıyla ayrıntılı tablo: [docs/katki-tablosu.md](docs/katki-tablosu.md)
 - Gecikme kontrolündeki saat dilimi hatasını buldu ve kaydetti
   ([#66](https://github.com/hilalakca/YG-Proje1-Grup1/issues/66)).
 - Görev formu ve 7 gün paneli için test senaryoları (TC-24, TC-25), hata kayıtları ve gereksinim–test
-  eşleştirmesini yazdı ([#102](https://github.com/hilalakca/YG-Proje1-Grup1/pull/102), incelemede); #104 ve #105'i inceleyip onayladı.
+  eşleştirmesini yazdı ([#102](https://github.com/hilalakca/YG-Proje1-Grup1/pull/102); P1-16); #104, #105 ve #109'u inceleyip onayladı.
 
 ## Özellikler
 
-8 Kasım 2026 itibarıyla:
+10 Kasım 2026 itibarıyla:
 
 | Özellik                                                      | Takip listesi | Durum                                                                                                   |
 | ------------------------------------------------------------ | ------------- | ------------------------------------------------------------------------------------------------------- |
@@ -165,11 +169,11 @@ sayılarıyla ayrıntılı tablo: [docs/katki-tablosu.md](docs/katki-tablosu.md)
 | Açık/koyu tema, tercih kalıcılığı                            | P1-13         | Test edildi                                                                                             |
 | Görev durumlarının `localStorage`'da saklanması, bozuk kayda dayanıklılık | P1-14 | Test edildi                                                                                         |
 | İlerlemeyi sıfırlama (onaylı)                                | P1-14         | Test edildi                                                                                             |
-| Kendi görevini ekleme, düzenleme, silme; form doğrulaması    | P1-07 (#85)   | Test edildi (birim testler; TC-24 [#102](https://github.com/hilalakca/YG-Proje1-Grup1/pull/102)'de) |
-| Önümüzdeki 7 gün: yaklaşan ve süresi geçen görevler          | #86 (ek)      | Test edildi (birim testler; TC-25 [#102](https://github.com/hilalakca/YG-Proje1-Grup1/pull/102)'de) |
+| Kendi görevini ekleme, düzenleme, silme; form doğrulaması    | P1-07 (#85)   | Test edildi (birim testler, TC-24) |
+| Önümüzdeki 7 gün: yaklaşan ve süresi geçen görevler          | #86 (ek)      | Test edildi (birim testler, TC-25) |
 
 "Test edildi": kabul kriterleri tarayıcıda denendi; kanıtı ilgili issue'nun kapanış yorumunda ve
-[`docs/test-senaryolari.md`](docs/test-senaryolari.md)'de (TC-01–TC-23).
+[`docs/test-senaryolari.md`](docs/test-senaryolari.md)'de (TC-01–TC-25).
 
 Arayüzün arkasındaki hesaplar (ilerleme, filtre ve arama, durum değiştirme, gecikme, form doğrulaması, veri
 doğrulama, depolama) **65 birim testiyle** denetleniyor (`tests/`).
@@ -246,7 +250,7 @@ node --test "tests/*.test.mjs"
 ```
 
 Üç test dosyası var: `logic.test.mjs` (iş mantığı), `course-data.test.mjs` (örnek verinin tutarlılığı),
-`storage.test.mjs` (`localStorage` kapalı ya da bozukken davranış). 8 Kasım itibarıyla 65 testin hepsi geçiyor.
+`storage.test.mjs` (`localStorage` kapalı ya da bozukken davranış). 10 Kasım itibarıyla 65 testin hepsi geçiyor.
 
 Aynı testler her push ve PR'da GitHub Actions'ta da çalışır; sonuç PR sayfasındaki **Checks** bölümünde
 görünür. Testi geçmeyen PR birleştirilmez.
@@ -423,7 +427,7 @@ veri yoktur.
 
 ## Bilinen eksikler
 
-8 Kasım 2026 itibarıyla:
+10 Kasım 2026 itibarıyla:
 
 - "Ders yolculuğu (zaman çizelgesi)" görünümü (FR-12, US-16) uygulanmadı; haftalar kart ızgarasıyla gösteriliyor.
   Gereksinim belgesinde "sonraki sürüm" olarak işaretli ([#106](https://github.com/hilalakca/YG-Proje1-Grup1/pull/106)).
@@ -433,19 +437,19 @@ veri yoktur.
 
 ## Teslim dosyaları
 
-8 Kasım 2026 itibarıyla:
+10 Kasım 2026 itibarıyla:
 
 | Dosya                                    | İçerik                                                                                                     | Durum      |
 | ---------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------- |
 | [`docs/gereksinimler.md`](docs/gereksinimler.md) | Gereksinimler ve kabul kriterleri ([P1-02 #5](https://github.com/hilalakca/YG-Proje1-Grup1/issues/5)) | Var (FR-01–FR-15, US-01–US-19) |
 | [`docs/sayfa-haritasi-ve-kullanici-akisi.md`](docs/sayfa-haritasi-ve-kullanici-akisi.md), [`docs/wireframes.svg`](docs/wireframes.svg) | Sayfa haritası ve masaüstü wireframe ([P1-04 #7](https://github.com/hilalakca/YG-Proje1-Grup1/issues/7)) | Var; mobil wireframe bekleniyor (#27) |
-| [`docs/test-senaryolari.md`](docs/test-senaryolari.md) | Test senaryoları ve hata kaydı ([P1-15 #2](https://github.com/hilalakca/YG-Proje1-Grup1/issues/2)) | Var (TC-01–TC-23); TC-24/TC-25, hata kayıtları ve eşleştirme [#102](https://github.com/hilalakca/YG-Proje1-Grup1/pull/102)'de |
+| [`docs/test-senaryolari.md`](docs/test-senaryolari.md) | Test senaryoları ve hata kaydı ([P1-15 #2](https://github.com/hilalakca/YG-Proje1-Grup1/issues/2)) | Var: TC-01–TC-25, hata kayıtları, gereksinim–test eşleştirmesi |
 | [`docs/kullanici-kilavuzu.md`](docs/kullanici-kilavuzu.md) | Kullanıcı kılavuzu ([P1-17 #3](https://github.com/hilalakca/YG-Proje1-Grup1/issues/3)) | Var; ekran görüntüleri bekleniyor (#74) |
 | [`docs/kisa-proje-raporu.md`](docs/kisa-proje-raporu.md) (+ `.docx`) | Kısa proje raporu ([P1-18 #18](https://github.com/hilalakca/YG-Proje1-Grup1/issues/18)) | Var; `.docx` ve PDF güncel değil (#76) |
 | [`docs/proje-sunumu.pptx`](docs/proje-sunumu.pptx) | Grup sunumu ([P1-18 #18](https://github.com/hilalakca/YG-Proje1-Grup1/issues/18))                         | Taslak (#77) |
 | `docs/screenshots/`                      | Masaüstü ve mobil ekran görüntüleri ([P1-08 #10](https://github.com/hilalakca/YG-Proje1-Grup1/issues/10)) | Henüz yok (#39) |
-| [`docs/katki-tablosu.md`](docs/katki-tablosu.md) | Ekip katkı tablosu ([P1-19 #19](https://github.com/hilalakca/YG-Proje1-Grup1/issues/19)) | Var (8 Kasım akşamı); teslimden önce son güncelleme (#78) |
-| [`docs/teslim-kontrol-listesi.md`](docs/teslim-kontrol-listesi.md) | Teslim paketi, rubrik kanıtları, prova ve teslim günü listesi ([P1-20 #20](https://github.com/hilalakca/YG-Proje1-Grup1/issues/20)) | Var (9 Kasım) |
+| [`docs/katki-tablosu.md`](docs/katki-tablosu.md) | Ekip katkı tablosu ([P1-19 #19](https://github.com/hilalakca/YG-Proje1-Grup1/issues/19)) | Var (10 Kasım); teslimden önce son güncelleme (#78) |
+| [`docs/teslim-kontrol-listesi.md`](docs/teslim-kontrol-listesi.md) | Teslim paketi, rubrik kanıtları, prova ve teslim günü listesi ([P1-20 #20](https://github.com/hilalakca/YG-Proje1-Grup1/issues/20)) | Var (10 Kasım) |
 | [`docs/surum-notu-v1.0.0.md`](docs/surum-notu-v1.0.0.md) | v1.0.0 sürüm notu ([#81](https://github.com/hilalakca/YG-Proje1-Grup1/issues/81)) | Taslak; etiket teslim günü |
 
 Ekran görüntüleri `docs/screenshots/` klasörüne `responsive-360.png`, `responsive-768.png` ve
