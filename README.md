@@ -269,6 +269,8 @@ docs/tema-ve-kontrast.md  Tema davranışı ve kontrast ölçümleri
 docs/test-senaryolari.md  Elle yapılan test senaryoları ve sonuçları
 docs/kullanici-kilavuzu.md  Kullanıcı kılavuzu
 docs/kisa-proje-raporu.*  Kısa proje raporu (md, docx); docs/proje-sunumu.pptx sunum
+docs/katki-tablosu.md     Ekip katkı tablosu
+docs/teslim-kontrol-listesi.md  Teslim paketi, prova ve teslim günü listesi
 docs/arsiv/           Eski taslaklar (yalnızca geçmiş kaydı)
 .github/              PR şablonu, GitHub Actions test iş akışı
 ```
@@ -443,6 +445,8 @@ veri yoktur.
 | [`docs/proje-sunumu.pptx`](docs/proje-sunumu.pptx) | Grup sunumu ([P1-18 #18](https://github.com/hilalakca/YG-Proje1-Grup1/issues/18))                         | Taslak (#77) |
 | `docs/screenshots/`                      | Masaüstü ve mobil ekran görüntüleri ([P1-08 #10](https://github.com/hilalakca/YG-Proje1-Grup1/issues/10)) | Henüz yok (#39) |
 | [`docs/katki-tablosu.md`](docs/katki-tablosu.md) | Ekip katkı tablosu ([P1-19 #19](https://github.com/hilalakca/YG-Proje1-Grup1/issues/19)) | Var (8 Kasım akşamı); teslimden önce son güncelleme (#78) |
+| [`docs/teslim-kontrol-listesi.md`](docs/teslim-kontrol-listesi.md) | Teslim paketi, rubrik kanıtları, prova ve teslim günü listesi ([P1-20 #20](https://github.com/hilalakca/YG-Proje1-Grup1/issues/20)) | Var (9 Kasım) |
+| [`docs/surum-notu-v1.0.0.md`](docs/surum-notu-v1.0.0.md) | v1.0.0 sürüm notu ([#81](https://github.com/hilalakca/YG-Proje1-Grup1/issues/81)) | Taslak; etiket teslim günü |
 
 Ekran görüntüleri `docs/screenshots/` klasörüne `responsive-360.png`, `responsive-768.png` ve
 `responsive-1280.png` adlarıyla eklenecek; wireframe gerçek ekran görüntüsü yerine kullanılmaz.
