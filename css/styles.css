@@ -50,6 +50,9 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
+/* display verilen bileşenler (ör. .task-form { display: grid }) hidden özelliğini ezmesin */
+[hidden] { display: none !important; }
+
 html { scroll-behavior: smooth; }
 
 body {
