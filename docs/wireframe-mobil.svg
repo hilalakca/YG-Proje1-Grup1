@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1100" viewBox="0 0 360 1100">
+<defs><style>
+.bg{fill:#f2f5f9}.card{fill:#fff;stroke:#cfd7e3;stroke-width:1.2}.ink{fill:#17203a;font-family:Arial,sans-serif}.muted{fill:#4b5670;font-family:Arial,sans-serif}.blue{fill:#2b4acb}.line{stroke:#cfd7e3;stroke-width:1}
+</style></defs>
+<rect class="bg" width="360" height="1100"/>
+<rect x="12" y="12" width="336" height="58" rx="12" class="card"/>
+<text x="24" y="37" class="ink" font-size="17" font-weight="bold">Ders Deneyimi Panosu</text>
+<text x="24" y="55" class="muted" font-size="10">Yazılım Geliştirme · 2026 Güz</text>
+<rect x="12" y="82" width="336" height="42" rx="9" class="card"/>
+<text x="25" y="108" class="muted" font-size="12">⌕  Görev ara</text>
+<rect x="12" y="136" width="160" height="58" rx="10" class="card"/>
+<text x="24" y="158" class="muted" font-size="10">GENEL İLERLEME</text><text x="24" y="181" class="ink" font-size="21" font-weight="bold">%42</text>
+<rect x="184" y="136" width="164" height="58" rx="10" class="card"/>
+<text x="196" y="158" class="muted" font-size="10">TAMAMLANAN GÖREV</text><text x="196" y="181" class="ink" font-size="21" font-weight="bold">5 / 12</text>
+<text x="16" y="224" class="ink" font-size="15" font-weight="bold">7 Gün Paneli</text>
+<rect x="12" y="236" width="336" height="112" rx="10" class="card"/>
+<rect x="25" y="250" width="35" height="72" rx="7" fill="#e8edf4"/><text x="42.5" y="269" text-anchor="middle" class="muted" font-size="9">Pzt</text><circle cx="42.5" cy="293" r="8" fill="#2b4acb"/><text x="42.5" y="311" text-anchor="middle" class="ink" font-size="8">1</text><rect x="70" y="250" width="35" height="72" rx="7" fill="#e8edf4"/><text x="87.5" y="269" text-anchor="middle" class="muted" font-size="9">Sal</text><circle cx="87.5" cy="293" r="8" fill="#2b4acb"/><text x="87.5" y="311" text-anchor="middle" class="ink" font-size="8">2</text><rect x="115" y="250" width="35" height="72" rx="7" fill="#e8edf4"/><text x="132.5" y="269" text-anchor="middle" class="muted" font-size="9">Çar</text><circle cx="132.5" cy="293" r="8" fill="#2b4acb"/><text x="132.5" y="311" text-anchor="middle" class="ink" font-size="8">3</text><rect x="160" y="250" width="35" height="72" rx="7" fill="#e8edf4"/><text x="177.5" y="269" text-anchor="middle" class="muted" font-size="9">Per</text><circle cx="177.5" cy="293" r="8" fill="#2b4acb"/><text x="177.5" y="311" text-anchor="middle" class="ink" font-size="8">4</text><rect x="205" y="250" width="35" height="72" rx="7" fill="#e8edf4"/><text x="222.5" y="269" text-anchor="middle" class="muted" font-size="9">Cum</text><circle cx="222.5" cy="293" r="8" fill="#2b4acb"/><text x="222.5" y="311" text-anchor="middle" class="ink" font-size="8">5</text><rect x="250" y="250" width="35" height="72" rx="7" fill="#e8edf4"/><text x="267.5" y="269" text-anchor="middle" class="muted" font-size="9">Cmt</text><circle cx="267.5" cy="293" r="8" fill="#2b4acb"/><text x="267.5" y="311" text-anchor="middle" class="ink" font-size="8">6</text><rect x="295" y="250" width="35" height="72" rx="7" fill="#e8edf4"/><text x="312.5" y="269" text-anchor="middle" class="muted" font-size="9">Paz</text><circle cx="312.5" cy="293" r="8" fill="#2b4acb"/><text x="312.5" y="311" text-anchor="middle" class="ink" font-size="8">7</text>
+<text x="16" y="378" class="ink" font-size="15" font-weight="bold">Haftalar</text>
+<rect x="12" y="390" width="336" height="64" rx="10" class="card"/>
+<text x="25" y="415" class="ink" font-size="12" font-weight="bold">1. Hafta · Web’in yapı taşları</text><text x="25" y="435" class="muted" font-size="10">2 / 3 görev tamamlandı</text>
+<rect x="12" y="464" width="336" height="64" rx="10" class="card"/>
+<text x="25" y="489" class="ink" font-size="12" font-weight="bold">2. Hafta · JavaScript ile etkileşim</text><text x="25" y="509" class="muted" font-size="10">1 / 3 görev tamamlandı</text>
+<text x="16" y="558" class="ink" font-size="15" font-weight="bold">Görevler ve filtreler</text>
+<rect x="12" y="570" width="336" height="44" rx="9" class="card"/>
+<text x="24" y="597" class="muted" font-size="11">Durum: Tümü   ▾     Hafta: Tümü   ▾</text>
+<rect x="12" y="624" width="336" height="112" rx="10" class="card"/>
+<text x="25" y="649" class="ink" font-size="12" font-weight="bold">Kişisel tanıtım sayfası iskeleti</text><text x="25" y="670" class="muted" font-size="10">Başlık, bölüm ve liste öğeleriyle anlamlı bir sayfa hazırla.</text><rect x="25" y="689" width="94" height="28" rx="7" fill="#e8edf4"/><text x="72" y="707" text-anchor="middle" class="ink" font-size="10">Yapılacak ▾</text>
+<rect x="12" y="746" width="336" height="112" rx="10" class="card"/>
+<text x="25" y="771" class="ink" font-size="12" font-weight="bold">CSS ile iki sütunlu düzen</text><text x="25" y="792" class="muted" font-size="10">Flexbox veya Grid ile basit bir yerleşim oluştur.</text><rect x="25" y="811" width="94" height="28" rx="7" fill="#e8edf4"/><text x="72" y="829" text-anchor="middle" class="ink" font-size="10">Devam ediyor ▾</text>
+<text x="16" y="896" class="ink" font-size="15" font-weight="bold">Görev Formu</text>
+<rect x="12" y="908" width="336" height="176" rx="10" class="card"/>
+<text x="25" y="933" class="ink" font-size="12" font-weight="bold">Yeni görev ekle</text>
+<rect x="25" y="946" width="310" height="30" rx="6" fill="#fff" stroke="#cfd7e3"/><text x="35" y="966" class="muted" font-size="10">Görev başlığı</text>
+<rect x="25" y="984" width="310" height="30" rx="6" fill="#fff" stroke="#cfd7e3"/><text x="35" y="1004" class="muted" font-size="10">Açıklama</text>
+<rect x="25" y="1023" width="145" height="28" rx="6" fill="#fff" stroke="#cfd7e3"/><text x="35" y="1041" class="muted" font-size="10">Hafta seç ▾</text>
+<rect x="245" y="1023" width="90" height="28" rx="6" class="blue"/><text x="290" y="1041" text-anchor="middle" fill="#fff" font-family="Arial" font-size="10">Kaydet</text>
+</svg>

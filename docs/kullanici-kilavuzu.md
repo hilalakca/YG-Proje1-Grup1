@@ -9,6 +9,8 @@ Kendi bilgisayarınızda çalıştırmak için:
 3. `fetch` ve ES modülleri kullanıldığı için dosyayı çift tıklayarak açmayın; yerel sunucu kullanın.
 
 ## Genel ilerleme ve önümüzdeki 7 gün
+![Ana ekran: genel ilerleme, önümüzdeki 7 gün ve hafta kartları](screenshots/responsive-1280.png)
+
 Sayfanın üstündeki halka, tamamlanan görevlerin yüzdesini ve "tamamlanan / toplam" sayısını gösterir.
 
 Yanındaki **Önümüzdeki 7 gün** bölümü, bugün ve sonraki 7 gün içinde son tarihi olan ve henüz tamamlanmamış en fazla 5 görevi, en yakını başta olacak şekilde listeler ("Bugün", "Yarın", "4 gün kaldı"). Süresi geçmiş görev varsa sayısı yazılır; **Yapılacak görevleri göster** düğmesi görev listesini "Yapılacak" durumuna süzer ve listeye götürür.
@@ -20,9 +22,13 @@ Hafta kartına tıklayarak öğrenme hedeflerini ve varsa kaynak bağlantıları
 Üstteki Görev ara alanı başlık, açıklama ve etiketlerde arama yapar; büyük/küçük harf ve Türkçe karakter farkı gözetmez ("İŞ" ile "iş" aynı sonucu verir). Durum ve hafta filtrelerini seçebilirsiniz. Birden fazla koşul birlikte VE (AND) mantığıyla uygulanır. Kaç görevin gösterildiği listenin üstünde yazar. Filtreleri temizle düğmesi tüm filtreleri varsayılana döndürür.
 
 ## Görev durumu ve tema
+![Koyu tema](screenshots/koyu-tema-1280.png)
+
 Her görev kartında Yapılacak, Devam ediyor veya Tamamlandı durumlarından birini seçin. İlerleme göstergeleri sayfa yenilenmeden güncellenir. Son tarihi geçmiş ve tamamlanmamış görevlerde tarih "Süresi geçti: …" olarak vurgulanır. Üst çubuktaki düğme açık/koyu tema arasında geçiş yapar.
 
 ## Kendi görevini ekleme, düzenleme ve silme
+![Görev formu: boş gönderimde hata mesajı](screenshots/gorev-formu.png)
+
 1. Görevler bölümündeki **Görev ekle** düğmesine basın; form açılır.
 2. **Başlık** ve **Hafta** zorunludur. **Son tarih**, **Açıklama** ve **Etiketler** isteğe bağlıdır. Etiketleri virgülle ayırın (en çok 5 etiket, örnek: `ödev, okuma`).
 3. **Kaydet**'e basın. Eksik ya da hatalı alan varsa altında kırmızı bir mesaj çıkar ve imleç o alana gider. Başlık en çok 120, açıklama en çok 500 karakter olabilir.
@@ -30,6 +36,11 @@ Her görev kartında Yapılacak, Devam ediyor veya Tamamlandı durumlarından bi
 5. Kendi görevinizi değiştirmek için kartındaki **Düzenle**'ye, silmek için **Sil**'e basın; silmeden önce onay istenir. Ders içeriğinden gelen görevler düzenlenemez ve silinemez.
 
 Formu **Vazgeç** düğmesiyle ya da **Esc** tuşuyla kapatabilirsiniz. Eklediğiniz görevler yalnızca kullandığınız tarayıcıda saklanır.
+
+## Telefonda kullanım
+Uygulama telefon ekranında tek sütuna geçer; tüm düğmeler parmakla rahat basılacak büyüklüktedir (en az 44 px).
+
+<img src="screenshots/responsive-360.png" alt="Telefon görünümü, 360 px" width="240">
 
 ## Klavyeyle kullanım
 Sayfa açılınca ilk **Tab**, "Görevlere geç" bağlantısını gösterir; **Enter** ile doğrudan görev listesine gidilir. Tüm düğme, filtre ve form alanlarına **Tab** ile ulaşılır ve **Enter** / **Boşluk** ile kullanılır.

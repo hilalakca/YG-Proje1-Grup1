@@ -42,4 +42,4 @@ Ders Deneyimi Panosu (tek sayfa)
 | Görev ekleme formu | `#task-add`, `#task-form`, `openForm()`, `onFormSubmit()` |
 | Sıfırlama | `#reset` |
 
-Masaüstü wireframe taslağı `wireframes.svg` dosyasındadır; görev formu ve 7 gün paneli wireframe'den sonra eklendiği için taslakta yer almaz.
+Masaüstü wireframe taslağı `wireframes.svg` dosyasındadır; görev formu ve 7 gün paneli wireframe'den sonra eklendiği için bu taslakta yer almaz. Mobil (360 px) wireframe `wireframe-mobil.svg` dosyasındadır (Ayşe Yurtseven) ve 7 gün panelini ve görev formunu da içerir.

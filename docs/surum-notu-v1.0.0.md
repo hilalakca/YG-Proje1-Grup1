@@ -1,7 +1,6 @@
-# Sürüm Notu: v1.0.0 (taslak)
+# Sürüm Notu: v1.0.0
 
-> Bu metin teslim günü GitHub'da **Releases → Draft a new release** sayfasında `v1.0.0` etiketiyle yayımlanacak
-> (#81). O güne kadar birleşen işler eklenecek.
+> Bu metin GitHub'da **Releases** sayfasında `v1.0.0` etiketiyle yayımlanır (#81).
 
 **Etkileşimli Ders Deneyimi Panosu** · Yazılım Geliştirme dersi · Proje 1 · Grup 1
 Canlı demo: https://hilalakca.github.io/YG-Proje1-Grup1/
@@ -25,7 +24,8 @@ Canlı demo: https://hilalakca.github.io/YG-Proje1-Grup1/
 - 65 birim testi (`tests/`), her push ve PR'da GitHub Actions'ta çalışır.
 - Elle test senaryoları: [`docs/test-senaryolari.md`](test-senaryolari.md).
 - Düzeltilen hatalar: #66 (gecikme kontrolünde saat dilimi), #94 (sekme simgesi), #93 ve #98 (hafta kartında
-  başlık yapısı ve klavye odağı).
+  başlık yapısı ve klavye odağı), #111 (görev formunun açılışta görünmesi).
+- Elle test senaryoları: 25 (TC-01–TC-25); 15 fonksiyonel gereksinimle eşleştirildi.
 
 ## Bilinen sınırlamalar
 
