@@ -2,7 +2,7 @@
 
 **Proje:** Etkileşimli Ders Deneyimi Panosu · Grup 1
 **Teslim:** 11 Kasım 2026 · **Sorumlu:** Hilal Akça (P1-20, [#20](https://github.com/hilalakca/YG-Proje1-Grup1/issues/20))
-**Durum:** 9 Kasım 2026 öğleden sonra itibarıyla
+**Durum:** 10 Kasım 2026 öğleden sonra itibarıyla
 
 Hocanın teknik dokümanındaki "Teslim paketi" ve "Değerlendirme rubriği" bölümlerine göre hazırlandı.
 
@@ -22,7 +22,7 @@ Hocanın teknik dokümanındaki "Teslim paketi" ve "Değerlendirme rubriği" bö
 
 | Kriter | Puan | Kanıt | Eksik |
 | --- | ---: | --- | --- |
-| Temel işlevlerin çalışması | 15 | Hafta kartları ve detayı, görev durumu, filtre ve arama, ilerleme, tema, kalıcılık; TC-01–TC-16; 65 birim testi | — |
+| Temel işlevlerin çalışması | 15 | Hafta kartları ve detayı, görev durumu, filtre ve arama, ilerleme, tema, kalıcılık; TC-01–TC-16, TC-24, TC-25; 65 birim testi | — |
 | Web arayüzü ve kullanıcı etkileşimi | 12 | Görev ekleme/düzenleme/silme formu, "Önümüzdeki 7 gün" paneli, anlık güncellenen ilerleme | — |
 | Responsive tasarım ve kullanılabilirlik | 8 | 360/768/1280 px'de taşma yok, 44 px dokunma hedefleri, klavye ve odak (TC-17–TC-23), [kontrast ölçümü](tema-ve-kontrast.md) | Ekran görüntüleri (#39) |
 | İhtiyaç analizi / kullanıcı senaryoları | 7 | [Gereksinimler](gereksinimler.md): FR-01–FR-15, US-01–US-19, kabul kriterleri, izlenebilirlik | — |
@@ -37,7 +37,8 @@ performansı. Kanıtlar: [katkı tablosu](katki-tablosu.md).
 
 | Ne zaman | İş | Kim |
 | --- | --- | --- |
-| 9 Kasım akşam | #102 (test belgesi) ve #108 (ekran görüntüleri, mobil wireframe, rapor PDF'i) birleşmiş olacak | Yusuf, Ayşe |
+| 9 Kasım | #102 (test belgesi) birleşti ✔ | Yusuf |
+| 10 Kasım | #108 (ekran görüntüleri, mobil wireframe, rapor PDF'i) düzeltilip birleşecek | Ayşe |
 | 10 Kasım öğlen | Sunumun son hali (#77); yansıtma raporları (#87–#90) | Ayşe + ekip, herkes |
 | 10 Kasım akşam | Demo provası (#82); katkı tablosunun son güncellemesi (#78) | Ekip, Hilal |
 | 11 Kasım sabah | `v1.0.0` etiketi ve GitHub sürümü (#81); LMS teslimi (#83) | Hilal |
