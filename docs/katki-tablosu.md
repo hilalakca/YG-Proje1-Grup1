@@ -1,7 +1,7 @@
 # Ekip Katkı Tablosu
 
 **Proje:** Etkileşimli Ders Deneyimi Panosu · Grup 1
-**Durum:** 11 Kasım 2026, teslim günü. Açık PR'lar birleşince ve teslimden önce son kez güncellenecek (P1-19, #78).
+**Durum:** 11 Kasım 2026, teslim günü; son hali (#113 birleştikten sonra). Açık PR'lar birleşince ve teslimden önce son kez güncellenecek (P1-19, #78).
 
 Veriler GitHub'dan alındı: `main` dalındaki commitler, birleşen PR'lar ve issue kayıtları. Kişi bazında commit
 listesi: [Insights → Contributors](https://github.com/hilalakca/YG-Proje1-Grup1/graphs/contributors).
@@ -10,13 +10,14 @@ listesi: [Insights → Contributors](https://github.com/hilalakca/YG-Proje1-Grup
 
 | Üye | Rol | `main`'deki commit | Birleşen PR | PR incelemesi | Değişen satır* |
 | --- | --- | ---: | ---: | ---: | ---: |
-| Hilal Akça ([@hilalakca](https://github.com/hilalakca)) | Lider + Geliştirici | 33 | 15 | 11 | +2447 / −1207 |
+| Hilal Akça ([@hilalakca](https://github.com/hilalakca)) | Lider + Geliştirici | 40 | 18 | 11 | +2667 / −1317 |
 | Fatih Ulupınar ([@fatih-software](https://github.com/fatih-software)) | Analist + Geliştirici | 5 | 3 | 0 | +1434 / −3 |
-| Yusuf Veis ([@ManufactoredConductor](https://github.com/ManufactoredConductor)) | Test / Kalite + Geliştirici | 13 | 3 | 3 | +618 / −62 |
-| Ayşe Yurtseven ([@ayseyurtseven](https://github.com/ayseyurtseven)) | Dokümantasyon + Geliştirici | 1 | 1 (+1 düzeltme bekliyor) | 0 | +111 / −0 (+ `.docx`, `.pptx`) |
+| Yusuf Veis ([@ManufactoredConductor](https://github.com/ManufactoredConductor)) | Test / Kalite + Geliştirici | 13 | 3 | 4 | +618 / −62 |
+| Ayşe Yurtseven ([@ayseyurtseven](https://github.com/ayseyurtseven)) | Dokümantasyon + Geliştirici | 1 | 1 (#108 birleşmedi) | 0 | +111 / −0 (+ `.docx`, `.pptx`) |
 
 \* Birleştirme commitleri hariç; ikili dosyalar (`.docx`, `.pptx`, PDF) satır olarak sayılmaz. Satır sayısı emeğin
-ölçüsü değildir, yalnızca kayıttır.
+ölçüsü değildir, yalnızca kayıttır. Hilal'in sayılarına teslim günü devralınan belgeler ve Ayşe'nin mobil wireframe
+dosyasının eklenmesi (`81827af`, dosya Ayşe'nin) de dahildir.
 
 Yusuf'un yerel git adı `Conductor-exe`'dir; commitleri e-posta üzerinden @ManufactoredConductor hesabına bağlıdır.
 #67'deki iki commit Yusuf'un kapanan PR'ından (#64) yazarlığı korunarak aktarıldı.
