@@ -1,7 +1,7 @@
 # Ekip Katkı Tablosu
 
 **Proje:** Etkileşimli Ders Deneyimi Panosu · Grup 1
-**Durum:** 10 Kasım 2026, 15:00 itibarıyla. Açık PR'lar birleşince ve teslimden önce son kez güncellenecek (P1-19, #78).
+**Durum:** 11 Kasım 2026, teslim günü. Açık PR'lar birleşince ve teslimden önce son kez güncellenecek (P1-19, #78).
 
 Veriler GitHub'dan alındı: `main` dalındaki commitler, birleşen PR'lar ve issue kayıtları. Kişi bazında commit
 listesi: [Insights → Contributors](https://github.com/hilalakca/YG-Proje1-Grup1/graphs/contributors).
@@ -39,6 +39,8 @@ Yusuf'un yerel git adı `Conductor-exe`'dir; commitleri e-posta üzerinden @Manu
 | README ve belge güncellemeleri | [#69](https://github.com/hilalakca/YG-Proje1-Grup1/pull/69), [#100](https://github.com/hilalakca/YG-Proje1-Grup1/pull/100), [#104](https://github.com/hilalakca/YG-Proje1-Grup1/pull/104) |
 | Ekip katkı tablosu ve hesap kontrolü (P1-19) | [#105](https://github.com/hilalakca/YG-Proje1-Grup1/pull/105), [#107](https://github.com/hilalakca/YG-Proje1-Grup1/pull/107) |
 | Teslim kontrol listesi, v1.0.0 sürüm notu taslağı (P1-20) | [#109](https://github.com/hilalakca/YG-Proje1-Grup1/pull/109) |
+| Görev formunun açılışta görünmesi hatası (bulma ve düzeltme) | [#111](https://github.com/hilalakca/YG-Proje1-Grup1/issues/111) |
+| Teslim günü devralınan işler: ekran görüntüleri, rapor PDF/Word, sunumun son hali (Ayşe'ye atanmıştı; aşağıdaki nota bakın) | #39, #73, #74, #76, #77 |
 | PR incelemeleri | #65, #95, #96, #101, #102, #106, #108 |
 | 7 Kasım entegrasyon denemesi, bulunan hata kaydı | [#98](https://github.com/hilalakca/YG-Proje1-Grup1/issues/98) |
 
@@ -71,7 +73,7 @@ Yusuf'un yerel git adı `Conductor-exe`'dir; commitleri e-posta üzerinden @Manu
 | Sayfa haritası ve kullanıcı akışı, masaüstü wireframe (P1-04) | [#65](https://github.com/hilalakca/YG-Proje1-Grup1/pull/65) |
 | Kullanıcı kılavuzu ilk sürümü (P1-17) | [#65](https://github.com/hilalakca/YG-Proje1-Grup1/pull/65) |
 | Kısa rapor (md, docx) ve sunum taslağı (P1-18) | [#65](https://github.com/hilalakca/YG-Proje1-Grup1/pull/65) |
-| Ekran görüntüleri, mobil wireframe, rapor PDF'i | [#108](https://github.com/hilalakca/YG-Proje1-Grup1/pull/108) (açık; düzeltme bekliyor) |
+| Mobil wireframe ve ilk ekran görüntüleri | [#108](https://github.com/hilalakca/YG-Proje1-Grup1/pull/108) (9 Kasım; düzeltme istendi, birleşmedi). Mobil wireframe `docs/wireframe-mobil.svg` olarak Ayşe'nin adıyla alındı |
 
 ## Kendi hesabıyla katkı kontrolü (P1-19.2, #79)
 
@@ -90,3 +92,11 @@ küçük düzeltme commitleri ekledi (#65'te iki commit); bunlar Hilal'in adıyl
 Issue sayıları katkı ölçüsü olarak kullanılmamalıdır. 7 Kasım'da kodu önceden yazılmış ama kimse doğrulamadığı için
 açık kalan 17 issue, lider tarafından tarayıcıda doğrulanarak kapatıldı; bu issue'lar atandıkları kişinin üzerinde
 görünse de işi yapanı kapanış yorumları gösterir.
+
+## Not: teslim günü devralınan işler
+
+Ayşe Yurtseven'e atanan ekran görüntüleri (#39, #73, #74), raporun PDF ve Word sürümü (#76) ve sunumun son hali (#77)
+teslim gününe kadar `main`'e girmedi: 9 Kasım'da açılan [#108](https://github.com/hilalakca/YG-Proje1-Grup1/pull/108) projenin eski bir kopyasını içerdiği için
+düzeltme istendi ve düzeltilmedi. Bu işler 11 Kasım'da lider tarafından tamamlandı; ilgili issue'ların kapanış
+yorumlarında da yazılıdır. Mobil wireframe (#27) Ayşe'nin dosyasıdır. README'yi projeyi bilmeyen biriyle deneme işi
+(#75) yapılmadı.

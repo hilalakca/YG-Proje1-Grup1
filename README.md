@@ -11,38 +11,43 @@ sayfada, etkileşimli bir web arayüzüyle takip edebildiği uygulama.
 - **Teslim tarihi:** 11 Kasım 2026
 - **Canlı demo:** https://hilalakca.github.io/YG-Proje1-Grup1/ (GitHub Pages; `main`'e her birleşmede kendiliğinden güncellenir)
 
-## Güncel durum (10 Kasım 2026)
+## Güncel durum (11 Kasım 2026, teslim günü)
 
-Lider özeti; teslim yarın (11 Kasım). Ayrıntılar: [katkı tablosu](docs/katki-tablosu.md),
-[teslim kontrol listesi](docs/teslim-kontrol-listesi.md).
-
-**Bitti**
+Lider özeti. Ayrıntılar: [katkı tablosu](docs/katki-tablosu.md), [teslim kontrol listesi](docs/teslim-kontrol-listesi.md).
 
 - **Uygulama:** Hocanın belgesindeki zorunlu işlevlerin hepsi çalışıyor ve [canlı demoda](https://hilalakca.github.io/YG-Proje1-Grup1/)
   yayında: hafta kartları ve detayı, görev durumu, filtre ve Türkçe arama, ilerleme, tema, kalıcılık. Ek olarak kendi
   görevini ekleme/düzenleme/silme ve "Önümüzdeki 7 gün" paneli var.
 - **Test:** 65 birim testi her push ve PR'da GitHub Actions'ta çalışıyor, hepsi geçiyor. 25 elle test senaryosu
-  (TC-01–TC-25) sonuçlarıyla yazılı; 15 fonksiyonel gereksinim test senaryolarıyla eşleştirildi. Bulunan 4 hatanın
-  4'ü de düzeltildi (#66, #93, #94, #98); bilinen açık hata yok.
-- **Belgeler:** Gereksinimler (FR-01–FR-15, US-01–US-19), mimari, veri modeli, tema ve kontrast, sayfa haritası,
-  masaüstü wireframe, kullanıcı kılavuzu, kısa rapor (md), test senaryoları, katkı tablosu, teslim kontrol listesi,
-  v1.0.0 sürüm notu taslağı.
-- **Süreç:** 20 takip listesi maddesi issue ve alt görevlere bölündü; bütün işler dal + PR + inceleme ile
-  `main`'e giriyor.
+  (TC-01–TC-25) sonuçlarıyla yazılı; 15 fonksiyonel gereksinim test senaryolarıyla eşleştirildi. Bulunan 5 hatanın
+  5'i de düzeltildi (#66, #93, #94, #98, #111); bilinen açık hata yok.
+- **Teslim paketi:** README, çalışan uygulama ve canlı demo, [proje raporu (PDF)](docs/kisa-proje-raporu.pdf),
+  [kullanıcı kılavuzu](docs/kullanici-kilavuzu.md), [sunum](docs/proje-sunumu.pptx), [ekran görüntüleri](#ekran-görüntüleri).
+  Bireysel yansıtma raporları ve akran değerlendirmeleri her üye tarafından LMS'e ayrıca yüklenir.
 
-**Kalan**
+### Teslim notu: lider tarafından tamamlanan işler
 
-| Kim | İş | Hedef |
+Aşağıdaki işler Ayşe Yurtseven'e atanmıştı (P1-04, P1-08, P1-17, P1-18). Ayşe 9 Kasım'da bu işler için
+[#108](https://github.com/hilalakca/YG-Proje1-Grup1/pull/108)'i açtı; ancak PR projenin eski bir kopyasını (`sonson/` klasörü) içerdiği için aynı gün
+düzeltme istendi ve teslim gününe kadar düzeltilmedi. Teslimin eksik kalmaması için bu işler **11 Kasım'da lider
+(Hilal Akça) tarafından tamamlandı**:
+
+| İş | Issue | Nasıl tamamlandı |
 | --- | --- | --- |
-| Ayşe | [#108](https://github.com/hilalakca/YG-Proje1-Grup1/pull/108)'in düzeltilmesi: ekran görüntüleri (#39, #73, #74), mobil wireframe (#27), raporun PDF'i (#76); README denemesi (#75) | 10 Kasım |
-| Ayşe + ekip | Sunumun son hali ([#77](https://github.com/hilalakca/YG-Proje1-Grup1/issues/77)) | 10 Kasım prova |
-| Hilal + ekip | Demo provası ([#82](https://github.com/hilalakca/YG-Proje1-Grup1/issues/82)) | 10 Kasım akşam |
-| Hilal | Katkı tablosunun son hali (#78), v1.0.0 etiketi (#81), LMS teslimi (#83) | 11 Kasım |
-| Herkes | Bireysel yansıtma raporu ve akran değerlendirmesi (#87–#90) | 11 Kasım teslimden önce |
+| Ekran görüntüleri (360, 768, 1280 px, görev formu, koyu tema) | [#39](https://github.com/hilalakca/YG-Proje1-Grup1/issues/39), [#73](https://github.com/hilalakca/YG-Proje1-Grup1/issues/73) | Canlı uygulamadan yeniden alındı |
+| Kullanıcı kılavuzuna ekran görüntüleri | [#74](https://github.com/hilalakca/YG-Proje1-Grup1/issues/74) | Kılavuza eklendi |
+| Proje raporunun son hali, PDF ve Word | [#76](https://github.com/hilalakca/YG-Proje1-Grup1/issues/76) | Güncel metinden yeniden üretildi |
+| Sunumun son hali | [#77](https://github.com/hilalakca/YG-Proje1-Grup1/issues/77) | Taslak sunum yeniden düzenlendi |
+| Mobil wireframe (360 px) | [#27](https://github.com/hilalakca/YG-Proje1-Grup1/issues/27) | **Ayşe'nin #108'deki dosyası** olduğu gibi alındı |
+
+Ayşe'nin önceki çalışmaları (sayfa haritası, masaüstü wireframe, kılavuzun, raporun ve sunumun ilk sürümleri,
+[#65](https://github.com/hilalakca/YG-Proje1-Grup1/pull/65)) ve mobil wireframe'i belgelerde onun adıyla duruyor. "README'yi projeyi bilmeyen biriyle deneme"
+işi ([#75](https://github.com/hilalakca/YG-Proje1-Grup1/issues/75)) yapılmadı.
 
 ## İçindekiler
 
-1. [Güncel durum](#güncel-durum-10-kasım-2026)
+1. [Güncel durum](#güncel-durum-11-kasım-2026-teslim-günü)
+1. [Ekran görüntüleri](#ekran-görüntüleri)
 1. [Projenin amacı](#projenin-amacı)
 2. [Ekip, roller ve katkılar](#ekip-roller-ve-katkılar)
 3. [Özellikler](#özellikler)
@@ -55,6 +60,18 @@ Lider özeti; teslim yarın (11 Kasım). Ayrıntılar: [katkı tablosu](docs/kat
 10. [Gizlilik](#gizlilik)
 11. [Bilinen eksikler](#bilinen-eksikler)
 12. [Teslim dosyaları](#teslim-dosyaları)
+
+## Ekran görüntüleri
+
+Canlı uygulamadan, 11 Kasım 2026'da alındı (`docs/screenshots/`).
+
+| Masaüstü (1280 px) | Koyu tema |
+| --- | --- |
+| ![Masaüstü görünüm, 1280 px](docs/screenshots/responsive-1280.png) | ![Koyu tema, 1280 px](docs/screenshots/koyu-tema-1280.png) |
+
+| Telefon (360 px) | Tablet (768 px) | Görev formu, hatalı gönderim |
+| --- | --- | --- |
+| ![Telefon görünümü, 360 px](docs/screenshots/responsive-360.png) | ![Tablet görünümü, 768 px](docs/screenshots/responsive-768.png) | ![Görev formu ve hata mesajı](docs/screenshots/gorev-formu.png) |
 
 ## Projenin amacı
 
@@ -96,7 +113,7 @@ Bütün üyeler aynı zamanda geliştiricidir. Roller hocanın takip listesindek
 
 ### Kim ne yaptı?
 
-Git geçmişine ve issue kayıtlarına göre, 10 Kasım 2026 itibarıyla. Commit, PR ve satır
+Git geçmişine ve issue kayıtlarına göre, 11 Kasım 2026 itibarıyla. Commit, PR ve satır
 sayılarıyla ayrıntılı tablo: [docs/katki-tablosu.md](docs/katki-tablosu.md) (P1-19).
 
 **Hilal Akça (Lider + Geliştirici)**
@@ -123,6 +140,9 @@ sayılarıyla ayrıntılı tablo: [docs/katki-tablosu.md](docs/katki-tablosu.md)
   tuttu ([#69](https://github.com/hilalakca/YG-Proje1-Grup1/pull/69), [#100](https://github.com/hilalakca/YG-Proje1-Grup1/pull/100), [#104](https://github.com/hilalakca/YG-Proje1-Grup1/pull/104)) ve katkı tablosunu hazırladı
   ([#105](https://github.com/hilalakca/YG-Proje1-Grup1/pull/105); P1-19); teslim kontrol listesini ve v1.0.0 sürüm notu taslağını yazdı
   ([#109](https://github.com/hilalakca/YG-Proje1-Grup1/pull/109); P1-20).
+- Teslim günü görev formunun açılışta görünmesi hatasını buldu ve düzeltti ([#111](https://github.com/hilalakca/YG-Proje1-Grup1/issues/111)).
+- Teslim günü, süresi dolan dokümantasyon işlerini tamamladı: ekran görüntüleri, raporun PDF ve Word sürümü, sunumun
+  son hali (bkz. [Teslim notu](#teslim-notu-lider-tarafından-tamamlanan-işler)).
 
 **Fatih Ulupınar (Analist + Geliştirici)**
 
@@ -139,7 +159,10 @@ sayılarıyla ayrıntılı tablo: [docs/katki-tablosu.md](docs/katki-tablosu.md)
 **Ayşe Yurtseven (Dokümantasyon + Geliştirici)**
 
 - Sayfa haritası, kullanıcı akışı, masaüstü wireframe, kullanıcı kılavuzu ve rapor/sunum taslağını hazırladı
-  ([#65](https://github.com/hilalakca/YG-Proje1-Grup1/pull/65), birleşti; mobil wireframe bekleniyor).
+  ([#65](https://github.com/hilalakca/YG-Proje1-Grup1/pull/65), birleşti).
+- Mobil wireframe'i ve ilk ekran görüntülerini hazırladı ([#108](https://github.com/hilalakca/YG-Proje1-Grup1/pull/108), 9 Kasım). PR düzeltilmediği için
+  birleşmedi; mobil wireframe `docs/wireframe-mobil.svg` olarak Ayşe'nin adıyla alındı. Bkz.
+  [Teslim notu](#teslim-notu-lider-tarafından-tamamlanan-işler).
 
 **Yusuf Veis (Test / Kalite + Geliştirici)**
 
@@ -155,14 +178,14 @@ sayılarıyla ayrıntılı tablo: [docs/katki-tablosu.md](docs/katki-tablosu.md)
 
 ## Özellikler
 
-10 Kasım 2026 itibarıyla:
+11 Kasım 2026 itibarıyla:
 
 | Özellik                                                      | Takip listesi | Durum                                                                                                   |
 | ------------------------------------------------------------ | ------------- | ------------------------------------------------------------------------------------------------------- |
 | Haftalık ders kartları ve hafta detayı (hedefler, kaynaklar) | P1-06         | Test edildi; klavye hataları [#101](https://github.com/hilalakca/YG-Proje1-Grup1/pull/101) ile düzeltildi |
 | Görev listesi ve durum değiştirme                            | P1-07         | Test edildi                                                                                             |
 | Son tarihi geçmiş görevin işaretlenmesi                      | P1-07         | Test edildi                                                                                             |
-| Responsive düzen: 360, 768, 1280 px'de taşma yok, ≥ 44 px dokunma hedefleri | P1-08 | Test edildi; ekran görüntüleri bekleniyor ([#39](https://github.com/hilalakca/YG-Proje1-Grup1/issues/39)) |
+| Responsive düzen: 360, 768, 1280 px'de taşma yok, ≥ 44 px dokunma hedefleri | P1-08 | Test edildi; [ekran görüntüleri](#ekran-görüntüleri) |
 | Klavyeyle kullanım, "Görevlere geç" bağlantısı               | P1-08         | Test edildi                                                                                             |
 | Duruma ve haftaya göre filtre, Türkçe karakter uyumlu arama  | P1-11         | Test edildi                                                                                             |
 | Genel ve haftalık ilerleme göstergesi                        | P1-12         | Test edildi                                                                                             |
@@ -192,8 +215,7 @@ Uygulama tek sayfadır; bölümler yukarıdan aşağıya:
 
 Sayfa haritası ve kullanıcı akışı: [docs/sayfa-haritasi-ve-kullanici-akisi.md](docs/sayfa-haritasi-ve-kullanici-akisi.md);
 masaüstü wireframe: [docs/wireframes.svg](docs/wireframes.svg)
-([P1-04 #7](https://github.com/hilalakca/YG-Proje1-Grup1/issues/7); mobil wireframe bekleniyor,
-[#27](https://github.com/hilalakca/YG-Proje1-Grup1/issues/27)).
+mobil wireframe: [docs/wireframe-mobil.svg](docs/wireframe-mobil.svg) ([P1-04 #7](https://github.com/hilalakca/YG-Proje1-Grup1/issues/7)).
 
 ## Kullanılan teknolojiler
 
@@ -250,7 +272,7 @@ node --test "tests/*.test.mjs"
 ```
 
 Üç test dosyası var: `logic.test.mjs` (iş mantığı), `course-data.test.mjs` (örnek verinin tutarlılığı),
-`storage.test.mjs` (`localStorage` kapalı ya da bozukken davranış). 10 Kasım itibarıyla 65 testin hepsi geçiyor.
+`storage.test.mjs` (`localStorage` kapalı ya da bozukken davranış). 11 Kasım itibarıyla 65 testin hepsi geçiyor.
 
 Aynı testler her push ve PR'da GitHub Actions'ta da çalışır; sonuç PR sayfasındaki **Checks** bölümünde
 görünür. Testi geçmeyen PR birleştirilmez.
@@ -427,7 +449,7 @@ veri yoktur.
 
 ## Bilinen eksikler
 
-10 Kasım 2026 itibarıyla:
+11 Kasım 2026 itibarıyla:
 
 - "Ders yolculuğu (zaman çizelgesi)" görünümü (FR-12, US-16) uygulanmadı; haftalar kart ızgarasıyla gösteriliyor.
   Gereksinim belgesinde "sonraki sürüm" olarak işaretli ([#106](https://github.com/hilalakca/YG-Proje1-Grup1/pull/106)).
@@ -437,20 +459,17 @@ veri yoktur.
 
 ## Teslim dosyaları
 
-10 Kasım 2026 itibarıyla:
+11 Kasım 2026 itibarıyla:
 
-| Dosya                                    | İçerik                                                                                                     | Durum      |
-| ---------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------- |
+| Dosya | İçerik | Durum |
+| --- | --- | --- |
 | [`docs/gereksinimler.md`](docs/gereksinimler.md) | Gereksinimler ve kabul kriterleri ([P1-02 #5](https://github.com/hilalakca/YG-Proje1-Grup1/issues/5)) | Var (FR-01–FR-15, US-01–US-19) |
-| [`docs/sayfa-haritasi-ve-kullanici-akisi.md`](docs/sayfa-haritasi-ve-kullanici-akisi.md), [`docs/wireframes.svg`](docs/wireframes.svg) | Sayfa haritası ve masaüstü wireframe ([P1-04 #7](https://github.com/hilalakca/YG-Proje1-Grup1/issues/7)) | Var; mobil wireframe bekleniyor (#27) |
+| [`docs/sayfa-haritasi-ve-kullanici-akisi.md`](docs/sayfa-haritasi-ve-kullanici-akisi.md), [`docs/wireframes.svg`](docs/wireframes.svg), [`docs/wireframe-mobil.svg`](docs/wireframe-mobil.svg) | Sayfa haritası, masaüstü ve mobil wireframe ([P1-04 #7](https://github.com/hilalakca/YG-Proje1-Grup1/issues/7)) | Var |
 | [`docs/test-senaryolari.md`](docs/test-senaryolari.md) | Test senaryoları ve hata kaydı ([P1-15 #2](https://github.com/hilalakca/YG-Proje1-Grup1/issues/2)) | Var: TC-01–TC-25, hata kayıtları, gereksinim–test eşleştirmesi |
-| [`docs/kullanici-kilavuzu.md`](docs/kullanici-kilavuzu.md) | Kullanıcı kılavuzu ([P1-17 #3](https://github.com/hilalakca/YG-Proje1-Grup1/issues/3)) | Var; ekran görüntüleri bekleniyor (#74) |
-| [`docs/kisa-proje-raporu.md`](docs/kisa-proje-raporu.md) (+ `.docx`) | Kısa proje raporu ([P1-18 #18](https://github.com/hilalakca/YG-Proje1-Grup1/issues/18)) | Var; `.docx` ve PDF güncel değil (#76) |
-| [`docs/proje-sunumu.pptx`](docs/proje-sunumu.pptx) | Grup sunumu ([P1-18 #18](https://github.com/hilalakca/YG-Proje1-Grup1/issues/18))                         | Taslak (#77) |
-| `docs/screenshots/`                      | Masaüstü ve mobil ekran görüntüleri ([P1-08 #10](https://github.com/hilalakca/YG-Proje1-Grup1/issues/10)) | Henüz yok (#39) |
-| [`docs/katki-tablosu.md`](docs/katki-tablosu.md) | Ekip katkı tablosu ([P1-19 #19](https://github.com/hilalakca/YG-Proje1-Grup1/issues/19)) | Var (10 Kasım); teslimden önce son güncelleme (#78) |
-| [`docs/teslim-kontrol-listesi.md`](docs/teslim-kontrol-listesi.md) | Teslim paketi, rubrik kanıtları, prova ve teslim günü listesi ([P1-20 #20](https://github.com/hilalakca/YG-Proje1-Grup1/issues/20)) | Var (10 Kasım) |
-| [`docs/surum-notu-v1.0.0.md`](docs/surum-notu-v1.0.0.md) | v1.0.0 sürüm notu ([#81](https://github.com/hilalakca/YG-Proje1-Grup1/issues/81)) | Taslak; etiket teslim günü |
-
-Ekran görüntüleri `docs/screenshots/` klasörüne `responsive-360.png`, `responsive-768.png` ve
-`responsive-1280.png` adlarıyla eklenecek; wireframe gerçek ekran görüntüsü yerine kullanılmaz.
+| [`docs/kullanici-kilavuzu.md`](docs/kullanici-kilavuzu.md) | Kullanıcı kılavuzu ([P1-17 #3](https://github.com/hilalakca/YG-Proje1-Grup1/issues/3)) | Var, ekran görüntüleriyle |
+| [`docs/kisa-proje-raporu.pdf`](docs/kisa-proje-raporu.pdf) (+ [`.md`](docs/kisa-proje-raporu.md), [`.docx`](docs/kisa-proje-raporu.docx)) | Proje raporu ([P1-18 #18](https://github.com/hilalakca/YG-Proje1-Grup1/issues/18)) | Var (11 Kasım) |
+| [`docs/proje-sunumu.pptx`](docs/proje-sunumu.pptx) | Grup sunumu, 11 slayt ([P1-18 #18](https://github.com/hilalakca/YG-Proje1-Grup1/issues/18)) | Var (11 Kasım) |
+| [`docs/screenshots/`](docs/screenshots/) | Masaüstü, tablet, mobil, form ve koyu tema görüntüleri ([P1-08 #10](https://github.com/hilalakca/YG-Proje1-Grup1/issues/10)) | Var |
+| [`docs/katki-tablosu.md`](docs/katki-tablosu.md) | Ekip katkı tablosu ([P1-19 #19](https://github.com/hilalakca/YG-Proje1-Grup1/issues/19)) | Var (11 Kasım) |
+| [`docs/teslim-kontrol-listesi.md`](docs/teslim-kontrol-listesi.md) | Teslim paketi, rubrik kanıtları, prova ve teslim günü listesi ([P1-20 #20](https://github.com/hilalakca/YG-Proje1-Grup1/issues/20)) | Var |
+| [`docs/surum-notu-v1.0.0.md`](docs/surum-notu-v1.0.0.md) | v1.0.0 sürüm notu ([#81](https://github.com/hilalakca/YG-Proje1-Grup1/issues/81)) | Var; etiket birleşmeden sonra |

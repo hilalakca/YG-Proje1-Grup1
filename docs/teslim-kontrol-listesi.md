@@ -2,7 +2,7 @@
 
 **Proje:** Etkileşimli Ders Deneyimi Panosu · Grup 1
 **Teslim:** 11 Kasım 2026 · **Sorumlu:** Hilal Akça (P1-20, [#20](https://github.com/hilalakca/YG-Proje1-Grup1/issues/20))
-**Durum:** 10 Kasım 2026 öğleden sonra itibarıyla
+**Durum:** 11 Kasım 2026, teslim günü
 
 Hocanın teknik dokümanındaki "Teslim paketi" ve "Değerlendirme rubriği" bölümlerine göre hazırlandı.
 
@@ -12,9 +12,9 @@ Hocanın teknik dokümanındaki "Teslim paketi" ve "Değerlendirme rubriği" bö
 | --- | --- | --- | --- | --- |
 | 1 | GitHub repository ve README | https://github.com/hilalakca/YG-Proje1-Grup1, [README](../README.md) | Hazır | Hilal |
 | 2 | Çalışan web uygulaması | `index.html`, `css/`, `js/`, `data/course.json`; 65 birim testi geçiyor | Hazır | Ekip |
-| 3 | Proje raporu | [`kisa-proje-raporu.md`](kisa-proje-raporu.md) güncel; `.docx` ve **PDF güncellenecek** | Bekliyor ([#76](https://github.com/hilalakca/YG-Proje1-Grup1/issues/76), #108) | Ayşe |
-| 4 | Kullanıcı dokümantasyonu | [`kullanici-kilavuzu.md`](kullanici-kilavuzu.md) güncel; **ekran görüntüleri eklenecek** | Bekliyor ([#74](https://github.com/hilalakca/YG-Proje1-Grup1/issues/74), #108) | Ayşe |
-| 5 | Sunum dosyası | [`proje-sunumu.pptx`](proje-sunumu.pptx) taslak; **son haline getirilecek** | Bekliyor ([#77](https://github.com/hilalakca/YG-Proje1-Grup1/issues/77)) | Ayşe + ekip |
+| 3 | Proje raporu | [`kisa-proje-raporu.pdf`](kisa-proje-raporu.pdf) (+ `.md`, `.docx`) | Hazır | Hilal (Ayşe'nin taslağından) |
+| 4 | Kullanıcı dokümantasyonu | [`kullanici-kilavuzu.md`](kullanici-kilavuzu.md), ekran görüntüleriyle | Hazır | Ayşe, Hilal |
+| 5 | Sunum dosyası | [`proje-sunumu.pptx`](proje-sunumu.pptx), 11 slayt | Hazır | Hilal (Ayşe'nin taslağından) |
 | 6 | Canlı demo veya kurulum | Canlı demo: https://hilalakca.github.io/YG-Proje1-Grup1/ · kurulum: README → "Kurulum ve çalıştırma" | Hazır | Hilal |
 | 7 | Bireysel yansıtma raporu ve akran değerlendirmesi | Her üye kendisi yazar ve LMS'e kendisi yükler | Bekliyor (#87–#90) | Herkes |
 
@@ -24,11 +24,11 @@ Hocanın teknik dokümanındaki "Teslim paketi" ve "Değerlendirme rubriği" bö
 | --- | ---: | --- | --- |
 | Temel işlevlerin çalışması | 15 | Hafta kartları ve detayı, görev durumu, filtre ve arama, ilerleme, tema, kalıcılık; TC-01–TC-16, TC-24, TC-25; 65 birim testi | — |
 | Web arayüzü ve kullanıcı etkileşimi | 12 | Görev ekleme/düzenleme/silme formu, "Önümüzdeki 7 gün" paneli, anlık güncellenen ilerleme | — |
-| Responsive tasarım ve kullanılabilirlik | 8 | 360/768/1280 px'de taşma yok, 44 px dokunma hedefleri, klavye ve odak (TC-17–TC-23), [kontrast ölçümü](tema-ve-kontrast.md) | Ekran görüntüleri (#39) |
+| Responsive tasarım ve kullanılabilirlik | 8 | 360/768/1280 px'de taşma yok, 44 px dokunma hedefleri, klavye ve odak (TC-17–TC-23), [kontrast ölçümü](tema-ve-kontrast.md) | — |
 | İhtiyaç analizi / kullanıcı senaryoları | 7 | [Gereksinimler](gereksinimler.md): FR-01–FR-15, US-01–US-19, kabul kriterleri, izlenebilirlik | — |
-| Kod ve repository düzeni | 6 | Modüler kod (`logic` / `storage` / `main`), issue + dal + PR + inceleme düzeni, CI, [mimari](mimari.md) | `sonson/` kopyası `main`'e girmemeli (#108) |
-| Rapor ve kullanıcı dokümanı | 7 | Rapor (md), kullanıcı kılavuzu, [test senaryoları](test-senaryolari.md), [katkı tablosu](katki-tablosu.md) | Rapor PDF'i, kılavuz görüntüleri |
-| Sunum ve demo | 5 | Canlı demo | Sunumun son hali, prova |
+| Kod ve repository düzeni | 6 | Modüler kod (`logic` / `storage` / `main`), issue + dal + PR + inceleme düzeni, CI, [mimari](mimari.md) | — |
+| Rapor ve kullanıcı dokümanı | 7 | Rapor (md), kullanıcı kılavuzu, [test senaryoları](test-senaryolari.md), [katkı tablosu](katki-tablosu.md) | — |
+| Sunum ve demo | 5 | Canlı demo | Prova (#82) |
 
 Bireysel katkı (%40): GitHub katkısı, rol çıktısı, issue/task katkısı, akran değerlendirmesi ve sunum/demo
 performansı. Kanıtlar: [katkı tablosu](katki-tablosu.md).
@@ -38,7 +38,8 @@ performansı. Kanıtlar: [katkı tablosu](katki-tablosu.md).
 | Ne zaman | İş | Kim |
 | --- | --- | --- |
 | 9 Kasım | #102 (test belgesi) birleşti ✔ | Yusuf |
-| 10 Kasım | #108 (ekran görüntüleri, mobil wireframe, rapor PDF'i) düzeltilip birleşecek | Ayşe |
+| 10 Kasım | #108 düzeltilmedi | Ayşe |
+| 11 Kasım | Ekran görüntüleri, rapor PDF/Word, sunum, #111 düzeltmesi lider tarafından tamamlandı | Hilal |
 | 10 Kasım öğlen | Sunumun son hali (#77); yansıtma raporları (#87–#90) | Ayşe + ekip, herkes |
 | 10 Kasım akşam | Demo provası (#82); katkı tablosunun son güncellemesi (#78) | Ekip, Hilal |
 | 11 Kasım sabah | `v1.0.0` etiketi ve GitHub sürümü (#81); LMS teslimi (#83) | Hilal |
