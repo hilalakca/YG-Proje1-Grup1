@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "id": "yazilim-gelistirme",
+  "title": "Yazılım Geliştirme",
+  "term": "2026 Güz",
+  "weeks": [
+    {
+      "id": "w01",
+      "weekNo": 1,
+      "title": "Web’in yapı taşları",
+      "description": "HTML ile anlamlı sayfa iskeleti ve CSS ile temel düzen.",
+      "objectives": [
+        "Anlamsal (semantic) HTML öğelerini doğru kullanmak",
+        "CSS ile temel yerleşim ve tipografi kurmak"
+      ],
+      "resources": [
+        { "title": "MDN: HTML ile içerik yapılandırma", "url": "https://developer.mozilla.org/docs/Learn_web_development/Core/Structuring_content", "type": "makale" }
+      ]
+    },
+    {
+      "id": "w02",
+      "weekNo": 2,
+      "title": "JavaScript ile etkileşim",
+      "description": "DOM, olaylar ve formlarla sayfaya hayat vermek.",
+      "objectives": [
+        "DOM’u seçmek ve güncellemek",
+        "Form ve olay yönetimi uygulamak"
+      ],
+      "resources": [
+        { "title": "MDN: DOM’a giriş", "url": "https://developer.mozilla.org/docs/Web/API/Document_Object_Model/Introduction", "type": "makale" }
+      ]
+    },
+    {
+      "id": "w03",
+      "weekNo": 3,
+      "title": "Responsive ve erişilebilir tasarım",
+      "description": "Her ekranda ve herkes için kullanılabilir arayüz.",
+      "objectives": [
+        "Esnek ızgara ve medya sorguları kullanmak",
+        "Klavye ve kontrast gibi erişilebilirlik ilkelerini uygulamak"
+      ],
+      "resources": [
+        { "title": "WCAG hızlı başvuru", "url": "https://www.w3.org/WAI/WCAG22/quickref/", "type": "makale" }
+      ]
+    },
+    {
+      "id": "w04",
+      "weekNo": 4,
+      "title": "Git ve takım çalışması",
+      "description": "Dallar, commit’ler ve pull request ile ortak çalışma.",
+      "objectives": [
+        "Anlamlı commit mesajları yazmak",
+        "Pull request ile kod incelemesi yapmak"
+      ],
+      "resources": []
+    }
+  ],
+  "tasks": [
+    { "id": "t01-01", "weekId": "w01", "title": "Kişisel tanıtım sayfası iskeleti", "description": "Başlık, bölüm ve liste öğeleriyle anlamlı bir sayfa hazırla.", "dueDate": "2026-10-20", "tags": ["html"] },
+    { "id": "t01-02", "weekId": "w01", "title": "CSS ile iki sütunlu düzen", "description": "Flexbox veya Grid ile basit bir yerleşim oluştur.", "dueDate": "2026-10-27", "tags": ["css"] },
+    { "id": "t01-03", "weekId": "w01", "title": "Tipografi denemesi", "description": "Üç farklı yazı boyutu ve satır yüksekliği dene.", "dueDate": null, "tags": ["css"] },
+    { "id": "t02-01", "weekId": "w02", "title": "Sayaç uygulaması", "description": "Düğme olaylarıyla artıp azalan bir sayaç yaz.", "dueDate": "2026-11-03", "tags": ["javascript"] },
+    { "id": "t02-02", "weekId": "w02", "title": "İletişim formu doğrulama", "description": "Boş alanları ve e-posta biçimini denetle.", "dueDate": "2026-11-03", "tags": ["javascript", "form"] },
+    { "id": "t02-03", "weekId": "w02", "title": "Listeyi arama kutusuyla filtrele", "description": "Yazdıkça güncellenen bir liste yap.", "dueDate": null, "tags": ["javascript", "arama"] },
+    { "id": "t03-01", "weekId": "w03", "title": "Mobil öncelikli sayfa düzeni", "description": "360 px, 768 px ve 1280 px için düzeni ayarla.", "dueDate": "2026-11-10", "tags": ["css", "responsive"] },
+    { "id": "t03-02", "weekId": "w03", "title": "Klavye ile gezinme testi", "description": "Sayfayı yalnızca klavyeyle kullanıp sorunları listele.", "dueDate": "2026-11-10", "tags": ["erişilebilirlik"] },
+    { "id": "t03-03", "weekId": "w03", "title": "Renk kontrastı denetimi", "description": "Metin ve arka plan çiftlerini kontrast aracıyla ölç.", "dueDate": null, "tags": ["erişilebilirlik", "css"] },
+    { "id": "t04-01", "weekId": "w04", "title": "Depoyu kur ve README yaz", "description": "Takımla ortak bir repository aç.", "dueDate": "2026-11-17", "tags": ["git"] },
+    { "id": "t04-02", "weekId": "w04", "title": "İlk pull request’ini aç", "description": "Bir dal oluştur, değişiklik yap, incelemeye gönder.", "dueDate": "2026-11-17", "tags": ["git", "takım"] },
+    { "id": "t04-03", "weekId": "w04", "title": "Bir arkadaşının PR’ını incele", "description": "En az iki yapıcı yorum yaz.", "dueDate": null, "tags": ["git", "takım"] }
+  ]
+}
